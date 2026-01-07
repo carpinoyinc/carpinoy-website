@@ -1175,6 +1175,27 @@ body{
       cursor:pointer;
     }
 
+
+/* =========================
+   MOBILE AUTO-HIDE (LOGO + THEME SWITCH)
+   ========================= */
+@media (max-width: 520px){
+  .cp-nav__left,
+  .cp-nav__right{
+    display: none !important;
+  }
+
+  /* Single column: links take the full width */
+  .cp-nav__inner{
+    grid-template-columns: 1fr;
+  }
+
+  /* Mobile: start-aligned so HOME is immediately visible; still scrollable to Privacy Policy */
+  .cp-nav__center{
+    justify-content: flex-start;
+  }
+}
+
 </style>
 </head>
 
@@ -1392,14 +1413,24 @@ body{
         }
       }catch(_){}
     })();
-// Center the nav strip when it overflows (desktop + mobile)
+// Center the nav strip when it overflows (desktop only; mobile defaults to HOME/start)
 (function(){
   try{
     var center = document.querySelector('.cp-nav__center');
     if(!center) return;
 
-    function centerStrip(){
-      // Center only if overflow exists
+    function isMobile(){
+      return window.matchMedia && window.matchMedia('(max-width: 520px)').matches;
+    }
+
+    function positionStrip(){
+      // On mobile: default to the start so HOME is always reachable immediately.
+      if(isMobile()){
+        center.scrollLeft = 0;
+        return;
+      }
+
+      // Desktop/large screens: center only if overflow exists
       var max = center.scrollWidth - center.clientWidth;
       if(max > 2){
         center.scrollLeft = Math.round(max / 2);
@@ -1410,12 +1441,13 @@ body{
 
     // Run after layout
     if(document.readyState === 'loading'){
-      document.addEventListener('DOMContentLoaded', function(){ setTimeout(centerStrip, 0); }, { once:true });
+      document.addEventListener('DOMContentLoaded', function(){ setTimeout(positionStrip, 0); }, { once:true });
     }else{
-      setTimeout(centerStrip, 0);
+      setTimeout(positionStrip, 0);
     }
 
-    window.addEventListener('resize', function(){ setTimeout(centerStrip, 0); }, { passive:true });
+    // Resize can fire on mobile due to browser UI; keep mobile pinned to start.
+    window.addEventListener('resize', function(){ setTimeout(positionStrip, 0); }, { passive:true });
   }catch(_){}
 })();
 
