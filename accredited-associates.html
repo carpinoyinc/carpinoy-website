@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+<title>Carpinoy Logistics Services</title>
+  <!-- Favicon (upload favicon.png beside index.html) -->
+  <link rel="icon" type="image/png" href="https://carpinoyinc.pages.dev/favicon.png" />
+
+  <!--
+  PATCH LOG
+  - v1.0 (2025-12-25 PH) Base Home Page (system fonts, mobile lite)
+  - v1.1 (2025-12-25 PH) Added PATCH-ZONE ids (JSON patching)
+  - v1.4 (2025-12-26 PH) Sticky liquid banner (full image visible) + centered mobile-friendly nav (no logo)
+  - v1.4.1 (2025-12-26 PH) Nav labels updated + linked to pages
+  - v1.5 (2026-01-03 PH) Light/Dark toggle + full-width banner (edge-to-edge)
+  - v1.8 (2026-01-03 PH) Sticky header (no banner) + Payroll-voucher style switch + header logo + embedded favicon/logo
+  -->
+
+  <!-- PERF-LOCKED: System fonts only (fastest, no Google Fonts) -->
+  <style>
+    :root{
+      --cp-bg:#f3f4f6;
+      --cp-card:#ffffff;
+      --cp-ink:#111827;
+      --cp-ink-soft:#4b5563;
+      --cp-border:rgba(148,163,184,.45);
+      --cp-lime:#c5cd27;
+      --cp-lime-soft:rgba(197,205,39,.14);
+      --cp-brick:#a06032;
+      --cp-carton:#d78c5a;
+
+      --cp-topbar:#ffffff;
+      --cp-navbg:#ffffff;
+      --cp-linkbg:#f8fafc;
+      --cp-linkink:#111827;
+
+      /* Desktop shadow (kept) */
+      --cp-shadow:0 14px 32px rgba(15,23,42,.14);
+      --cp-radius:22px;
+
+      /* Toggle UI */
+      --cp-toggle-bg:#ffffff;
+      --cp-toggle-border:rgba(148,163,184,.45);
+      --cp-toggle-ink:#111827;
+      --cp-toggle-shadow:0 10px 18px rgba(15,23,42,.10);
+    }
+
+    html[data-theme="dark"]{
+      --cp-bg:#0b1220;
+      --cp-card:#0f1a2f;
+      --cp-ink:#e5e7eb;
+      --cp-ink-soft:#aeb7c2;
+      --cp-border:rgba(148,163,184,.20);
+
+      --cp-topbar:#0a1324;
+      --cp-navbg:#0a1324;
+      --cp-linkbg:rgba(255,255,255,.06);
+      --cp-linkink:#e5e7eb;
+
+      --cp-shadow:0 12px 26px rgba(0,0,0,.35);
+
+      --cp-toggle-bg:rgba(255,255,255,.06);
+      --cp-toggle-border:rgba(255,255,255,.14);
+      --cp-toggle-ink:#e5e7eb;
+      --cp-toggle-shadow:0 14px 24px rgba(0,0,0,.40);
+    }
+
+    *{box-sizing:border-box;}
+
+    html,body{
+      margin:0; padding:0;
+      background:var(--cp-bg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      overflow-x:hidden; overflow-y:auto;
+      color:var(--cp-ink);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+
+    /* NOTE: Scrollbar theme removed for performance + mobile consistency */
+
+    .white-wrap{
+      background:var(--cp-card);
+      border-radius:32px;
+      max-width:1250px;
+      margin:clamp(10px,3vw,22px) auto;
+      padding:clamp(14px,3vw,26px);
+      box-shadow:0 10px 30px rgba(15,23,42,.10);
+      border:1px solid rgba(148,163,184,.18);
+    }
+
+    html[data-theme="dark"] .white-wrap{
+      box-shadow:0 18px 38px rgba(0,0,0,.50);
+      border:1px solid rgba(255,255,255,.08);
+    }
+
+    .wrap{
+      max-width:1180px;
+      margin:0 auto;
+      padding:clamp(10px,2.4vw,18px);
+    }
+
+    .cp-section{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      padding:clamp(6px,2.4vw,12px) clamp(4px,1.4vw,8px);
+    }
+
+    /* FULL-BLEED section: no padding, no centering constraint */
+    .cp-section--fullbleed{
+      padding:0;
+      display:block;
+    }
+
+    .cp-card{
+      background:var(--cp-card);
+      border-radius:var(--cp-radius);
+      border:1px solid var(--cp-border);
+      box-shadow:var(--cp-shadow);
+      max-width:960px;
+      width:100%;
+      padding:clamp(14px,2.4vw,22px);
+      text-align:left;
+      position:relative;
+      overflow:hidden;
+      margin:0 auto 20px auto;
+
+      /* PERF: isolates layout/paint for smoother scroll */
+      contain: content;
+    }
+
+    /* 3D glossy accent bar on top of each card (Desktop) */
+    .cp-card::before{
+      content:"";
+      position:absolute;
+      top:0; left:0; right:0;
+      height:18px;
+      border-radius:18px 18px 0 0;
+      background:linear-gradient(135deg,#f3d2b7 0%,#d78c5a 40%,#a06032 100%);
+      box-shadow:0 2px 6px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.7);
+    }
+
+    /* Title card = lime/green accent */
+    .cp-card[data-kind="title"]::before{
+      background:linear-gradient(135deg,#fefce8 0%,#e5f28d 40%,#c5cd27 100%);
+    }
+
+    .cp-title-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:8px;
+      text-align:center;
+      gap:8px;
+    }
+
+    .cp-dot{
+      width:10px; height:10px;
+      border-radius:50%;
+      background:var(--cp-lime);
+      box-shadow:0 0 8px rgba(197,205,39,.45);
+    }
+
+    .cp-title-plate{
+      display:inline-block;
+      border-radius:14px;
+      padding:6px 18px;
+      background:linear-gradient(180deg,#f9fafb 0%,#e5e7eb 55%,#d1d5db 100%);
+      border:1px solid #d0d8df;
+      box-shadow:
+        inset 0 8px 14px rgba(0,0,0,.04),
+        inset 0 -3px 8px rgba(255,255,255,.45),
+        0 3px 9px rgba(15,23,42,.16);
+
+      contain: content;
+    }
+
+    html[data-theme="dark"] .cp-title-plate{
+      background:linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(255,255,255,.05) 55%, rgba(255,255,255,.04) 100%);
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:
+        inset 0 10px 18px rgba(0,0,0,.35),
+        inset 0 -2px 10px rgba(255,255,255,.04),
+        0 8px 18px rgba(0,0,0,.45);
+    }
+
+    .cp-title{
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-weight:800;
+      font-size:clamp(17px,2.7vw,23px);
+      margin:0;
+      color:var(--cp-linkink);
+      text-shadow:0 -1px 0 rgba(255,255,255,.7);
+      text-align:center;
+    }
+
+    html[data-theme="dark"] .cp-title{
+      text-shadow:none;
+    }
+
+    .cp-title--card{ font-size:clamp(15px,2.2vw,20px); }
+
+    .cp-sub,
+    .cp-text{
+      font-size:clamp(12px,1.45vw,14px);
+      line-height:1.7;
+      margin:6px 0 10px;
+      color:var(--cp-ink-soft);
+      text-align:left;
+    }
+
+    /* cp-box design – side accent bar */
+    .cp-box{
+      background:#f9fafb;
+      border:1px solid rgba(148,163,184,.6);
+      border-radius:14px;
+      padding:9px 11px 10px;
+      margin:9px 0 12px;
+      font-size:12.5px;
+      position:relative;
+
+      contain: content;
+    }
+
+    html[data-theme="dark"] .cp-box{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.12);
+    }
+
+    .cp-box::before{
+      content:"";
+      position:absolute;
+      left:0; top:10px; bottom:10px;
+      width:3px;
+      border-radius:999px;
+      background:var(--cp-lime-soft);
+    }
+
+    .cp-box h3{
+      margin:0 0 6px 8px;
+      font-size:13px;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-weight:800;
+      color:var(--cp-ink);
+      display:flex;
+      align-items:center;
+      gap:6px;
+      text-align:left;
+    }
+
+    .cp-box h3 span{ font-size:14px; }
+
+    .cp-box p{
+      margin:3px 0;
+      font-size:12.5px;
+      color:var(--cp-ink-soft);
+    }
+
+    /* EMBOSSED FOOTER – Desktop look */
+    .cp-footer-embossed{
+      margin-top:20px;
+      padding:10px 18px;
+      text-align:center;
+      font-weight:800;
+      letter-spacing:.15px;
+      color:#1e293b;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      text-shadow:0 1px 0 #fff, 0 -1px 0 rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+      font-size:12px;
+      border-radius:18px;
+      border:1px solid rgba(233,238,242,.9);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.94), rgba(248,250,252,.94)) padding-box,
+        linear-gradient(135deg,#cfd6de,#aeb7c2 38%,#dfe5ea) border-box;
+      box-shadow:
+        inset 0 2px 5px rgba(255,255,255,.85),
+        inset 0 -2px 8px rgba(0,0,0,.05),
+        0 10px 22px rgba(0,0,0,.10),
+        0 3px 9px rgba(0,0,0,.06);
+
+      contain: content;
+    }
+
+    html[data-theme="dark"] .cp-footer-embossed{
+      color:rgba(229,231,235,.92);
+      text-shadow:none;
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03)) padding-box,
+        linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.06) 38%, rgba(255,255,255,.12)) border-box;
+      box-shadow:
+        inset 0 2px 6px rgba(0,0,0,.35),
+        inset 0 -2px 10px rgba(255,255,255,.03),
+        0 18px 34px rgba(0,0,0,.55);
+    }
+
+    @media (max-width:640px){
+      .wrap{padding-inline:10px;}
+      .cp-section{padding-inline:0;}
+      .cp-card{padding:14px 12px;}
+      .cp-title-plate{padding-inline:10px;}
+    }
+
+    /* =========================
+       PERF LOCK: MOBILE LITE
+       ========================= */
+    @media (max-width: 820px){
+      :root{ --cp-shadow: 0 6px 16px rgba(15,23,42,.10); }
+
+      /* Remove glossy accent bars (big paint cost) */
+      .cp-card::before{ display:none; }
+
+      /* Reduce dot glow */
+      .cp-dot{ box-shadow:none; }
+
+      /* Simplify title plate */
+      .cp-title-plate{
+        background:#eef2f7;
+        box-shadow: 0 2px 8px rgba(15,23,42,.12);
+      }
+      .cp-title{ text-shadow:none; }
+
+      /* Lighter boxes */
+      .cp-box{ background:#ffffff; }
+
+      /* Footer: cheaper version */
+      .cp-footer-embossed{
+        background:#f8fafc;
+        text-shadow:none;
+        border:1px solid rgba(148,163,184,.35);
+        box-shadow: 0 6px 16px rgba(0,0,0,.10);
+      }
+
+      html[data-theme="dark"] .cp-title-plate{
+        background:rgba(255,255,255,.06);
+        box-shadow: 0 10px 18px rgba(0,0,0,.45);
+      }
+      html[data-theme="dark"] .cp-box{ background:rgba(255,255,255,.03); }
+      html[data-theme="dark"] .cp-footer-embossed{
+        background:rgba(255,255,255,.04);
+        border:1px solid rgba(255,255,255,.12);
+        box-shadow: 0 16px 28px rgba(0,0,0,.55);
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{
+        transition:none!important;
+        animation:none!important;
+        scroll-behavior:auto!important;
+      }
+    }
+
+    /* =========================
+       STICKY HEADER (NO BANNER)
+       ========================= */
+    .cp-topbar{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background:var(--cp-topbar);
+      border:1px solid rgba(148,163,184,.45);
+      border-radius:22px;
+      box-shadow:0 10px 22px rgba(15,23,42,.10);
+      overflow:hidden;
+    }
+
+    html[data-theme="dark"] .cp-topbar{
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 18px 34px rgba(0,0,0,.55);
+    }
+
+    /* Full-bleed behavior for header container */
+    .cp-topbar--fullbleed{
+      width:100vw;
+      margin-left:calc(50% - 50vw);
+      margin-right:calc(50% - 50vw);
+      border-radius:0;
+      border-left:0;
+      border-right:0;
+    }
+
+    /* Liquid banner image: always whole image visible (no crop) */
+    /* Dark mode: subtle overlay (<=10%) */
+    /* small screen caps (still whole image) */
+    @media (max-width: 640px){
+      }
+
+    /* =========================
+       NAVIGATION (CENTER, MOBILE FRIENDLY) + THEME TOGGLE
+       ========================= */
+    .cp-nav{
+      width:100%;
+      background:var(--cp-navbg);
+      border-top:1px solid rgba(148,163,184,.25);
+    }
+
+    html[data-theme="dark"] .cp-nav{
+      border-top:1px solid rgba(255,255,255,.10);
+    }
+
+    .cp-nav--center{
+      padding:10px 10px 12px;
+    }
+
+    /* Inner wrapper so links stay centered while toggle sits on the right */
+    .cp-nav__inner{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .cp-nav__links{
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;                 /* prevents deform */
+      width:100%;
+      padding-right:92px;             /* reserve space for toggle */
+    }
+
+    /* Mobile fallback: scroll instead of squish */
+    @media (max-width: 520px){
+      .cp-nav--center{ padding:8px 8px 10px; }
+      .cp-nav__links{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        justify-content:flex-start;
+        padding-bottom:4px;
+        padding-right:102px;           /* reserve space for toggle */
+        scrollbar-width:none;
+      }
+      .cp-nav__links::-webkit-scrollbar{ display:none; }
+    }
+
+    .cp-nav__link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.45);
+      background:var(--cp-linkbg);
+      font-weight:800;
+      font-size:13px;
+      color:var(--cp-linkink);
+      text-decoration:none;
+      white-space:nowrap;
+      transition: box-shadow .15s ease, transform .15s ease, border-color .15s ease;
+    }
+
+    .cp-nav__link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(197,205,39,.65);
+      box-shadow:0 0 0 3px rgba(197,205,39,.18), 0 10px 18px rgba(15,23,42,.12);
+    }
+
+    html[data-theme="dark"] .cp-nav__link:hover{
+      box-shadow:0 0 0 3px rgba(197,205,39,.18), 0 12px 22px rgba(0,0,0,.45);
+    }
+
+    .cp-nav__link:active{
+      transform:translateY(0px);
+      box-shadow:0 0 0 4px rgba(197,205,39,.22), 0 8px 14px rgba(15,23,42,.10);
+    }
+
+    .cp-nav__link--active{
+      background:rgba(197,205,39,.14);
+      border-color:rgba(197,205,39,.70);
+      box-shadow:0 0 0 3px rgba(197,205,39,.18);
+    }
+
+    
+    /* Header Logo (beside Home) */
+    .cp-nav__logo{
+      height:84px;
+      width:auto;
+      display:block;
+      flex:0 0 auto;
+      margin-right:8px;
+      border-radius:8px;
+      object-fit:contain;
+      image-rendering:auto;
+    }
+
+    @media (max-width: 520px){
+      .cp-nav__logo{
+        height:72px;
+        margin-right:6px;
+      }
+    }
+
+    /* Payroll Voucher style ON/OFF switch (Dark Mode) */
+    .cp-switch{
+      position:absolute;
+      right:8px;
+      top:50%;
+      transform:translateY(-50%);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      user-select:none;
+      -webkit-tap-highlight-color:transparent;
+    }
+
+    .cp-switch__input{
+      position:absolute;
+      opacity:0;
+      width:1px;
+      height:1px;
+      pointer-events:none;
+    }
+
+    .cp-switch__track{
+      position:relative;
+      width:68px;
+      height:34px;
+      border-radius:999px;
+      border:1px solid var(--cp-toggle-border);
+      background:var(--cp-toggle-bg);
+      box-shadow:var(--cp-toggle-shadow);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 10px;
+      cursor:pointer;
+      transition: box-shadow .15s ease, border-color .15s ease, transform .12s ease;
+      overflow:hidden;
+    }
+
+    .cp-switch__knob{
+      position:absolute;
+      top:50%;
+      left:4px;
+      transform:translateY(-50%);
+      width:26px;
+      height:26px;
+      border-radius:999px;
+      background:linear-gradient(180deg, rgba(255,255,255,.98), rgba(226,232,240,.98));
+      border:1px solid rgba(148,163,184,.55);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 8px 14px rgba(15,23,42,.18);
+      transition: left .18s ease;
+    }
+
+    html[data-theme="dark"] .cp-switch__knob{
+      background:linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 22px rgba(0,0,0,.45);
+    }
+
+    .cp-switch__txt{
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.6px;
+      color:var(--cp-toggle-ink);
+      opacity:.70;
+      transition: opacity .15s ease;
+      line-height:1;
+    }
+
+    .cp-switch__txt--on{ opacity:.40; }
+    .cp-switch__txt--off{ opacity:.85; }
+
+    /* Checked = Dark ON */
+    .cp-switch__input:checked + .cp-switch__track{
+      border-color:rgba(197,205,39,.70);
+      box-shadow:0 0 0 3px rgba(197,205,39,.16), var(--cp-toggle-shadow);
+    }
+    .cp-switch__input:checked + .cp-switch__track .cp-switch__knob{
+      left:calc(100% - 30px);
+    }
+    .cp-switch__input:checked + .cp-switch__track .cp-switch__txt--on{ opacity:.92; }
+    .cp-switch__input:checked + .cp-switch__track .cp-switch__txt--off{ opacity:.40; }
+
+    .cp-switch__track:hover{
+      border-color:rgba(197,205,39,.55);
+      box-shadow:0 0 0 3px rgba(197,205,39,.14), var(--cp-toggle-shadow);
+    }
+
+/* Theme Toggle Button (icon-only) */
+    /* Top anchor target */
+    #top{ position:absolute; top:0; left:0; }
+
+    /* CP GLOBAL RESPONSIVE SAFETY */
+    img, video, canvas, svg{
+      max-width:100%;
+      height:auto;
+    }
+    iframe{
+      max-width:100%;
+    }
+    .cp-table-wrap{
+      width:100%;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+    }
+
+    /* CP GLOBAL STICKY HEADER ENFORCE */
+    header, .cp-topbar, .cp-header, .site-header{
+      position:sticky;
+      top:0;
+      z-index:1200;
+    }
+    
+
+/* =========================
+   FIXED HEADER (ALWAYS VISIBLE)
+   ========================= */
+#pz-header > header.cp-topbar,
+header.cp-topbar{
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Offset body content so it won't hide under fixed header */
+body{
+  padding-top: 120px;
+}
+
+/* =========================
+   CUSTOM SCROLLBAR (MATCH PAGE THEME)
+   ========================= */
+/* Webkit */
+::-webkit-scrollbar{
+  width: 12px;
+}
+::-webkit-scrollbar-track{
+  background: var(--cp-bg);
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, var(--cp-lime), var(--cp-brick));
+  border-radius: 10px;
+  border: 3px solid var(--cp-bg);
+}
+::-webkit-scrollbar-thumb:hover{
+  background: linear-gradient(180deg, var(--cp-carton), var(--cp-brick));
+}
+
+/* Firefox */
+*{
+  scrollbar-width: thin;
+  scrollbar-color: var(--cp-lime) var(--cp-bg);
+}
+
+
+    /* accredited-associates content: preserve exact text, wrap safely */
+    .bp-content{
+      margin:0;
+      padding-top:6px;
+      white-space:pre-wrap;
+      word-break:break-word;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-size:clamp(12px,1.45vw,14px);
+      line-height:1.7;
+      color:var(--cp-ink-soft);
+      background:transparent;
+      border:0;
+    }
+    html[data-theme="dark"] .bp-content{ color:var(--cp-ink-soft); }
+
+
+    /* =========================
+       ACCREDITED ASSOCIATES — DOCUMENT LAYOUT (CONTENT ONLY)
+       ========================= */
+    .aa-doc{
+      max-width: 920px;
+      margin: 10px auto 0;
+      padding: clamp(14px, 2.6vw, 22px);
+      border-radius: 18px;
+      border: 1px solid rgba(148,163,184,.45);
+      background:
+        radial-gradient(1000px 220px at 10% 0%, rgba(197,205,39,.16), transparent 60%),
+        radial-gradient(900px 240px at 90% 0%, rgba(215,140,90,.16), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.62));
+      box-shadow: 0 18px 34px rgba(15,23,42,.12);
+      overflow:hidden;
+    }
+    html[data-theme="dark"] .aa-doc{
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+        radial-gradient(1000px 220px at 10% 0%, rgba(197,205,39,.14), transparent 60%),
+        radial-gradient(900px 240px at 90% 0%, rgba(215,140,90,.14), transparent 58%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: 0 26px 46px rgba(0,0,0,.55);
+    }
+
+    .aa-head{
+      padding: 10px 10px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,.30);
+      background: rgba(255,255,255,.55);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
+    }
+    html[data-theme="dark"] .aa-head{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.06);
+    }
+
+    .aa-kicker{
+      margin: 0 0 6px;
+      font-weight: 900;
+      letter-spacing: .3px;
+      font-size: 12px;
+      color: var(--cp-ink-soft);
+      text-transform: uppercase;
+    }
+
+    .aa-title{
+      margin: 0 0 8px;
+      font-weight: 900;
+      line-height: 1.15;
+      font-size: clamp(18px, 2.6vw, 24px);
+      color: var(--cp-ink);
+    }
+
+    .aa-lead{
+      margin: 0;
+      color: var(--cp-ink-soft);
+      font-size: clamp(12.5px, 1.55vw, 14.5px);
+      line-height: 1.75;
+    }
+
+    .aa-section{
+      margin-top: 14px;
+      padding: 12px 12px 10px;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,.26);
+      background: rgba(255,255,255,.42);
+    }
+    html[data-theme="dark"] .aa-section{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+
+    .aa-h2{
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--cp-ink);
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .aa-h2::before{
+      content:"";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--cp-lime);
+      box-shadow: 0 0 0 4px rgba(197,205,39,.14);
+      flex: 0 0 auto;
+    }
+    html[data-theme="dark"] .aa-h2::before{
+      box-shadow: 0 0 0 4px rgba(197,205,39,.12);
+    }
+
+    .aa-p{
+      margin: 0 0 10px;
+      color: var(--cp-ink-soft);
+      font-size: clamp(12.5px, 1.55vw, 14px);
+      line-height: 1.75;
+    }
+    .aa-p:last-child{ margin-bottom: 0; }
+
+    .aa-callout{
+      border-left: 4px solid rgba(197,205,39,.70);
+      padding-left: 10px;
+      background: rgba(197,205,39,.10);
+      border-radius: 12px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    html[data-theme="dark"] .aa-callout{
+      background: rgba(197,205,39,.08);
+      border-left-color: rgba(197,205,39,.65);
+    }
+
+    .aa-footer{
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,.26);
+      background: rgba(255,255,255,.42);
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+    }
+    html[data-theme="dark"] .aa-footer{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+
+    .aa-issued{
+      margin: 0;
+      font-weight: 800;
+      color: var(--cp-ink);
+      font-size: 12.5px;
+    }
+
+    .aa-signature{
+      border-top: 1px dashed rgba(148,163,184,.45);
+      padding-top: 10px;
+    }
+    html[data-theme="dark"] .aa-signature{
+      border-top: 1px dashed rgba(255,255,255,.14);
+    }
+
+    .aa-name{
+      margin: 0 0 2px;
+      font-weight: 900;
+      color: var(--cp-ink);
+    }
+    .aa-role, .aa-org{
+      margin: 0;
+      color: var(--cp-ink-soft);
+      font-size: 12.5px;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+
+
+    /* =========================
+       ACCREDITED BRAND CONTAINER
+       ========================= */
+    .cp-brand{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      padding-top:10px; /* account for cp-card ::before accent bar */
+      text-align:center;
+    }
+
+    .cp-brand__link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:620px;
+      padding:14px 14px;
+      border-radius:18px;
+      border:1px solid rgba(148,163,184,.45);
+      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(248,250,252,.85));
+      box-shadow:0 12px 22px rgba(15,23,42,.10);
+      text-decoration:none;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    }
+
+    html[data-theme="dark"] .cp-brand__link{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 18px 32px rgba(0,0,0,.55);
+    }
+
+    .cp-brand__link:hover{
+      transform:translateY(-1px);
+      border-color:rgba(197,205,39,.65);
+      box-shadow:0 0 0 3px rgba(197,205,39,.18), 0 16px 26px rgba(15,23,42,.12);
+    }
+
+    html[data-theme="dark"] .cp-brand__link:hover{
+      box-shadow:0 0 0 3px rgba(197,205,39,.18), 0 22px 38px rgba(0,0,0,.65);
+    }
+
+    .cp-brand__link:active{
+      transform:translateY(0px);
+    }
+
+    .cp-brand__logo{
+      width:100%;
+      height:auto;
+      max-height:260px;
+      object-fit:contain;
+      border-radius:14px;
+      display:block;
+    }
+
+    .cp-brand__note{
+      margin:0;
+      max-width:760px;
+      font-size:clamp(12px,1.45vw,14px);
+      line-height:1.6;
+      font-weight:800;
+      color:var(--cp-ink);
+    }
+
+    html[data-theme="dark"] .cp-brand__note{
+      color:var(--cp-ink);
+    }
+
+    @media (max-width:640px){
+      .cp-brand__link{ padding:12px; border-radius:16px; }
+      .cp-brand__logo{ max-height:220px; }
+    }
+</style>
+</head>
+
+<body>
+  <a id="top" aria-hidden="true"></a>
+
+  <!-- FULL-BLEED HEADER (edge-to-edge) -->
+  <section class="cp-section cp-section--fullbleed" id="pz-header">
+    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<!-- Navigation (FINAL labels + page links) -->
+      <nav class="cp-nav cp-nav--center" aria-label="Primary">
+        <div class="cp-nav__inner">
+          <div class="cp-nav__links" role="list">
+            <img class="cp-nav__logo" src="https://carpinoyinc.pages.dev/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
+            <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+            <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+            <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+            <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+            <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+            <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+          </div>
+          <!-- Theme Switch (Payroll Voucher style) -->
+          <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+            <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
+            <span class="cp-switch__track" aria-hidden="true">
+              <span class="cp-switch__knob"></span>
+              <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+              <span class="cp-switch__txt cp-switch__txt--on">ON</span>
+            </span>
+          </label>
+</div>
+      </nav>
+    </header>
+  </section>
+
+  <!-- CONTENT (centered cards) -->
+  <div class="white-wrap">
+    <div class="wrap">
+
+      <!-- PATCH-ZONE: CONTENT -->
+      <section class="cp-section" id="pz-content">
+        <article class="cp-card" data-kind="title">
+          <div class="aa-doc" aria-label="Accredited Associates Explanation">
+  <header class="aa-head">
+    <p class="aa-kicker">﻿Public Explanation on</p>
+    <h1 class="aa-title">Carpinoy Business Package – Trusted Accredited Associates</h1>
+    <p class="aa-lead">Carpinoy Logistics Services formally introduces its Carpinoy Business Package Accredited Associates as part of its continuing advocacy to support individuals and entities who wish to participate in the logistics industry through an independent and business-oriented arrangement.</p>
+  </header>
+
+  <section class="aa-section" aria-label="Nature of the Accredited Associate Program">
+    <h2 class="aa-h2">Nature of the Accredited Associate Program</h2>
+    <p class="aa-p">Carpinoy Business Package Accredited Associates are exclusive, trusted, and authorized partners who are allowed to facilitate the entry of transport units strictly within the scope of the Authorized Car Dealership to which they are officially assigned. Only these Accredited Associates are recognized to endorse and assist unit owners in processing their participation within the Carpinoy Logistics network.</p>
+    <p class="aa-p aa-callout">It is hereby emphasized that no membership fee, joining fee, processing fee, or any similar charge is required to enter Carpinoy Logistics Services, provided that the onboarding is facilitated through Carpinoy Trusted Accredited Associates. Entry into Carpinoy is free of charge, and any form of unauthorized collection is not sanctioned by management.</p>
+  </section>
+
+  <section class="aa-section" aria-label="No Employer-Employee Relationship">
+    <h2 class="aa-h2">No Employer-Employee Relationship</h2>
+    <p class="aa-p">For public clarity and legal transparency, Carpinoy Business Package Accredited Associates are NOT employees of Carpinoy Logistics Services. There exists no employer-employee relationship, whether express or implied, between Carpinoy Management and its Accredited Associates.</p>
+    <p class="aa-p">The Accredited Associate arrangement is not employment, not manpower supply, and not labor contracting or subcontracting as defined under Philippine labor laws. Associates operate independently, on their own discretion, methods, resources, and business judgment. They do not receive salaries, wages, employment benefits, or mandatory employer contributions from Carpinoy Logistics Services.</p>
+    <p class="aa-p">This program is extended purely as a business opportunity and a voluntary, non-compulsory free privilege granted to individuals who wish to explore entrepreneurship within the logistics ecosystem.</p>
+  </section>
+
+  <section class="aa-section" aria-label="No Guarantee of Income, Profit, or Business Success">
+    <h2 class="aa-h2">No Guarantee of Income, Profit, or Business Success</h2>
+    <p class="aa-p">Carpinoy Logistics Services does not provide any guarantee, assurance, or promise that participation in Carpinoy or engagement in logistics activities will result in income, profit, growth, or financial success.</p>
+    <p class="aa-p">As with any form of business, outcomes depend on proper management, discipline, market conditions, operational decisions, financial planning, and individual effort. Logistics, like all industries, carries inherent business risks, and success is not automatic nor assured.</p>
+    <p class="aa-p">Participants are therefore encouraged to conduct their own due diligence and to approach the opportunity with a clear understanding that Carpinoy does not offer guaranteed returns or representations of assured prosperity.</p>
+  </section>
+
+  <section class="aa-section" aria-label="Purpose of the Program">
+    <h2 class="aa-h2">Purpose of the Program</h2>
+    <p class="aa-p">The Carpinoy Business Package Accredited Associate Program is intended solely as a business-enabling platform—a free and optional avenue for individuals who aspire to start or expand a logistics-related enterprise without being burdened by entry fees or employment dependencies.</p>
+    <p class="aa-p">Carpinoy Logistics Services remains committed to ethical operations, regulatory compliance, and transparent business practices in support of sustainable entrepreneurship.</p>
+  </section>
+
+  <footer class="aa-footer" aria-label="Signature">
+    <p class="aa-issued">Issued for public information and guidance.</p>
+    <div class="aa-signature">
+      <p class="aa-name">Boss Olan</p>
+      <p class="aa-role">Owner &amp;amp; Chief Executive Officer</p>
+      <p class="aa-org">Carpinoy Logistics Services</p>
+    </div>
+  </footer>
+</div>
+        </article>
+      </section>
+
+      <!-- PATCH-ZONE: FOOTER -->
+      
+      <!-- PATCH-ZONE: MITSUBISHI ACCREDITED ASSOCIATES -->
+      <section class="cp-section" id="pz-mitsu">
+        <article class="cp-card" data-kind="brand">
+          <div class="cp-brand">
+            <a class="cp-brand__link" href="mitsubishi-associates.html" aria-label="Mitsubishi Trusted Accredited Associates">
+              <img class="cp-brand__logo" src="https://www.carpinoylogistics.com/images/mitsu-logo.png" alt="Mitsubishi Motors" decoding="async" loading="lazy" />
+            </a>
+            <p class="cp-brand__note">Click the Mitsubishi Logo for All Mitsubishi Trusted Accredited Associates.</p>
+          </div>
+        </article>
+      </section>
+
+<div class="cp-footer-embossed" id="pz-footer">
+        © 2025 Carpinoy Logistics Services — All rights reserved.
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
+    (function(){
+      try{
+        var path = (location.pathname || '').split('/').pop() || 'index.html';
+        path = path.split('?')[0].split('#')[0];
+        var links = document.querySelectorAll('.cp-nav__link');
+        links.forEach(function(a){
+          a.classList.remove('cp-nav__link--active');
+          a.removeAttribute('aria-current');
+          var href = (a.getAttribute('href') || '').split('?')[0].split('#')[0];
+          if(href === path){
+            a.classList.add('cp-nav__link--active');
+            a.setAttribute('aria-current','page');
+          }
+        });
+      }catch(_){}
+    })();
+
+    // Carpinoy Theme Toggle — Light default, switch UI, persists
+    (function(){
+      try{
+        var KEY = 'cp_theme';
+        var root = document.documentElement;
+        var sw  = document.getElementById('cpThemeSwitch');
+
+        function apply(mode){
+          if(mode === 'dark'){
+            root.setAttribute('data-theme','dark');
+            if(sw) sw.checked = true;
+          }else{
+            root.removeAttribute('data-theme');
+            if(sw) sw.checked = false;
+          }
+        }
+
+        // Default = Light (do not auto-follow OS)
+        var saved = '';
+        try{ saved = (localStorage.getItem(KEY) || '').toLowerCase(); }catch(_){}
+        if(saved === 'dark' || saved === 'light') apply(saved);
+        else apply('light');
+
+        if(sw){
+          sw.addEventListener('change', function(){
+            var now = sw.checked ? 'dark' : 'light';
+            apply(now);
+            try{ localStorage.setItem(KEY, now); }catch(_){}
+          }, { passive:true });
+        }
+      }catch(_){}
+    })();
+</script>
+</body>
+</html>
