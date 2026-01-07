@@ -1177,6 +1177,17 @@ body{
 
 
 /* =========================
+   NAV SCROLL BEHAVIOR
+   Desktop centered, Tablet/Mobile start at Home
+   ========================= */
+@media (min-width: 821px){
+  .cp-nav__center{ justify-content: center; }
+}
+@media (max-width: 820px){
+  .cp-nav__center{ justify-content: flex-start; }
+}
+
+/* =========================
    MOBILE AUTO-HIDE (LOGO + THEME SWITCH)
    ========================= */
 @media (max-width: 520px){
@@ -1413,46 +1424,49 @@ body{
         }
       }catch(_){}
     })();
-// Center the nav strip when it overflows (desktop only; mobile defaults to HOME/start)
+// Nav strip auto-center: Desktop only (tablet/mobile start at HOME)
 (function(){
   try{
     var center = document.querySelector('.cp-nav__center');
     if(!center) return;
 
-    function isMobile(){
-      return window.matchMedia && window.matchMedia('(max-width: 520px)').matches;
+    function isDesktop(){
+      return window.matchMedia('(min-width: 821px)').matches;
     }
 
-    function positionStrip(){
-      // On mobile: default to the start so HOME is always reachable immediately.
-      if(isMobile()){
+    function applyNavScroll(){
+      var max = center.scrollWidth - center.clientWidth;
+
+      if(max <= 2){
         center.scrollLeft = 0;
         return;
       }
 
-      // Desktop/large screens: center only if overflow exists
-      var max = center.scrollWidth - center.clientWidth;
-      if(max > 2){
+      if(isDesktop()){
+        // Desktop: center the strip when it overflows
         center.scrollLeft = Math.round(max / 2);
       }else{
+        // Tablet & Mobile: default to START (Home)
         center.scrollLeft = 0;
       }
     }
 
-    // Run after layout
     if(document.readyState === 'loading'){
-      document.addEventListener('DOMContentLoaded', function(){ setTimeout(positionStrip, 0); }, { once:true });
+      document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(applyNavScroll, 0);
+      }, { once:true });
     }else{
-      setTimeout(positionStrip, 0);
+      setTimeout(applyNavScroll, 0);
     }
 
-    // Resize can fire on mobile due to browser UI; keep mobile pinned to start.
-    window.addEventListener('resize', function(){ setTimeout(positionStrip, 0); }, { passive:true });
+    window.addEventListener('resize', function(){
+      setTimeout(applyNavScroll, 50);
+    }, { passive:true });
+
   }catch(_){}
 })();
 
-
-    // Carpinoy AI Helpdesk — Floating chat (front-end only)
+// Carpinoy AI Helpdesk — Floating chat (front-end only)
     (function(){
       try{
         var btn   = document.getElementById('cpHelpdeskBtn');
