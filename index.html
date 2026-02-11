@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
 <title>Carpinoy Logistics Services</title>
   <!-- Favicon (upload favicon.png beside index.html) -->
   <link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
@@ -960,10 +959,6 @@ body{
       .cp-brand__logo{ max-height:220px; }
     }
 
-    /* =========================
-       PIXAR AI HELPDESK (FLOATING)
-       ========================= */
-    .cp-helpdesk{
       position: fixed;
       right: clamp(10px, 2vw, 18px);
       bottom: clamp(10px, 2vw, 18px);
@@ -975,7 +970,6 @@ body{
       -webkit-tap-highlight-color:transparent;
     }
 
-    .cp-helpdesk__btn{
       width: 86px;
       height: 86px;
       border-radius: 999px;
@@ -990,21 +984,17 @@ body{
       transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
     }
 
-    html[data-theme="dark"] .cp-helpdesk__btn{
       background: rgba(15,26,47,.78);
       border: 1px solid rgba(255,255,255,.14);
       box-shadow: 0 26px 46px rgba(0,0,0,.55);
     }
 
-    .cp-helpdesk__btn:hover{
       transform: translateY(-1px);
       border-color: rgba(197,205,39,.70);
       box-shadow: 0 0 0 3px rgba(197,205,39,.18), 0 22px 40px rgba(15,23,42,.18);
     }
 
-    .cp-helpdesk picture{display:flex;align-items:center;justify-content:center;}
 
-    .cp-helpdesk__img{
       width: 74px;
       height: 74px;
       object-fit: contain;
@@ -1012,7 +1002,6 @@ body{
       filter: drop-shadow(0 10px 18px rgba(0,0,0,.22));
     }
 
-    .cp-helpdesk__badge{
       position:absolute;
       right: 8px;
       top: 8px;
@@ -1024,12 +1013,9 @@ body{
     }
 
     @media (max-width: 520px){
-      .cp-helpdesk__btn{ width: 72px; height: 72px; }
-      .cp-helpdesk__img{ width: 62px; height: 62px; }
     }
 
     /* Modal */
-    .cp-helpdesk-modal{
       position: fixed;
       inset: 0;
       z-index: 10060;
@@ -1041,9 +1027,7 @@ body{
       backdrop-filter: blur(2px);
     }
 
-    .cp-helpdesk-modal[aria-hidden="false"]{ display:flex; }
 
-    .cp-helpdesk-panel{
       width: min(420px, calc(100vw - 20px));
       height: min(560px, calc(100vh - 24px));
       border-radius: 18px;
@@ -1055,12 +1039,10 @@ body{
       flex-direction:column;
     }
 
-    html[data-theme="dark"] .cp-helpdesk-panel{
       border: 1px solid rgba(255,255,255,.12);
       box-shadow: 0 30px 56px rgba(0,0,0,.65);
     }
 
-    .cp-helpdesk-head{
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -1070,12 +1052,10 @@ body{
       background: linear-gradient(180deg, rgba(197,205,39,.16), transparent);
     }
 
-    html[data-theme="dark"] .cp-helpdesk-head{
       border-bottom: 1px solid rgba(255,255,255,.10);
       background: linear-gradient(180deg, rgba(197,205,39,.10), transparent);
     }
 
-    .cp-helpdesk-head__title{
       display:flex;
       align-items:center;
       gap:10px;
@@ -1085,7 +1065,6 @@ body{
       letter-spacing:.2px;
     }
 
-    .cp-helpdesk-head__title img{
       width: 34px; height: 34px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,.35);
@@ -1094,7 +1073,6 @@ body{
       object-fit:contain;
     }
 
-    .cp-helpdesk-head__btn{
       border: 1px solid rgba(148,163,184,.35);
       background: var(--cp-linkbg);
       color: var(--cp-linkink);
@@ -1104,7 +1082,6 @@ body{
       cursor:pointer;
     }
 
-    .cp-helpdesk-body{
       padding: 12px;
       overflow:auto;
       display:flex;
@@ -1113,7 +1090,6 @@ body{
       background: transparent;
     }
 
-    .cp-chat-bubble{
       max-width: 85%;
       padding: 10px 12px;
       border-radius: 14px;
@@ -1125,18 +1101,15 @@ body{
       white-space: pre-wrap;
     }
 
-    html[data-theme="dark"] .cp-chat-bubble{
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.10);
     }
 
-    .cp-chat-bubble--me{
       margin-left:auto;
       background: rgba(197,205,39,.14);
       border-color: rgba(197,205,39,.35);
     }
 
-    .cp-helpdesk-foot{
       border-top: 1px solid rgba(148,163,184,.22);
       padding: 10px;
       display:flex;
@@ -1144,12 +1117,10 @@ body{
       background: rgba(255,255,255,.55);
     }
 
-    html[data-theme="dark"] .cp-helpdesk-foot{
       border-top: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
     }
 
-    .cp-helpdesk-input{
       flex:1;
       border-radius: 12px;
       border: 1px solid rgba(148,163,184,.35);
@@ -1160,12 +1131,10 @@ body{
       color: var(--cp-ink);
     }
 
-    html[data-theme="dark"] .cp-helpdesk-input{
       background: rgba(255,255,255,.04);
       border: 1px solid rgba(255,255,255,.12);
     }
 
-    .cp-helpdesk-send{
       border-radius: 12px;
       border: 1px solid rgba(197,205,39,.65);
       background: linear-gradient(180deg,#fefce8,#e5f28d,#c5cd27);
@@ -1206,6 +1175,85 @@ body{
     justify-content: flex-start;
   }
 }
+
+
+    /* =========================
+       PAPER MARKETING THEME OVERRIDES (Public)
+       - inspired by subcon terms pages: paper/doc vibe
+       - keeps light/dark toggle
+       ========================= */
+    :root{
+      --pm-maxw: 1080px;
+      --pm-radius: 14px;
+      --pm-border: rgba(148,163,184,.34);
+      --pm-soft: rgba(148,163,184,.14);
+      --pm-shadow: 0 14px 30px rgba(15,23,42,.10);
+    }
+    /* Prefer editorial spacing / marketing rhythm */
+    .cp-wrap{ max-width: var(--pm-maxw); }
+    .cp-card{
+      border: 1px solid var(--pm-border) !important;
+      border-radius: var(--pm-radius) !important;
+      box-shadow: var(--pm-shadow) !important;
+      background: var(--cp-card, rgba(255,255,255,.92)) !important;
+      backdrop-filter: saturate(1.05);
+    }
+    .cp-card::before{ display:none !important; }
+    .cp-box{
+      border: 1px solid var(--pm-border) !important;
+      border-radius: 12px !important;
+      background: var(--cp-card, rgba(255,255,255,.92)) !important;
+      box-shadow: none !important;
+      position: relative;
+    }
+    .cp-box::before{
+      content:"";
+      position:absolute;
+      left:0; top:10px; bottom:10px;
+      width:4px;
+      border-radius: 999px;
+      background: var(--cp-accent, #2563eb);
+      opacity:.55;
+    }
+    .cp-box > *{ position: relative; }
+    /* Topbar: simpler, more “public site” */
+    .cp-topbar{
+      border-bottom: 1px solid var(--pm-border) !important;
+      box-shadow: none !important;
+      background: color-mix(in oklab, var(--cp-bg, #fff) 90%, transparent) !important;
+      backdrop-filter: blur(10px);
+    }
+    .cp-nav__inner{ max-width: var(--pm-maxw) !important; }
+    .cp-nav__links a{
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+    .cp-nav__links a:hover{
+      border-color: var(--pm-border);
+      background: var(--pm-soft);
+    }
+    /* Hero feel: bigger type, more airy */
+    .cp-hero__title{ letter-spacing: -.02em; }
+    .cp-hero__subtitle{ color: var(--cp-muted); max-width: 62ch; }
+    /* Footer polish */
+    .cp-footer{
+      border-top: 1px solid var(--pm-border) !important;
+      background: transparent !important;
+    }
+    /* Dark mode: keep paper contrast */
+    [data-theme="dark"]{
+      --pm-border: rgba(148,163,184,.22);
+      --pm-soft: rgba(148,163,184,.10);
+      --pm-shadow: 0 16px 36px rgba(0,0,0,.45);
+    }
+
+
+    .cp-nav__links a.is-active{
+      border-color: var(--pm-border);
+      background: var(--pm-soft);
+      font-weight: 700;
+    }
 
 </style>
 </head>
@@ -1466,15 +1514,8 @@ body{
   }catch(_){}
 })();
 
-// Carpinoy AI Helpdesk — Floating chat (front-end only)
     (function(){
       try{
-        var btn   = document.getElementById('cpHelpdeskBtn');
-        var modal = document.getElementById('cpHelpdeskModal');
-        var close = document.getElementById('cpHelpdeskClose');
-        var body  = document.getElementById('cpHelpdeskBody');
-        var input = document.getElementById('cpHelpdeskInput');
-        var send  = document.getElementById('cpHelpdeskSend');
 
         function openModal(){
           if(!modal) return;
@@ -1576,50 +1617,28 @@ body{
 
 </script>
 
-<!-- Carpinoy AI Helpdesk (Floating) -->
-<div class="cp-helpdesk" aria-label="Carpinoy AI Helpdesk">
-  <button type="button" class="cp-helpdesk__btn" id="cpHelpdeskBtn" aria-label="Open Carpinoy AI Helpdesk">
-    <span class="cp-helpdesk__badge" aria-hidden="true"></span>
-    <picture>
-      <source media="(min-width: 1280px)" srcset="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-desktop.png">
-      <source media="(min-width: 1024px)" srcset="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-laptop.png">
-      <source media="(min-width: 768px)" srcset="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-tablet.png">
-      <img class="cp-helpdesk__img" src="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-mobilephone.png" alt="Carpinoy AI Helpdesk" loading="eager" decoding="async"/>
-    </picture>
-  </button>
-</div>
-
-<!-- Carpinoy AI Helpdesk (Modal) -->
-<div class="cp-helpdesk-modal" id="cpHelpdeskModal" aria-hidden="true" role="dialog" aria-label="Carpinoy AI Helpdesk Chat">
-  <div class="cp-helpdesk-panel" role="document">
-    <div class="cp-helpdesk-head">
-      <div class="cp-helpdesk-head__title">
-        <picture>
-          <source media="(min-width: 1280px)" srcset="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-desktop.png">
-          <source media="(min-width: 1024px)" srcset="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-laptop.png">
-          <source media="(min-width: 768px)" srcset="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-tablet.png">
-          <img src="https://www.carpinoylogistics.com/images/helpdesk/carpinoy-helpdesk-mobilephone.png" alt="" aria-hidden="true"/>
-        </picture>
-        Carpinoy AI Helpdesk
-      </div>
-      <button type="button" class="cp-helpdesk-head__btn" id="cpHelpdeskClose" aria-label="Close">Close</button>
-    </div>
-
-    <div class="cp-helpdesk-body" id="cpHelpdeskBody" aria-live="polite">
-      <div class="cp-chat-bubble">Hello! Ako si Carpinoy AI Helpdesk. Paano kita matutulungan?
-
-Quick options:
-• Services / Rates
-• Requirements
-• Contact / Location</div>
-    </div>
-
-    <div class="cp-helpdesk-foot">
-      <input class="cp-helpdesk-input" id="cpHelpdeskInput" type="text" placeholder="Type your inquiry…" autocomplete="off" />
-      <button class="cp-helpdesk-send" id="cpHelpdeskSend" type="button">Send</button>
     </div>
   </div>
 </div>
+
+
+<script>
+/* Nav active-state helper (works for all pages that share the same header/nav) */
+(function(){
+  try{
+    var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    var links = document.querySelectorAll('.cp-nav__links a[href]');
+    links.forEach(function(a){
+      var href = (a.getAttribute('href')||'').split('#')[0].toLowerCase();
+      if(!href) return;
+      if(href === path){
+        a.setAttribute('aria-current','page');
+        a.classList.add('is-active');
+      }
+    });
+  }catch(_){}
+})();
+</script>
 
 </body>
 </html>
