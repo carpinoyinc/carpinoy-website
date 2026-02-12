@@ -1589,6 +1589,50 @@ body{
       background: var(--pm-soft);
       font-weight: 700;
     }
+
+
+    /* PATCH: Bank offer containers */
+    .cp-bank-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:10px;
+    }
+    @media (max-width:560px){
+      .cp-bank-grid{ grid-template-columns:1fr; }
+    }
+    .cp-bank-card{
+      border:1px solid var(--cp-border);
+      background:rgba(255,255,255,.65);
+      border-radius:16px;
+      padding:12px 12px 10px;
+      box-shadow:0 10px 18px rgba(15,23,42,.06);
+    }
+    html[data-theme="dark"] .cp-bank-card{
+      background:rgba(15,26,47,.6);
+    }
+    .cp-bank-name{
+      font-weight:800;
+      letter-spacing:.2px;
+      margin-bottom:6px;
+    }
+    .cp-bank-row{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:10px;
+      font-size:14px;
+      padding:2px 0;
+      border-bottom:1px dashed rgba(148,163,184,.35);
+    }
+    .cp-bank-row:last-of-type{ border-bottom:none; }
+    .cp-bank-label{ color:var(--cp-ink-soft); }
+    .cp-bank-val{ font-variant-numeric:tabular-nums; }
+    .cp-bank-note{
+      margin-top:6px;
+      font-size:12px;
+      color:var(--cp-ink-soft);
+    }
 </style>
 </head>
 
@@ -1717,32 +1761,80 @@ body{
           </div>
 
           <p class="cp-sub">
-            Pakibasa po ang buong details. Depende sa bank Approval at Month&apos;s Promo! All Banks With Free 2mos Amortization.
+            Pakibasa po ang buong details. Depende sa bank approval at month&apos;s promo. All banks with free 2 months amortization.
             <br><strong>Area:</strong> Metro Manila
           </p>
 
-          <div class="cp-box">
+                    <div class="cp-box">
             <h3><span>🏦</span> Bank Offers (5 years) — All Banks</h3>
-            <ul class="cp-list">
-              <li><strong>BDO</strong> — DP 25K, Monthly 21,694 for 5yrs</li>
-              <li><strong>BPI</strong> — DP 25K, Monthly 21,694 for 5yrs</li>
-              <li><strong>RCBC</strong> — 25K, Monthly 21,460 for 5yrs</li>
-              <li><strong>STERLINGBANK</strong> — 25K, Monthly 21,460 for 5yrs</li>
-            </ul>
+
+            <div class="cp-bank-grid" role="list">
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">BDO</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">25K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,694</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">BPI</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">25K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,694</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">RCBC</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">25K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,460</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">Sterling Bank</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">25K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,460</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+            </div>
           </div>
 
           <div class="cp-box">
             <h3><span>🏦</span> Bank Offers (5 years) — Other Banks</h3>
-            <ul class="cp-list">
-              <li><strong>SECURITY BANK</strong> — DP 55K, Monthly 21,611 for 5yrs</li>
-              <li><strong>EASWESTBANK</strong> — DP 42K, Monthly 21,444 for 5yrs</li>
-              <li><strong>MAYBANK</strong> — DP 42K, Monthly 21,444 for 5yrs</li>
-              <li><strong>Bank of Commerce</strong> — DP 42K, Monthly 21,611 for 5yrs</li>
-            </ul>
+
+            <div class="cp-bank-grid" role="list">
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">Security Bank</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">55K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,611</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">EastWest Bank</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">42K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,444</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">Maybank</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">42K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,444</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+
+              <div class="cp-bank-card" role="listitem">
+                <div class="cp-bank-name">Bank of Commerce</div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Downpayment</span><strong class="cp-bank-val">42K</strong></div>
+                <div class="cp-bank-row"><span class="cp-bank-label">Monthly</span><strong class="cp-bank-val">21,611</strong></div>
+                <div class="cp-bank-note">Term: 5 years</div>
+              </div>
+            </div>
           </div>
 
           <div class="cp-box">
-            <h3><span>✅</span> Inhouse Bank All in DP includes</h3>
+            <h3><span>✅</span> In-house Bank All-in DP Includes</h3>
             <ul class="cp-list">
               <li>✅ Brand new L300 FB Exceed Dual Aircon (Euro-4)</li>
               <li>✅ 3 years LTO Registration w/ TPL</li>
