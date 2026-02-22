@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="tl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
 <title>Carpinoy Logistics Services • Mission &amp; Vision</title>
-  <link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
-  <style>
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
+<style>
     :root{
       --cp-bg:#f3f4f6;
       --cp-card:#ffffff;
@@ -68,14 +69,17 @@
     /* NOTE: Scrollbar theme removed for performance + mobile consistency */
 
     .white-wrap{
-      background:var(--cp-card);
-      border-radius:32px;
-      max-width:1250px;
-      margin:clamp(10px,3vw,22px) auto;
-      padding:clamp(14px,3vw,26px);
-      box-shadow:0 10px 30px rgba(15,23,42,.10);
-      border:1px solid rgba(148,163,184,.18);
-    }
+  background:var(--cp-card);
+  border-radius:32px;
+
+  /* MAXED WIDTH: almost edge-to-edge, but keeps safe margin */
+  width: min(1680px, calc(100vw - 28px));
+  margin: 14px auto;
+  padding: clamp(12px, 2.2vw, 22px);
+
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  border:1px solid rgba(148,163,184,.18);
+}
 
     html[data-theme="dark"] .white-wrap{
       box-shadow:0 18px 38px rgba(0,0,0,.50);
@@ -83,10 +87,10 @@
     }
 
     .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:clamp(10px,2.4vw,18px);
-    }
+  max-width: 1600px;
+  margin:0 auto;
+  padding: clamp(10px, 1.8vw, 16px);
+}
 
     .cp-section{
       width:100%;
@@ -1568,139 +1572,123 @@ body{
       font-weight: 700;
     }
 </style>
-  <!-- Sticky Chat Widget -->
-  <link rel="stylesheet" href="/cp-chat-widget.css" />
+<!-- Sticky Chat Widget -->
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <a id="top" aria-hidden="true"></a>
-
-  <!-- FULL-BLEED HEADER (edge-to-edge) -->
-  <section class="cp-section cp-section--fullbleed" id="pz-header">
-    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<a aria-hidden="true" id="top"></a>
+<!-- FULL-BLEED HEADER (edge-to-edge) -->
+<section class="cp-section cp-section--fullbleed" id="pz-header">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
 <!-- Navigation (FINAL labels + page links) -->
-      <nav class="cp-nav cp-nav--center" aria-label="Primary">
-  <div class="cp-nav__inner">
-
-    <!-- LEFT: Logo (fixed) -->
-    <div class="cp-nav__left">
-      <a href="index.html" onclick="window.location.href='index.html';return false;" aria-label="Carpinoy Home">
-        <img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
-      </a>
-    </div>
-
-    <!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
-    <div class="cp-nav__center">
-      <div class="cp-nav__links" role="list">
-        <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
-        <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
-        <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
-        <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
-        <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
-        <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Theme Switch (fixed) -->
-    <div class="cp-nav__right">
-      <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
-        <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
-        <span class="cp-switch__track" aria-hidden="true">
-          <span class="cp-switch__knob"></span>
-          <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
-          <span class="cp-switch__txt cp-switch__txt--on">ON</span>
-        </span>
-      </label>
-    </div>
-
-  </div>
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<!-- LEFT: Logo (fixed) -->
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
+</div>
+<!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a aria-current="page" class="cp-nav__link cp-nav__link--active" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+<a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+</div>
+</div>
+<!-- RIGHT: Theme Switch (fixed) -->
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
 </nav>
-    </header>
-  </section>
-
-  <div class="white-wrap">
-    <div class="wrap">
-
-      <section class="cp-section">
-        <article class="cp-card" data-kind="title">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h1 class="cp-title">Our Mission &amp; Vision — Carpinoy</h1>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-
-          <p class="cp-sub">
+</header>
+</section>
+<div class="white-wrap">
+<div class="wrap">
+<section class="cp-section">
+<article class="cp-card" data-kind="title">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h1 class="cp-title">Our Mission &amp; Vision — Carpinoy</h1>
+</span>
+<span class="cp-dot"></span>
+</div>
+<p class="cp-sub">
             Carpinoy Logistics Services exists not only to move cargo, but to open real
             business opportunities para sa mga Pilipinong gustong magsimula ng sarili
             nilang logistics negosyo sa tamang paraan.
           </p>
-
-          <div class="cp-box">
-            <h2><span>🎯</span>Our Mission</h2>
-            <p>
+<div class="cp-box">
+<h2><span>🎯</span>Our Mission</h2>
+<p>
               The mission of <strong>Carpinoy Logistics Services</strong> is to deliver
               dependable, safe, and high-quality logistics solutions that connect
               warehouses, companies, and communities.
             </p>
-            <p>
+<p>
               At its core, Carpinoy’s mission is to open doors of opportunity for more
               ordinary Filipinos who dream of starting their own logistics business.
             </p>
-            <p>
+<p>
               This mission is made possible through the
               <strong>Legit Complete Business Package Program</strong>, which provides
               every aspiring Filipino with a guided pathway to success.
             </p>
-
-            <ul class="cp-list">
-              <li><strong>Dependable logistics solutions</strong><br>
+<ul class="cp-list">
+<li><strong>Dependable logistics solutions</strong><br/>
                 Consistent, organized, and on-time deliveries for partner companies.</li>
-              <li><strong>Safe and compliant operations</strong><br>
+<li><strong>Safe and compliant operations</strong><br/>
                 Focus on LTFRB compliance, proper documentation, and professional handling of cargo.</li>
-              <li><strong>Real opportunities for Filipinos</strong><br>
+<li><strong>Real opportunities for Filipinos</strong><br/>
                 Tulay para sa mga gustong maging subcontractor at magkaroon ng sariling unit.</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h2><span>👁️</span>Our Vision</h2>
-            <p>
+</ul>
+</div>
+<div class="cp-box">
+<h2><span>👁️</span>Our Vision</h2>
+<p>
               Our vision at <strong>Carpinoy Logistics Services</strong> is to expand our
               fleet and build a strong national network of partner companies—becoming
               the go-to trucking provider that businesses trust and recommend.
             </p>
-            <p>
+<p>
               We aim to set higher industry standards through reliable service,
               operational excellence, and sustainable growth that benefits all partners.
             </p>
-            <p>
+<p>
               Beyond logistics, Carpinoy envisions helping more ordinary Filipinos
               achieve their dream of owning a logistics business through the
               <strong>Complete Business Package</strong>.
             </p>
-
-            <ul class="cp-list">
-              <li><strong>Stronger national presence</strong><br>
+<ul class="cp-list">
+<li><strong>Stronger national presence</strong><br/>
                 Growing fleet and coverage, connecting more warehouses and companies nationwide.</li>
-              <li><strong>Trusted by businesses</strong><br>
+<li><strong>Trusted by businesses</strong><br/>
                 To be the trucking partner that clients confidently recommend to others.</li>
-              <li><strong>Higher industry standards</strong><br>
+<li><strong>Higher industry standards</strong><br/>
                 Better coordination, tracking, and support systems for day-to-day operations.</li>
-              <li><strong>New generation of entrepreneurs</strong><br>
+<li><strong>New generation of entrepreneurs</strong><br/>
                 By providing guidance, support, and real opportunities, Carpinoy strives to uplift lives
                 and create a new wave of successful Filipino entrepreneurs in the logistics industry.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <div class="cp-footer-embossed" id="pz-footer">© 2025 Carpinoy Logistics Services — All rights reserved.</div>
-
-    </div>
-  </div>
-
+</ul>
+</div>
+</article>
+</section>
+<div class="cp-footer-embossed" id="pz-footer">© 2025 Carpinoy Logistics Services — All rights reserved.</div>
+</div>
+</div>
 <script>
     // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
     (function(){
@@ -1770,7 +1758,7 @@ body{
   }catch(_){}
 })();
 </script>
-  <!-- Sticky Chat Widget -->
-  <script defer src="/cp-chat-widget.js"></script>
+<!-- Sticky Chat Widget -->
+<script defer="" src="/cp-chat-widget.js"></script>
 </body>
 </html>

@@ -1,14 +1,13 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Carpinoy • Selected Mitsubishi Associates — Peak Motors JAS (EBG Group)</title>
-
-  <!-- Favicon (same as index.html) -->
-  <link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>Carpinoy • Selected Mitsubishi Associates — Peak Motors JAS (EBG Group)</title>
+<!-- Favicon (same as index.html) -->
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
+<style>
 :root{
       --cp-bg:#f3f4f6;
       --cp-card:#ffffff;
@@ -71,14 +70,17 @@
     /* NOTE: Scrollbar theme removed for performance + mobile consistency */
 
     .white-wrap{
-      background:var(--cp-card);
-      border-radius:32px;
-      max-width:1250px;
-      margin:clamp(10px,3vw,22px) auto;
-      padding:clamp(14px,3vw,26px);
-      box-shadow:0 10px 30px rgba(15,23,42,.10);
-      border:1px solid rgba(148,163,184,.18);
-    }
+  background:var(--cp-card);
+  border-radius:32px;
+
+  /* MAXED WIDTH: almost edge-to-edge, but keeps safe margin */
+  width: min(1680px, calc(100vw - 28px));
+  margin: 14px auto;
+  padding: clamp(12px, 2.2vw, 22px);
+
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  border:1px solid rgba(148,163,184,.18);
+}
 
     html[data-theme="dark"] .white-wrap{
       box-shadow:0 18px 38px rgba(0,0,0,.50);
@@ -86,10 +88,10 @@
     }
 
     .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:clamp(10px,2.4vw,18px);
-    }
+  max-width: 1600px;
+  margin:0 auto;
+  padding: clamp(10px, 1.8vw, 16px);
+}
 
     .cp-section{
       width:100%;
@@ -1702,69 +1704,62 @@ body{
       font-weight: 700;
     }
 </style>
-  <!-- Sticky Chat Widget -->
-  <link rel="stylesheet" href="/cp-chat-widget.css" />
+<!-- Sticky Chat Widget -->
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
 </head>
 <body>
 <section class="cp-section cp-section--fullbleed" id="pz-header">
-    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
 <!-- Navigation (FINAL labels + page links) -->
-      <nav class="cp-nav cp-nav--center" aria-label="Primary">
-  <div class="cp-nav__inner">
-
-    <!-- LEFT: Logo (fixed) -->
-    <div class="cp-nav__left">
-      <a href="index.html" onclick="window.location.href='index.html';return false;" aria-label="Carpinoy Home">
-        <img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
-      </a>
-    </div>
-
-    <!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
-    <div class="cp-nav__center">
-      <div class="cp-nav__links" role="list">
-        <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
-        <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
-        <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
-        <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
-        <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
-        <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Theme Switch (fixed) -->
-    <div class="cp-nav__right">
-      <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
-        <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
-        <span class="cp-switch__track" aria-hidden="true">
-          <span class="cp-switch__knob"></span>
-          <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
-          <span class="cp-switch__txt cp-switch__txt--on">ON</span>
-        </span>
-      </label>
-    </div>
-
-  </div>
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<!-- LEFT: Logo (fixed) -->
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
+</div>
+<!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a aria-current="page" class="cp-nav__link cp-nav__link--active" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+<a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+</div>
+</div>
+<!-- RIGHT: Theme Switch (fixed) -->
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
 </nav>
-    </header>
-  </section>
-
-<div id="top" aria-hidden="true"></div>
-
+</header>
+</section>
+<div aria-hidden="true" id="top"></div>
 <div class="white-wrap">
-  <div class="wrap">
-    <section class="cp-section">
-      <div style="width:100%;">
-
-        <!-- TITLE CARD (LIME ACCENT) -->
-        <article class="cp-card" data-kind="title">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h1 class="cp-title">Carpinoy • Selected Mitsubishi Associates — Peak Motors JAS (EBG Group)</h1>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-          <div class="cp-box">
+<div class="wrap">
+<section class="cp-section">
+<div style="width:100%;">
+<!-- TITLE CARD (LIME ACCENT) -->
+<article class="cp-card" data-kind="title">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h1 class="cp-title">Carpinoy • Selected Mitsubishi Associates — Peak Motors JAS (EBG Group)</h1>
+</span>
+<span class="cp-dot"></span>
+</div>
+<div class="cp-box">
             The individuals listed below are <strong>Carpinoy’s Selected Associates</strong> from
             <strong>Peak Motors Phils., Inc. — Jose Abad Santos Branch</strong> (under <strong>EBG Group</strong>)
             and are <strong>accredited Sales Agents of Mitsubishi Motors Philippines</strong>. Clients who purchase
@@ -1773,284 +1768,272 @@ body{
             company for their <strong>Exclusive Business Package Program</strong> for brand-new
             <strong>Mitsubishi L300</strong> or <strong>FUSO Trucks</strong>.
           </div>
-        </article>
-
-        <!-- REMINDER CARD -->
-        <article class="cp-card">
-          <div class="cp-box">
-            <strong>Reminder:</strong> Not all agents at Peak Motors Phils. – Jose Abad Santos Branch are Carpinoy Selected Associates.
+</article>
+<!-- REMINDER CARD -->
+<article class="cp-card">
+<div class="cp-box">
+<strong>Reminder:</strong> Not all agents at Peak Motors Phils. – Jose Abad Santos Branch are Carpinoy Selected Associates.
             <em>Only</em> the agents listed on this page are part of Carpinoy’s Selected Associates roster.
           </div>
-        </article>
-
-        <!-- ASSOCIATES GRID CARD -->
-        <article class="cp-card">
-          <h2 class="cp-title cp-title--card" style="text-align:center; margin-bottom:10px;">Selected Associates Roster</h2>
-          <div class="grid">
-            <!-- 1. Jason Ray Butardo -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/13zKl4a12GJmkjUFwjxswrIUI39PpVXIU=w1600" alt="Jason Ray Butardo" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Jason Ray Butardo</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639752571554</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639752571554" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639752571554" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 2. Don Michael Torno -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1ETWEH0vPGlWripvc4oeuwv8syZ3OUsMT=w1600" alt="Don Michael Torno" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Don Michael Torno</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639913796635</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639913796635" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639913796635" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 3. Rommel (Melru) Paraguya -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1UP20_7-A7ptOT-cRW4VcdJAuCGePrV0O=w1600" alt="Rommel Paraguya" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Rommel (Melru) Paraguya</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639705003439</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639705003439" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639705003439" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 4. Jonnel Ayuson -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/14Qbc7sfHcGL5XqJW32vJt0Nasw2HD6Ld=w1600" alt="Jonnel Ayuson" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Jonnel Ayuson</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639605695703</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639605695703" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639605695703" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 5. Jerome Taypin -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1IoEADTC6q4JCOQ_gdkna7A6QPqq_j49N=w1600" alt="Jerome Taypin" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Jerome Taypin</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639669464618</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639669464618" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639669464618" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 6. Jim Mercado -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1SE5l2_FXF1iJc1b7oKgnESVLIf-PRRIj=w1600" alt="Jim Mercado" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Jim Mercado</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639935895317</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639935895317" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639935895317" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 7. Rafael Christian Buenaventura -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1otanO0unyHwoNdIMszOywLRnBgTnIjOc=w1600" alt="Rafael Christian Buenaventura" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Rafael Christian Buenaventura</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639232777017</span>
-                    <span class="badge-viber">Viber</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639232777017" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639232777017" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 8. Michael Lavarias -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/144DXum4sAgRYQtYdXqXn59mNm5aAp4cn=w1600" alt="Michael Lavarias" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Michael Lavarias</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639063369886</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639063369886" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639063369886" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 9. Joshua Patrick Undap Triñanes -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1Rt7If6gKmsmWhlAkTOTsvk-oU5RUaznm=w1600" alt="Joshua Patrick Undap Triñanes" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Joshua Patrick Undap Triñanes</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639272693049</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639272693049" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639272693049" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 10. Bon Somera -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1oy3E4KBf2dMUmEgTc6SGO3wVwzhO2Vw0=w1600" alt="Bon Somera" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Bon Somera</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639928905560</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639928905560" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639928905560" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 11. Louie Buenaventura -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1mNfuKD5ZtNmpifzeh3gAVhS9KKgJBX7m=w1600" alt="Louie Buenaventura" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">Louie Buenaventura</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639760087638</span>
-                    <span class="badge-viber">Viber</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639760087638" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639760087638" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-            <!-- 12. JM Domingo -->
-            <article class="agent">
-              <div class="agent__media" title="Click to enlarge">
-                <img src="https://lh3.googleusercontent.com/d/1-gskc7K6iiXfZLAkmASWvmhj9T_3JnPM=w1600" alt="JM Domingo" loading="lazy" decoding="async" />
-              </div>
-              <div class="agent__body">
-                <h3 class="agent__name">JM Domingo</h3>
-                <div class="agent__actions">
-                  <div class="phoneline">
-                    <span class="label">Mobile:</span><span class="phone-text">+639671982261</span>
-                  </div>
-                  <div class="btn-row">
-                    <a href="tel:+639671982261" class="cp-btn">📲 Call</a>
-                    <a href="sms:+639671982261" class="cp-btn">✉️ SMS</a>
-                  </div>
-                </div>
-              </div>
-            </article>
-                    </div>
-        </article>
-
-        <!-- MAP & ADDRESS CARD -->
-        <article class="cp-card">
-          <div class="cp-box">
-            <strong>Map & Address:</strong> Peak Motors Phils., Inc. — <strong>Jose Abad Santos Branch (EBG Group)</strong><br/>
-            <div style="margin-top:8px; font-weight:700; color:var(--cp-ink);">Complete Address:</div>
-            <div style="margin-top:2px;">2941, 2943 Abad Santos Ave, Tondo, Manila, 1013 Metro Manila</div>
-            <div style="margin-top:12px; border-radius:16px; overflow:hidden; border:1px solid rgba(148,163,184,.35);">
-              <div style="position:relative; width:100%; padding-top:56.25%; background:rgba(148,163,184,.12);">
-                <iframe title="Peak Motors JAS — Map" loading="lazy" allowfullscreen
-                  src="https://www.google.com/maps?q=2941,+2943+Abad+Santos+Ave,+Tondo,+Manila,+1013+Metro+Manila&z=16&output=embed"
-                  style="position:absolute; inset:0; width:100%; height:100%; border:0;"></iframe>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- HOW TO USE CARD -->
-        <article class="cp-card">
-          <div class="cp-box">
-            <strong>How to use:</strong> Tap <em>Call</em> to dial or <em>SMS</em> to text. Cards with “Number not yet provided”
+</article>
+<!-- ASSOCIATES GRID CARD -->
+<article class="cp-card">
+<h2 class="cp-title cp-title--card" style="text-align:center; margin-bottom:10px;">Selected Associates Roster</h2>
+<div class="grid">
+<!-- 1. Jason Ray Butardo -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Jason Ray Butardo" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/13zKl4a12GJmkjUFwjxswrIUI39PpVXIU=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Jason Ray Butardo</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639752571554</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639752571554">📲 Call</a>
+<a class="cp-btn" href="sms:+639752571554">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 2. Don Michael Torno -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Don Michael Torno" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1ETWEH0vPGlWripvc4oeuwv8syZ3OUsMT=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Don Michael Torno</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639913796635</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639913796635">📲 Call</a>
+<a class="cp-btn" href="sms:+639913796635">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 3. Rommel (Melru) Paraguya -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Rommel Paraguya" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1UP20_7-A7ptOT-cRW4VcdJAuCGePrV0O=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Rommel (Melru) Paraguya</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639705003439</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639705003439">📲 Call</a>
+<a class="cp-btn" href="sms:+639705003439">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 4. Jonnel Ayuson -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Jonnel Ayuson" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/14Qbc7sfHcGL5XqJW32vJt0Nasw2HD6Ld=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Jonnel Ayuson</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639605695703</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639605695703">📲 Call</a>
+<a class="cp-btn" href="sms:+639605695703">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 5. Jerome Taypin -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Jerome Taypin" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1IoEADTC6q4JCOQ_gdkna7A6QPqq_j49N=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Jerome Taypin</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639669464618</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639669464618">📲 Call</a>
+<a class="cp-btn" href="sms:+639669464618">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 6. Jim Mercado -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Jim Mercado" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1SE5l2_FXF1iJc1b7oKgnESVLIf-PRRIj=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Jim Mercado</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639935895317</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639935895317">📲 Call</a>
+<a class="cp-btn" href="sms:+639935895317">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 7. Rafael Christian Buenaventura -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Rafael Christian Buenaventura" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1otanO0unyHwoNdIMszOywLRnBgTnIjOc=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Rafael Christian Buenaventura</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639232777017</span>
+<span class="badge-viber">Viber</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639232777017">📲 Call</a>
+<a class="cp-btn" href="sms:+639232777017">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 8. Michael Lavarias -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Michael Lavarias" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/144DXum4sAgRYQtYdXqXn59mNm5aAp4cn=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Michael Lavarias</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639063369886</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639063369886">📲 Call</a>
+<a class="cp-btn" href="sms:+639063369886">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 9. Joshua Patrick Undap Triñanes -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Joshua Patrick Undap Triñanes" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1Rt7If6gKmsmWhlAkTOTsvk-oU5RUaznm=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Joshua Patrick Undap Triñanes</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639272693049</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639272693049">📲 Call</a>
+<a class="cp-btn" href="sms:+639272693049">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 10. Bon Somera -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Bon Somera" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1oy3E4KBf2dMUmEgTc6SGO3wVwzhO2Vw0=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Bon Somera</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639928905560</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639928905560">📲 Call</a>
+<a class="cp-btn" href="sms:+639928905560">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 11. Louie Buenaventura -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="Louie Buenaventura" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1mNfuKD5ZtNmpifzeh3gAVhS9KKgJBX7m=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">Louie Buenaventura</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639760087638</span>
+<span class="badge-viber">Viber</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639760087638">📲 Call</a>
+<a class="cp-btn" href="sms:+639760087638">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+<!-- 12. JM Domingo -->
+<article class="agent">
+<div class="agent__media" title="Click to enlarge">
+<img alt="JM Domingo" decoding="async" loading="lazy" src="https://lh3.googleusercontent.com/d/1-gskc7K6iiXfZLAkmASWvmhj9T_3JnPM=w1600"/>
+</div>
+<div class="agent__body">
+<h3 class="agent__name">JM Domingo</h3>
+<div class="agent__actions">
+<div class="phoneline">
+<span class="label">Mobile:</span><span class="phone-text">+639671982261</span>
+</div>
+<div class="btn-row">
+<a class="cp-btn" href="tel:+639671982261">📲 Call</a>
+<a class="cp-btn" href="sms:+639671982261">✉️ SMS</a>
+</div>
+</div>
+</div>
+</article>
+</div>
+</article>
+<!-- MAP & ADDRESS CARD -->
+<article class="cp-card">
+<div class="cp-box">
+<strong>Map &amp; Address:</strong> Peak Motors Phils., Inc. — <strong>Jose Abad Santos Branch (EBG Group)</strong><br/>
+<div style="margin-top:8px; font-weight:700; color:var(--cp-ink);">Complete Address:</div>
+<div style="margin-top:2px;">2941, 2943 Abad Santos Ave, Tondo, Manila, 1013 Metro Manila</div>
+<div style="margin-top:12px; border-radius:16px; overflow:hidden; border:1px solid rgba(148,163,184,.35);">
+<div style="position:relative; width:100%; padding-top:56.25%; background:rgba(148,163,184,.12);">
+<iframe allowfullscreen="" loading="lazy" src="https://www.google.com/maps?q=2941,+2943+Abad+Santos+Ave,+Tondo,+Manila,+1013+Metro+Manila&amp;z=16&amp;output=embed" style="position:absolute; inset:0; width:100%; height:100%; border:0;" title="Peak Motors JAS — Map"></iframe>
+</div>
+</div>
+</div>
+</article>
+<!-- HOW TO USE CARD -->
+<article class="cp-card">
+<div class="cp-box">
+<strong>How to use:</strong> Tap <em>Call</em> to dial or <em>SMS</em> to text. Cards with “Number not yet provided”
             will be updated once a number is supplied. Contacts tagged
             <span class="badge-viber" style="vertical-align:baseline;">Viber</span>
             accept Viber messages.
           </div>
-        </article>
-
-        <!-- FOOTER INSIDE WHITE WRAP -->
-        <div class="cp-footer-embossed">
+</article>
+<!-- FOOTER INSIDE WHITE WRAP -->
+<div class="cp-footer-embossed">
           © 2025 Carpinoy Logistics Services — All rights reserved.
         </div>
-
-      </div>
-    </section>
-  </div>
 </div>
-
+</section>
+</div>
+</div>
 <!-- LIGHTBOX -->
-<div class="lightbox" aria-hidden="true" id="lightbox"
-     style="position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;padding:16px;z-index:99;">
-  <img alt="Preview" id="lightbox-img"
-       style="max-width:96vw;max-height:86vh;border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.45);" />
+<div aria-hidden="true" class="lightbox" id="lightbox" style="position:fixed;inset:0;background:rgba(0,0,0,.68);display:none;align-items:center;justify-content:center;padding:16px;z-index:99;">
+<img alt="Preview" id="lightbox-img" style="max-width:96vw;max-height:86vh;border-radius:16px;box-shadow:0 18px 60px rgba(0,0,0,.45);"/>
 </div>
-
 <script>
     // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
     (function(){
@@ -2103,7 +2086,6 @@ body{
       }catch(_){}
     })();
 </script>
-
 <script>
 // ==== Simple Lightbox ====
   const lb = document.getElementById('lightbox');
@@ -2148,7 +2130,7 @@ body{
   }catch(_){}
 })();
 </script>
-  <!-- Sticky Chat Widget -->
-  <script defer src="/cp-chat-widget.js"></script>
+<!-- Sticky Chat Widget -->
+<script defer="" src="/cp-chat-widget.js"></script>
 </body>
 </html>

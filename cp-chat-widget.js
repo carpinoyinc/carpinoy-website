@@ -7,7 +7,7 @@
     START_URL: window.CP_CHAT_START_URL || "",
     SEND_URL: window.CP_CHAT_SEND_URL || "",
     STORAGE_KEY: "cp_webchat_session_id_v1",
-    AVATAR_URL: window.CP_CHAT_AVATAR_URL || "/cp-support-avatar-64.png"
+    AVATAR_URL: window.CP_CHAT_AVATAR_URL || "/cp-support-avatar-72.png"
   };
 
   function uid(){
@@ -73,7 +73,16 @@
     document.body.appendChild(launcher);
     document.body.appendChild(panel);
 
-    function open(){ panel.classList.add("is-open"); input.focus(); }
+    // Floating hint bubble (dismissible)
+    const hint = el("div",{id:"cp-chat-hint"});
+    hint.appendChild(el("span",{text:"Chat me for more info"}));
+    const hintClose = el("button",{type:"button","aria-label":"Dismiss",text:"×"});
+    hint.appendChild(hintClose);
+    document.body.appendChild(hint);
+    let hintTimer = setTimeout(()=>{ try{ hint.remove(); }catch(_){} }, 9000);
+    hintClose.addEventListener("click", ()=>{ clearTimeout(hintTimer); hint.remove(); });
+
+    function open(){ panel.classList.add("is-open"); input.focus(); const h=document.getElementById("cp-chat-hint"); if(h) h.remove(); }
     function close(){ panel.classList.remove("is-open"); }
     launcher.addEventListener("click", open);
     closeBtn.addEventListener("click", close);
@@ -89,43 +98,15 @@
       input.value="";
       addBubble("user", text);
 
-      // If endpoints not configured yet, show placeholder response.
-      if(!CFG.SEND_URL){
-        addBubble("ai", "AI endpoint not configured yet. Set CP_CHAT_SEND_URL to your Supabase Edge Function URL.");
-        return;
-      }
-
-      const payload = {
-        session_id: getSessionId(),
-        page_url: location.href,
-        message: text
-      };
-
-      try{
-        send.disabled=true;
-        const resp = await fetch(CFG.SEND_URL, {
-          method:"POST",
-          headers:{ "Content-Type":"application/json" },
-          body: JSON.stringify(payload)
-        });
-        const data = await resp.json().catch(()=> ({}));
-        if(!resp.ok){
-          addBubble("ai", "Sorry—may error. Please try again.");
-          return;
-        }
-        addBubble("ai", data.reply || "OK");
-      }catch(e){
-        addBubble("ai", "Network error. Please try again.");
-      }finally{
-        send.disabled=false;
-      }
+      // Temporary auto-answer (website): route to human admins.
+      addBubble("ai", "NOT AVAILABLE at the moment. Please chat our human admins @ https://m.me/carpinoylogistics");
     }
 
     send.addEventListener("click", sendMsg);
     input.addEventListener("keydown", (e)=>{ if(e.key==="Enter") sendMsg(); });
 
     // welcome
-    addBubble("ai","Hi! How can we help you today?");
+    addBubble("ai","Hi! Ask your question here. If you need a human admin, we will direct you to Messenger.");
   }
 
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", mount);

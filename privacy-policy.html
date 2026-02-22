@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="tl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Carpinoy • Privacy Policy</title>
-<link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>Carpinoy • Privacy Policy</title>
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
+<style>
     :root{
       --cp-bg:#f3f4f6;
       --cp-card:#ffffff;
@@ -69,14 +69,17 @@
     /* NOTE: Scrollbar theme removed for performance + mobile consistency */
 
     .white-wrap{
-      background:var(--cp-card);
-      border-radius:32px;
-      max-width:1250px;
-      margin:clamp(10px,3vw,22px) auto;
-      padding:clamp(14px,3vw,26px);
-      box-shadow:0 10px 30px rgba(15,23,42,.10);
-      border:1px solid rgba(148,163,184,.18);
-    }
+  background:var(--cp-card);
+  border-radius:32px;
+
+  /* MAXED WIDTH: almost edge-to-edge, but keeps safe margin */
+  width: min(1680px, calc(100vw - 28px));
+  margin: 14px auto;
+  padding: clamp(12px, 2.2vw, 22px);
+
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  border:1px solid rgba(148,163,184,.18);
+}
 
     html[data-theme="dark"] .white-wrap{
       box-shadow:0 18px 38px rgba(0,0,0,.50);
@@ -84,10 +87,10 @@
     }
 
     .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:clamp(10px,2.4vw,18px);
-    }
+  max-width: 1600px;
+  margin:0 auto;
+  padding: clamp(10px, 1.8vw, 16px);
+}
 
     .cp-section{
       width:100%;
@@ -1607,216 +1610,192 @@ body{
       font-weight: 700;
     }
 </style>
-  <!-- Sticky Chat Widget -->
-  <link rel="stylesheet" href="/cp-chat-widget.css" />
+<!-- Sticky Chat Widget -->
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <a id="top" aria-hidden="true"></a>
-
-  <section class="cp-section cp-section--fullbleed" id="pz-header">
-    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<a aria-hidden="true" id="top"></a>
+<section class="cp-section cp-section--fullbleed" id="pz-header">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
 <!-- Navigation (FINAL labels + page links) -->
-      <nav class="cp-nav cp-nav--center" aria-label="Primary">
-  <div class="cp-nav__inner">
-
-    <!-- LEFT: Logo (fixed) -->
-    <div class="cp-nav__left">
-      <a href="index.html" onclick="window.location.href='index.html';return false;" aria-label="Carpinoy Home">
-        <img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
-      </a>
-    </div>
-
-    <!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
-    <div class="cp-nav__center">
-      <div class="cp-nav__links" role="list">
-        <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
-        <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
-        <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
-        <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
-        <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
-        <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Theme Switch (fixed) -->
-    <div class="cp-nav__right">
-      <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
-        <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
-        <span class="cp-switch__track" aria-hidden="true">
-          <span class="cp-switch__knob"></span>
-          <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
-          <span class="cp-switch__txt cp-switch__txt--on">ON</span>
-        </span>
-      </label>
-    </div>
-
-  </div>
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<!-- LEFT: Logo (fixed) -->
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
+</div>
+<!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a aria-current="page" class="cp-nav__link cp-nav__link--active" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+<a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+</div>
+</div>
+<!-- RIGHT: Theme Switch (fixed) -->
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
 </nav>
-    </header>
-  </section>
-
-  <div class="white-wrap">
-    <div class="wrap">
-
-      <!-- CARD 1: OVERVIEW -->
-      <section class="cp-section">
-        <article class="cp-card" data-kind="title">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h1 class="cp-title">Privacy Policy – Carpinoy Logistics Services</h1>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-
-          <span class="cp-tag"><span class="cp-tag-dot"></span>Effective Date: August 11, 2024</span>
-
-          <p class="cp-sub">
+</header>
+</section>
+<div class="white-wrap">
+<div class="wrap">
+<!-- CARD 1: OVERVIEW -->
+<section class="cp-section">
+<article class="cp-card" data-kind="title">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h1 class="cp-title">Privacy Policy – Carpinoy Logistics Services</h1>
+</span>
+<span class="cp-dot"></span>
+</div>
+<span class="cp-tag"><span class="cp-tag-dot"></span>Effective Date: August 11, 2024</span>
+<p class="cp-sub">
             At Carpinoy Logistics Services, we respect your privacy and are committed to protecting
             your personal information. This Privacy Policy explains how we collect, use, and protect
             your data when you interact with our Facebook Page and other official channels.
           </p>
-
-          <div class="cp-box">
-            <h3><span>📌</span>Scope of this Policy</h3>
-            <p>Ang policy na ito ay sakop ang:</p>
-            <ul class="cp-list">
-              <li><strong>Facebook Page interactions</strong><br>
+<div class="cp-box">
+<h3><span>📌</span>Scope of this Policy</h3>
+<p>Ang policy na ito ay sakop ang:</p>
+<ul class="cp-list">
+<li><strong>Facebook Page interactions</strong><br/>
                 Halimbawa: pag-like, pag-comment, pag-message, at pag-click sa aming posts o ads.</li>
-              <li><strong>Other official online channels</strong><br>
+<li><strong>Other official online channels</strong><br/>
                 Kabilang dito ang aming email, online inquiry forms at iba pang opisyal na contact points.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <!-- CARD 2: INFORMATION & USAGE -->
-      <section class="cp-section">
-        <article class="cp-card">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h2 class="cp-title">What Information We Collect &amp; How We Use It</h2>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>📥</span>Information We Collect</h3>
-            <ul class="cp-list">
-              <li><strong>Basic contact details</strong><br>
+</ul>
+</div>
+</article>
+</section>
+<!-- CARD 2: INFORMATION & USAGE -->
+<section class="cp-section">
+<article class="cp-card">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h2 class="cp-title">What Information We Collect &amp; How We Use It</h2>
+</span>
+<span class="cp-dot"></span>
+</div>
+<div class="cp-box">
+<h3><span>📥</span>Information We Collect</h3>
+<ul class="cp-list">
+<li><strong>Basic contact details</strong><br/>
                 Tulad ng pangalan, email address, phone number, at iba pang impormasyon na kusa ninyong ibinibigay.</li>
-              <li><strong>Interaction data</strong><br>
+<li><strong>Interaction data</strong><br/>
                 Kapag nag-iinteract kayo sa aming posts, ads, o messages (halimbawa: inquiries, survey answers, promo entries).</li>
-              <li><strong>Support-related information</strong><br>
+<li><strong>Support-related information</strong><br/>
                 Mga detalye na ibinabahagi ninyo kapag humihingi ng tulong o nagsusumite ng concern.</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>⚙️</span>How We Use Your Information</h3>
-            <ul class="cp-list">
-              <li><strong>Customer support &amp; response</strong><br>
+</ul>
+</div>
+<div class="cp-box">
+<h3><span>⚙️</span>How We Use Your Information</h3>
+<ul class="cp-list">
+<li><strong>Customer support &amp; response</strong><br/>
                 Upang masagot ang inyong inquiries at maibigay ang kinakailangang assistance.</li>
-              <li><strong>Service improvement</strong><br>
+<li><strong>Service improvement</strong><br/>
                 Para maunawaan ang pangangailangan ng customers at mapaganda ang aming serbisyo.</li>
-              <li><strong>Updates &amp; promotions (with consent)</strong><br>
+<li><strong>Updates &amp; promotions (with consent)</strong><br/>
                 Pagpapadala ng balita, promo, at iba pang relevant communications kung kayo ay pumayag.</li>
-              <li><strong>Analytics &amp; trend monitoring</strong><br>
+<li><strong>Analytics &amp; trend monitoring</strong><br/>
                 Pagsusuri ng trends at user behavior para ma-optimize ang aming content at services.</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>🤝</span>Data Sharing &amp; Disclosure</h3>
-            <ul class="cp-list">
-              <li><strong>We do not sell your data</strong><br>
+</ul>
+</div>
+<div class="cp-box">
+<h3><span>🤝</span>Data Sharing &amp; Disclosure</h3>
+<ul class="cp-list">
+<li><strong>We do not sell your data</strong><br/>
                 Hindi namin ibinebenta, ipinagpapalit, o nirere-rent ang inyong personal na impormasyon sa third parties.</li>
-              <li><strong>Service providers</strong><br>
+<li><strong>Service providers</strong><br/>
                 Maaaring i-share ang data sa trusted service providers na tumutulong sa pag-operate ng aming negosyo.</li>
-              <li><strong>Legal requirements</strong><br>
+<li><strong>Legal requirements</strong><br/>
                 Maaaring i-disclose ang impormasyon kung hinihingi ng batas, regulatory bodies, o kung kinakailangan
                 para protektahan ang aming karapatan at seguridad.</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <!-- CARD 3: RIGHTS, COOKIES, SECURITY & CONTACT -->
-      <section class="cp-section">
-        <article class="cp-card">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h2 class="cp-title">Your Rights, Cookies, Security &amp; Contact</h2>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>🧾</span>Your Rights</h3>
-            <ul class="cp-list">
-              <li><strong>Access &amp; update</strong><br>
+</ul>
+</div>
+</article>
+</section>
+<!-- CARD 3: RIGHTS, COOKIES, SECURITY & CONTACT -->
+<section class="cp-section">
+<article class="cp-card">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h2 class="cp-title">Your Rights, Cookies, Security &amp; Contact</h2>
+</span>
+<span class="cp-dot"></span>
+</div>
+<div class="cp-box">
+<h3><span>🧾</span>Your Rights</h3>
+<ul class="cp-list">
+<li><strong>Access &amp; update</strong><br/>
                 May karapatan kayong i-access at i-update ang inyong personal na impormasyon.</li>
-              <li><strong>Deletion request</strong><br>
+<li><strong>Deletion request</strong><br/>
                 Maaari ninyong i-request ang pagbura ng inyong data, subject sa legal at operational requirements.</li>
-              <li><strong>Opt-out</strong><br>
+<li><strong>Opt-out</strong><br/>
                 Maaari kayong mag-unsubscribe o umiwas sa promotional communications anumang oras.</li>
-            </ul>
-            <p>
+</ul>
+<p>
               Para mag-exercise ng alinman sa mga rights na ito, maaari kaming kontakin sa Facebook Messenger o sa
               email na <strong>carpinoylogistics@gmail.com</strong>.
             </p>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>🍪</span>Cookies &amp; Tracking</h3>
-            <p>
+</div>
+<div class="cp-box">
+<h3><span>🍪</span>Cookies &amp; Tracking</h3>
+<p>
               Ang aming Facebook Page at website ay maaaring gumamit ng cookies at katulad na teknolohiya upang
               mapaganda ang inyong experience. Maaari ninyong i-manage ang cookies sa pamamagitan ng browser settings
               ng inyong device.
             </p>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>🔒</span>Security</h3>
-            <p>
+</div>
+<div class="cp-box">
+<h3><span>🔒</span>Security</h3>
+<p>
               Nagpapatupad kami ng reasonable security measures upang protektahan ang inyong impormasyon mula sa
               hindi awtorisadong access, disclosure, o alteration. Bagama’t nagsusumikap kaming panatilihing ligtas
               ang data, walang system na 100% risk-free online.
             </p>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>📢</span>Changes to this Policy</h3>
-            <p>
+</div>
+<div class="cp-box">
+<h3><span>📢</span>Changes to this Policy</h3>
+<p>
               Maaari naming i-update ang Privacy Policy na ito paminsan-minsan. Hinihikayat namin kayo na basahin
               ito muli nang regular upang manatiling informed kung paano namin pinoprotektahan ang inyong data.
             </p>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>📞</span>Contact Us</h3>
-            <ul class="cp-list">
-              <li><strong>Office Phone</strong><br>
+</div>
+<div class="cp-box">
+<h3><span>📞</span>Contact Us</h3>
+<ul class="cp-list">
+<li><strong>Office Phone</strong><br/>
                 (02) 8824-0603</li>
-              <li><strong>Facebook Page Messenger</strong><br>
+<li><strong>Facebook Page Messenger</strong><br/>
                 m.me/carpinoylogistics</li>
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <!-- EMBOSSED FOOTER SA ILALIM NG LAST CARD -->
-      <div class="cp-footer-embossed">
+</ul>
+</div>
+</article>
+</section>
+<!-- EMBOSSED FOOTER SA ILALIM NG LAST CARD -->
+<div class="cp-footer-embossed">
         © 2025 Carpinoy Logistics Services — All rights reserved.
       </div>
-
-    </div>
-  </div>
-
-  <script>
+</div>
+</div>
+<script>
     // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
     (function(){
       try{
@@ -1885,7 +1864,7 @@ body{
   }catch(_){}
 })();
 </script>
-  <!-- Sticky Chat Widget -->
-  <script defer src="/cp-chat-widget.js"></script>
+<!-- Sticky Chat Widget -->
+<script defer="" src="/cp-chat-widget.js"></script>
 </body>
 </html>

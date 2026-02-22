@@ -1,11 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="tl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
 <title>Carpinoy Logistics Services • Contact Page</title>
-  <link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
-
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
 <style>
     :root{
       --cp-bg:#f3f4f6;
@@ -69,14 +69,17 @@
     /* NOTE: Scrollbar theme removed for performance + mobile consistency */
 
     .white-wrap{
-      background:var(--cp-card);
-      border-radius:32px;
-      max-width:1250px;
-      margin:clamp(10px,3vw,22px) auto;
-      padding:clamp(14px,3vw,26px);
-      box-shadow:0 10px 30px rgba(15,23,42,.10);
-      border:1px solid rgba(148,163,184,.18);
-    }
+  background:var(--cp-card);
+  border-radius:32px;
+
+  /* MAXED WIDTH: almost edge-to-edge, but keeps safe margin */
+  width: min(1680px, calc(100vw - 28px));
+  margin: 14px auto;
+  padding: clamp(12px, 2.2vw, 22px);
+
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  border:1px solid rgba(148,163,184,.18);
+}
 
     html[data-theme="dark"] .white-wrap{
       box-shadow:0 18px 38px rgba(0,0,0,.50);
@@ -84,10 +87,10 @@
     }
 
     .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:clamp(10px,2.4vw,18px);
-    }
+  max-width: 1600px;
+  margin:0 auto;
+  padding: clamp(10px, 1.8vw, 16px);
+}
 
     .cp-section{
       width:100%;
@@ -1573,124 +1576,103 @@ body{
       font-weight: 700;
     }
 </style>
-  <!-- Sticky Chat Widget -->
-  <link rel="stylesheet" href="/cp-chat-widget.css" />
+<!-- Sticky Chat Widget -->
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <a id="top" aria-hidden="true"></a>
-
-  <!-- FULL-BLEED HEADER (edge-to-edge) -->
-  <section class="cp-section cp-section--fullbleed" id="pz-header">
-    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<a aria-hidden="true" id="top"></a>
+<!-- FULL-BLEED HEADER (edge-to-edge) -->
+<section class="cp-section cp-section--fullbleed" id="pz-header">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
 <!-- Navigation (FINAL labels + page links) -->
-      <nav class="cp-nav cp-nav--center" aria-label="Primary">
-  <div class="cp-nav__inner">
-
-    <!-- LEFT: Logo (fixed) -->
-    <div class="cp-nav__left">
-      <a href="index.html" onclick="window.location.href='index.html';return false;" aria-label="Carpinoy Home">
-        <img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
-      </a>
-    </div>
-
-    <!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
-    <div class="cp-nav__center">
-      <div class="cp-nav__links" role="list">
-        <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
-        <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
-        <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
-        <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
-        <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
-        <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Theme Switch (fixed) -->
-    <div class="cp-nav__right">
-      <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
-        <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
-        <span class="cp-switch__track" aria-hidden="true">
-          <span class="cp-switch__knob"></span>
-          <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
-          <span class="cp-switch__txt cp-switch__txt--on">ON</span>
-        </span>
-      </label>
-    </div>
-
-  </div>
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<!-- LEFT: Logo (fixed) -->
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
+</div>
+<!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a aria-current="page" class="cp-nav__link cp-nav__link--active" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+<a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+</div>
+</div>
+<!-- RIGHT: Theme Switch (fixed) -->
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
 </nav>
-    </header>
-  </section>
-
-  <!-- CONTENT (centered cards) -->
-  <div class="white-wrap">
-    <div class="wrap">
-
-      <section class="cp-section">
-        <article class="cp-card" data-kind="title">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h1 class="cp-title">Contact Us • Carpinoy Logistics Services</h1>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-
-          <p class="cp-sub">Official contact channels of <strong>Carpinoy Logistics Services</strong>. All meetings and transactions are coordinated online or via confirmed scheduled appointments.</p>
-
-          <div class="cp-box">
-            <h3>🏢 Company</h3>
-            <ul class="cp-list">
-              <li><strong>Name:</strong>Carpinoy Logistics Services</li>
-              <li><strong>Virtual Office Address:</strong><br>Unit 2404, Discovery Suites<br>ADB Avenue, Ortigas Center<br>Pasig City, Metro Manila, Philippines</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3>☎️ Contact Details</h3>
-            <ul class="cp-list">
-              <li><strong>Office Landline:</strong> (02) 8824-0603</li>
-              <li><strong>Mobile:</strong> +63 919 843 4100</li>
-              <li><strong>Email:</strong> carpinoylogistics@gmail.com</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3>👤 Contact Person</h3>
-            <ul class="cp-list">
-              <li><strong>Name:</strong> Mr. Froilan Salamat Feliciano</li>
-              <li><strong>Position:</strong> Owner &amp; CEO, Carpinoy Logistics Services</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3>📍 Location Map</h3>
-            <p class="cp-sub" style="margin-top:2px;"><strong>Map title:</strong> Carpinoy Logistics Services – Discovery Suites Ortigas</p>
-            <div class="cp-map-wrap">
-              <iframe
-                src="https://www.google.com/maps?q=Carpinoy+Logistics+Services+Discovery+Suites+Ortigas+Center+Pasig+City&hl=en&z=17&output=embed"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-            <p class="cp-note">Note: If the map does not appear, please open this page directly in your mobile browser (Google Chrome or Safari).</p>
-          </div>
-
-          <div class="cp-box">
-            <h3>📝 Additional Note</h3>
-            <p class="cp-sub" style="margin-top:2px;">Carpinoy Logistics Services operates under a virtual office setup (<strong>no walk-in</strong>). All meetings and transactions are coordinated online or through confirmed scheduled appointments.</p>
-          </div>
-
-        </article>
-      </section>
-
-      <div class="cp-footer-embossed">
+</header>
+</section>
+<!-- CONTENT (centered cards) -->
+<div class="white-wrap">
+<div class="wrap">
+<section class="cp-section">
+<article class="cp-card" data-kind="title">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h1 class="cp-title">Contact Us • Carpinoy Logistics Services</h1>
+</span>
+<span class="cp-dot"></span>
+</div>
+<p class="cp-sub">Official contact channels of <strong>Carpinoy Logistics Services</strong>. All meetings and transactions are coordinated online or via confirmed scheduled appointments.</p>
+<div class="cp-box">
+<h3>🏢 Company</h3>
+<ul class="cp-list">
+<li><strong>Name:</strong>Carpinoy Logistics Services</li>
+<li><strong>Virtual Office Address:</strong><br/>Unit 2404, Discovery Suites<br/>ADB Avenue, Ortigas Center<br/>Pasig City, Metro Manila, Philippines</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3>☎️ Contact Details</h3>
+<ul class="cp-list">
+<li><strong>Office Landline:</strong> (02) 8824-0603</li>
+<li><strong>Mobile:</strong> +63 919 843 4100</li>
+<li><strong>Email:</strong> carpinoylogistics@gmail.com</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3>👤 Contact Person</h3>
+<ul class="cp-list">
+<li><strong>Name:</strong> Mr. Froilan Salamat Feliciano</li>
+<li><strong>Position:</strong> Owner &amp; CEO, Carpinoy Logistics Services</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3>📍 Location Map</h3>
+<p class="cp-sub" style="margin-top:2px;"><strong>Map title:</strong> Carpinoy Logistics Services – Discovery Suites Ortigas</p>
+<div class="cp-map-wrap">
+<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Carpinoy+Logistics+Services+Discovery+Suites+Ortigas+Center+Pasig+City&amp;hl=en&amp;z=17&amp;output=embed"></iframe>
+</div>
+<p class="cp-note">Note: If the map does not appear, please open this page directly in your mobile browser (Google Chrome or Safari).</p>
+</div>
+<div class="cp-box">
+<h3>📝 Additional Note</h3>
+<p class="cp-sub" style="margin-top:2px;">Carpinoy Logistics Services operates under a virtual office setup (<strong>no walk-in</strong>). All meetings and transactions are coordinated online or through confirmed scheduled appointments.</p>
+</div>
+</article>
+</section>
+<div class="cp-footer-embossed">
         All rights reserved by Carpinoy Logistics Services.
       </div>
-
-    </div>
-  </div>
-
+</div>
+</div>
 <script>
     // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
     (function(){
@@ -1760,7 +1742,7 @@ body{
   }catch(_){}
 })();
 </script>
-  <!-- Sticky Chat Widget -->
-  <script defer src="/cp-chat-widget.js"></script>
+<!-- Sticky Chat Widget -->
+<script defer="" src="/cp-chat-widget.js"></script>
 </body>
 </html>

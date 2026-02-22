@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="tl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
 <title>Carpinoy Logistics Services</title>
-  <!-- Favicon (upload favicon.png beside index.html) -->
-  <link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
-
-  <!--
+<!-- Favicon (upload favicon.png beside index.html) -->
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
+<!--
   PATCH LOG
   - v1.0 (2025-12-25 PH) Base Home Page (system fonts, mobile lite)
   - v1.1 (2025-12-25 PH) Added PATCH-ZONE ids (JSON patching)
@@ -16,9 +16,8 @@
   - v1.5 (2026-01-03 PH) Light/Dark toggle + full-width banner (edge-to-edge)
   - v1.8 (2026-01-03 PH) Sticky header (no banner) + Payroll-voucher style switch + header logo + embedded favicon/logo
   -->
-
-  <!-- PERF-LOCKED: System fonts only (fastest, no Google Fonts) -->
-  <style>
+<!-- PERF-LOCKED: System fonts only (fastest, no Google Fonts) -->
+<style>
     :root{
       --cp-bg:#f3f4f6;
       --cp-card:#ffffff;
@@ -81,14 +80,17 @@
     /* NOTE: Scrollbar theme removed for performance + mobile consistency */
 
     .white-wrap{
-      background:var(--cp-card);
-      border-radius:32px;
-      max-width:1250px;
-      margin:clamp(10px,3vw,22px) auto;
-      padding:clamp(14px,3vw,26px);
-      box-shadow:0 10px 30px rgba(15,23,42,.10);
-      border:1px solid rgba(148,163,184,.18);
-    }
+  background:var(--cp-card);
+  border-radius:32px;
+
+  /* MAXED WIDTH: almost edge-to-edge, but keeps safe margin */
+  width: min(1680px, calc(100vw - 28px));
+  margin: 14px auto;
+  padding: clamp(12px, 2.2vw, 22px);
+
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  border:1px solid rgba(148,163,184,.18);
+}
 
     html[data-theme="dark"] .white-wrap{
       box-shadow:0 18px 38px rgba(0,0,0,.50);
@@ -96,10 +98,10 @@
     }
 
     .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:clamp(10px,2.4vw,18px);
-    }
+  max-width: 1600px;
+  margin:0 auto;
+  padding: clamp(10px, 1.8vw, 16px);
+}
 
     .cp-section{
       width:100%;
@@ -1839,130 +1841,112 @@ body{
       font-weight: 700;
     }
 </style>
-  <!-- Sticky Chat Widget -->
-  <link rel="stylesheet" href="/cp-chat-widget.css" />
+<!-- Sticky Chat Widget -->
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <a id="top" aria-hidden="true"></a>
-
-  <!-- FULL-BLEED HEADER (edge-to-edge) -->
-  <section class="cp-section cp-section--fullbleed" id="pz-header">
-    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<a aria-hidden="true" id="top"></a>
+<!-- FULL-BLEED HEADER (edge-to-edge) -->
+<section class="cp-section cp-section--fullbleed" id="pz-header">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
 <!-- Navigation (FINAL labels + page links) -->
-      <nav class="cp-nav cp-nav--center" aria-label="Primary">
-  <div class="cp-nav__inner">
-
-    <!-- LEFT: Logo (fixed) -->
-    <div class="cp-nav__left">
-      <a href="index.html" onclick="window.location.href='index.html';return false;" aria-label="Carpinoy Home">
-        <img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
-      </a>
-    </div>
-
-    <!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
-    <div class="cp-nav__center">
-      <div class="cp-nav__links" role="list">
-        <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
-        <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
-        <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
-        <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
-        <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
-        <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Theme Switch (fixed) -->
-    <div class="cp-nav__right">
-      <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
-        <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
-        <span class="cp-switch__track" aria-hidden="true">
-          <span class="cp-switch__knob"></span>
-          <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
-          <span class="cp-switch__txt cp-switch__txt--on">ON</span>
-        </span>
-      </label>
-    </div>
-
-  </div>
-</nav>
-    </header>
-  </section>
-
-  <!-- CONTENT (centered cards) -->
-  <div class="white-wrap">
-    <div class="wrap">
-
-      <!-- PATCH-ZONE: CONTENT -->
-      <section class="cp-section" id="pz-content">
-        <article class="cp-card" data-kind="title">
-          <div class="aa-doc" aria-label="Accredited Associates Explanation">
-  <header class="aa-head">
-    <p class="aa-kicker">﻿Public Explanation on</p>
-    <h1 class="aa-title">Carpinoy Business Package – Trusted Accredited Associates</h1>
-    <p class="aa-lead">Carpinoy Logistics Services formally introduces its Carpinoy Business Package Accredited Associates as part of its continuing advocacy to support individuals and entities who wish to participate in the logistics industry through an independent and business-oriented arrangement.</p>
-  </header>
-
-  <section class="aa-section" aria-label="Nature of the Accredited Associate Program">
-    <h2 class="aa-h2">Nature of the Accredited Associate Program</h2>
-    <p class="aa-p">Carpinoy Business Package Accredited Associates are exclusive, trusted, and authorized partners who are allowed to facilitate the entry of transport units strictly within the scope of the Authorized Car Dealership to which they are officially assigned. Only these Accredited Associates are recognized to endorse and assist unit owners in processing their participation within the Carpinoy Logistics network.</p>
-    <p class="aa-p aa-callout">It is hereby emphasized that no membership fee, joining fee, processing fee, or any similar charge is required to enter Carpinoy Logistics Services, provided that the onboarding is facilitated through Carpinoy Trusted Accredited Associates. Entry into Carpinoy is free of charge, and any form of unauthorized collection is not sanctioned by management.</p>
-  </section>
-
-  <section class="aa-section" aria-label="No Employer-Employee Relationship">
-    <h2 class="aa-h2">No Employer-Employee Relationship</h2>
-    <p class="aa-p">For public clarity and legal transparency, Carpinoy Business Package Accredited Associates are NOT employees of Carpinoy Logistics Services. There exists no employer-employee relationship, whether express or implied, between Carpinoy Management and its Accredited Associates.</p>
-    <p class="aa-p">The Accredited Associate arrangement is not employment, not manpower supply, and not labor contracting or subcontracting as defined under Philippine labor laws. Associates operate independently, on their own discretion, methods, resources, and business judgment. They do not receive salaries, wages, employment benefits, or mandatory employer contributions from Carpinoy Logistics Services.</p>
-    <p class="aa-p">This program is extended purely as a business opportunity and a voluntary, non-compulsory free privilege granted to individuals who wish to explore entrepreneurship within the logistics ecosystem.</p>
-  </section>
-
-  <section class="aa-section" aria-label="No Guarantee of Income, Profit, or Business Success">
-    <h2 class="aa-h2">No Guarantee of Income, Profit, or Business Success</h2>
-    <p class="aa-p">Carpinoy Logistics Services does not provide any guarantee, assurance, or promise that participation in Carpinoy or engagement in logistics activities will result in income, profit, growth, or financial success.</p>
-    <p class="aa-p">As with any form of business, outcomes depend on proper management, discipline, market conditions, operational decisions, financial planning, and individual effort. Logistics, like all industries, carries inherent business risks, and success is not automatic nor assured.</p>
-    <p class="aa-p">Participants are therefore encouraged to conduct their own due diligence and to approach the opportunity with a clear understanding that Carpinoy does not offer guaranteed returns or representations of assured prosperity.</p>
-  </section>
-
-  <section class="aa-section" aria-label="Purpose of the Program">
-    <h2 class="aa-h2">Purpose of the Program</h2>
-    <p class="aa-p">The Carpinoy Business Package Accredited Associate Program is intended solely as a business-enabling platform—a free and optional avenue for individuals who aspire to start or expand a logistics-related enterprise without being burdened by entry fees or employment dependencies.</p>
-    <p class="aa-p">Carpinoy Logistics Services remains committed to ethical operations, regulatory compliance, and transparent business practices in support of sustainable entrepreneurship.</p>
-  </section>
-
-  <footer class="aa-footer" aria-label="Signature">
-    <p class="aa-issued">Issued for public information and guidance.</p>
-    <div class="aa-signature">
-      <p class="aa-name">Boss Olan</p>
-      <p class="aa-role">Owner &amp;amp; Chief Executive Officer</p>
-      <p class="aa-org">Carpinoy Logistics Services</p>
-    </div>
-  </footer>
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<!-- LEFT: Logo (fixed) -->
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
 </div>
-        </article>
-      </section>
-
-      <!-- PATCH-ZONE: FOOTER -->
-      
-      <!-- PATCH-ZONE: MITSUBISHI ACCREDITED ASSOCIATES -->
-      <section class="cp-section" id="pz-mitsu">
-        <article class="cp-card" data-kind="brand">
-          <div class="cp-brand">
-            <a class="cp-brand__link" href="mitsubishi-associates.html" aria-label="Mitsubishi Trusted Accredited Associates">
-              <img class="cp-brand__logo" src="https://www.carpinoylogistics.com/images/mitsu-logo.png" alt="Mitsubishi Motors" decoding="async" loading="lazy" />
-            </a>
-            <p class="cp-brand__note">Click the Mitsubishi Logo for All Mitsubishi Trusted Accredited Associates.</p>
-          </div>
-        </article>
-      </section>
-
+<!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a aria-current="page" class="cp-nav__link cp-nav__link--active" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+<a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+</div>
+</div>
+<!-- RIGHT: Theme Switch (fixed) -->
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
+</nav>
+</header>
+</section>
+<!-- CONTENT (centered cards) -->
+<div class="white-wrap">
+<div class="wrap">
+<!-- PATCH-ZONE: CONTENT -->
+<section class="cp-section" id="pz-content">
+<article class="cp-card" data-kind="title">
+<div aria-label="Accredited Associates Explanation" class="aa-doc">
+<header class="aa-head">
+<p class="aa-kicker">﻿Public Explanation on</p>
+<h1 class="aa-title">Carpinoy Business Package – Trusted Accredited Associates</h1>
+<p class="aa-lead">Carpinoy Logistics Services formally introduces its Carpinoy Business Package Accredited Associates as part of its continuing advocacy to support individuals and entities who wish to participate in the logistics industry through an independent and business-oriented arrangement.</p>
+</header>
+<section aria-label="Nature of the Accredited Associate Program" class="aa-section">
+<h2 class="aa-h2">Nature of the Accredited Associate Program</h2>
+<p class="aa-p">Carpinoy Business Package Accredited Associates are exclusive, trusted, and authorized partners who are allowed to facilitate the entry of transport units strictly within the scope of the Authorized Car Dealership to which they are officially assigned. Only these Accredited Associates are recognized to endorse and assist unit owners in processing their participation within the Carpinoy Logistics network.</p>
+<p class="aa-p aa-callout">It is hereby emphasized that no membership fee, joining fee, processing fee, or any similar charge is required to enter Carpinoy Logistics Services, provided that the onboarding is facilitated through Carpinoy Trusted Accredited Associates. Entry into Carpinoy is free of charge, and any form of unauthorized collection is not sanctioned by management.</p>
+</section>
+<section aria-label="No Employer-Employee Relationship" class="aa-section">
+<h2 class="aa-h2">No Employer-Employee Relationship</h2>
+<p class="aa-p">For public clarity and legal transparency, Carpinoy Business Package Accredited Associates are NOT employees of Carpinoy Logistics Services. There exists no employer-employee relationship, whether express or implied, between Carpinoy Management and its Accredited Associates.</p>
+<p class="aa-p">The Accredited Associate arrangement is not employment, not manpower supply, and not labor contracting or subcontracting as defined under Philippine labor laws. Associates operate independently, on their own discretion, methods, resources, and business judgment. They do not receive salaries, wages, employment benefits, or mandatory employer contributions from Carpinoy Logistics Services.</p>
+<p class="aa-p">This program is extended purely as a business opportunity and a voluntary, non-compulsory free privilege granted to individuals who wish to explore entrepreneurship within the logistics ecosystem.</p>
+</section>
+<section aria-label="No Guarantee of Income, Profit, or Business Success" class="aa-section">
+<h2 class="aa-h2">No Guarantee of Income, Profit, or Business Success</h2>
+<p class="aa-p">Carpinoy Logistics Services does not provide any guarantee, assurance, or promise that participation in Carpinoy or engagement in logistics activities will result in income, profit, growth, or financial success.</p>
+<p class="aa-p">As with any form of business, outcomes depend on proper management, discipline, market conditions, operational decisions, financial planning, and individual effort. Logistics, like all industries, carries inherent business risks, and success is not automatic nor assured.</p>
+<p class="aa-p">Participants are therefore encouraged to conduct their own due diligence and to approach the opportunity with a clear understanding that Carpinoy does not offer guaranteed returns or representations of assured prosperity.</p>
+</section>
+<section aria-label="Purpose of the Program" class="aa-section">
+<h2 class="aa-h2">Purpose of the Program</h2>
+<p class="aa-p">The Carpinoy Business Package Accredited Associate Program is intended solely as a business-enabling platform—a free and optional avenue for individuals who aspire to start or expand a logistics-related enterprise without being burdened by entry fees or employment dependencies.</p>
+<p class="aa-p">Carpinoy Logistics Services remains committed to ethical operations, regulatory compliance, and transparent business practices in support of sustainable entrepreneurship.</p>
+</section>
+<footer aria-label="Signature" class="aa-footer">
+<p class="aa-issued">Issued for public information and guidance.</p>
+<div class="aa-signature">
+<p class="aa-name">Boss Olan</p>
+<p class="aa-role">Owner &amp;amp; Chief Executive Officer</p>
+<p class="aa-org">Carpinoy Logistics Services</p>
+</div>
+</footer>
+</div>
+</article>
+</section>
+<!-- PATCH-ZONE: FOOTER -->
+<!-- PATCH-ZONE: MITSUBISHI ACCREDITED ASSOCIATES -->
+<section class="cp-section" id="pz-mitsu">
+<article class="cp-card" data-kind="brand">
+<div class="cp-brand">
+<a aria-label="Mitsubishi Trusted Accredited Associates" class="cp-brand__link" href="mitsubishi-associates.html">
+<img alt="Mitsubishi Motors" class="cp-brand__logo" decoding="async" loading="lazy" src="https://www.carpinoylogistics.com/images/mitsu-logo.png"/>
+</a>
+<p class="cp-brand__note">Click the Mitsubishi Logo for All Mitsubishi Trusted Accredited Associates.</p>
+</div>
+</article>
+</section>
 <div class="cp-footer-embossed" id="pz-footer">
         © 2025 Carpinoy Logistics Services — All rights reserved.
       </div>
-
-    </div>
-  </div>
-
-  <script>
+</div>
+</div>
+<script>
     // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
     (function(){
       try{
@@ -2031,7 +2015,7 @@ body{
   }catch(_){}
 })();
 </script>
-  <!-- Sticky Chat Widget -->
-  <script defer src="/cp-chat-widget.js"></script>
+<!-- Sticky Chat Widget -->
+<script defer="" src="/cp-chat-widget.js"></script>
 </body>
 </html>

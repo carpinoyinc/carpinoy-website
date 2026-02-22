@@ -1,21 +1,19 @@
 <!DOCTYPE html>
+
 <html lang="tl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
 <title>Carpinoy • Business Package</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png" />
-
-  <!--
+<!-- Favicon -->
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
+<!--
   PATCH LOG
   - v1.0 (2025-12-26 PH) Business Package page (original)
   - v2.0 (2026-01-03 PH) Twin Theme Clone: index.html → business-package.html (CSS/Theme/Header/Toggle/Scrollbar)
   -->
-
-  <!-- PERF-LOCKED: System fonts only (fastest, no Google Fonts) -->
-  <style>
+<!-- PERF-LOCKED: System fonts only (fastest, no Google Fonts) -->
+<style>
     :root{
       --cp-bg:#f3f4f6;
       --cp-card:#ffffff;
@@ -78,14 +76,17 @@
     /* NOTE: Scrollbar theme removed for performance + mobile consistency */
 
     .white-wrap{
-      background:var(--cp-card);
-      border-radius:32px;
-      max-width:1250px;
-      margin:clamp(10px,3vw,22px) auto;
-      padding:clamp(14px,3vw,26px);
-      box-shadow:0 10px 30px rgba(15,23,42,.10);
-      border:1px solid rgba(148,163,184,.18);
-    }
+  background:var(--cp-card);
+  border-radius:32px;
+
+  /* MAXED WIDTH: almost edge-to-edge, but keeps safe margin */
+  width: min(1680px, calc(100vw - 28px));
+  margin: 14px auto;
+  padding: clamp(12px, 2.2vw, 22px);
+
+  box-shadow:0 10px 30px rgba(15,23,42,.10);
+  border:1px solid rgba(148,163,184,.18);
+}
 
     html[data-theme="dark"] .white-wrap{
       box-shadow:0 18px 38px rgba(0,0,0,.50);
@@ -93,10 +94,10 @@
     }
 
     .wrap{
-      max-width:1180px;
-      margin:0 auto;
-      padding:clamp(10px,2.4vw,18px);
-    }
+  max-width: 1600px;
+  margin:0 auto;
+  padding: clamp(10px, 1.8vw, 16px);
+}
 
     .cp-section{
       width:100%;
@@ -1590,132 +1591,114 @@ body{
       font-weight: 700;
     }
 </style>
-  <!-- Sticky Chat Widget -->
-  <link rel="stylesheet" href="/cp-chat-widget.css" />
+<!-- Sticky Chat Widget -->
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
 </head>
-
 <body>
-  <a id="top" aria-hidden="true"></a>
-
-  <!-- FULL-BLEED HEADER (edge-to-edge) -->
-  <section class="cp-section cp-section--fullbleed" id="pz-header">
-    <header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<a aria-hidden="true" id="top"></a>
+<!-- FULL-BLEED HEADER (edge-to-edge) -->
+<section class="cp-section cp-section--fullbleed" id="pz-header">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
 <!-- Navigation (FINAL labels + page links) -->
-      <nav class="cp-nav cp-nav--center" aria-label="Primary">
-  <div class="cp-nav__inner">
-
-    <!-- LEFT: Logo (fixed) -->
-    <div class="cp-nav__left">
-      <a href="index.html" onclick="window.location.href='index.html';return false;" aria-label="Carpinoy Home">
-        <img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy" decoding="async" loading="eager" />
-      </a>
-    </div>
-
-    <!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
-    <div class="cp-nav__center">
-      <div class="cp-nav__links" role="list">
-        <a class="cp-nav__link cp-nav__link--active" aria-current="page" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
-        <a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
-        <a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
-        <a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
-        <a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
-        <a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
-      </div>
-    </div>
-
-    <!-- RIGHT: Theme Switch (fixed) -->
-    <div class="cp-nav__right">
-      <label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
-        <input class="cp-switch__input" id="cpThemeSwitch" type="checkbox" aria-label="Dark mode switch" />
-        <span class="cp-switch__track" aria-hidden="true">
-          <span class="cp-switch__knob"></span>
-          <span class="cp-switch__txt cp-switch__txt--off">OFF</span>
-          <span class="cp-switch__txt cp-switch__txt--on">ON</span>
-        </span>
-      </label>
-    </div>
-
-  </div>
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<!-- LEFT: Logo (fixed) -->
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
+</div>
+<!-- CENTER: Links (centered on desktop, scrollable on mobile) -->
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a aria-current="page" class="cp-nav__link cp-nav__link--active" href="index.html" onclick="window.location.href='index.html';return false;">Home</a>
+<a class="cp-nav__link" href="business-package.html" onclick="window.location.href='business-package.html';return false;">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html" onclick="window.location.href='accredited-associates.html';return false;">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html" onclick="window.location.href='contact.html';return false;">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html" onclick="window.location.href='mission-vision.html';return false;">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html" onclick="window.location.href='privacy-policy.html';return false;">Privacy Policy</a>
+</div>
+</div>
+<!-- RIGHT: Theme Switch (fixed) -->
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
 </nav>
-    </header>
-  </section>
-
-  <!-- CONTENT (centered cards) -->
-  <div class="white-wrap">
-    <div class="wrap">
-
-      <!-- PATCH-ZONE: HERO -->
-      <section class="cp-section" id="pz-hero">
-        <article class="cp-card" data-kind="title">
-          <div class="cp-title-wrap">
-            <span class="cp-dot"></span>
-            <span class="cp-title-plate">
-              <h1 class="cp-title">🌟 Business Package Promo – Automatic Subcon</h1>
-            </span>
-            <span class="cp-dot"></span>
-          </div>
-
-          <p class="cp-sub">
+</header>
+</section>
+<!-- CONTENT (centered cards) -->
+<div class="white-wrap">
+<div class="wrap">
+<!-- PATCH-ZONE: HERO -->
+<section class="cp-section" id="pz-hero">
+<article class="cp-card" data-kind="title">
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate">
+<h1 class="cp-title">🌟 Business Package Promo – Automatic Subcon</h1>
+</span>
+<span class="cp-dot"></span>
+</div>
+<p class="cp-sub">
             Ito ang Business Package na designed para sa mga gustong mag-start ng logistics business at maging
             automatic subcontractor under Carpinoy network (with proper compliance &amp; coordination).
           </p>
-
-          <div class="cp-box">
-            <h3><span>📦</span> Package Overview</h3>
-            <p>Brand-new unit + business setup guidance + compliance pathway + onboarding support.</p>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>🚐</span> Authorized Dealership Car Loan</h3>
-            <ul class="cp-list">
-              <li>Mitsubishi L300 (FB Body)</li>
-              <li>Isuzu Traviz (subject to availability / program)</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>📜</span> LTFRB Compliance Support</h3>
-            <ul class="cp-list">
-              <li>Guidance for PA/CPC documentation flow</li>
-              <li>Coordination with liaison process (if applicable)</li>
-              <li>Compliance reminders and checklist</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>📑</span> Partnership Documents</h3>
-            <ul class="cp-list">
-              <li>Memorandum of Agreement (MOA) onboarding</li>
-              <li>Operational scheduling orientation</li>
-              <li>Basic documentation &amp; billing flow guidance</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>👨‍💼</span> Operations Support</h3>
-            <ul class="cp-list">
-              <li>Dispatch &amp; coordination support</li>
-              <li>Basic monitoring and SOP reminders</li>
-              <li>Practical onboarding for daily operations</li>
-            </ul>
-          </div>
-
-          <div class="cp-box">
-            <h3><span>✅</span> Automatic Subcontractor Status</h3>
-            <p>Kapag complete ang onboarding, included ka na sa subcontractor pool para sa deployment opportunities.</p>
-          </div>
-        </article>
-      </section>
-
-      <!-- PATCH-ZONE: FOOTER -->
-      <div class="cp-footer-embossed" id="pz-footer">
+<div class="cp-box">
+<h3><span>📦</span> Package Overview</h3>
+<p>Brand-new unit + business setup guidance + compliance pathway + onboarding support.</p>
+</div>
+<div class="cp-box">
+<h3><span>🚐</span> Authorized Dealership Car Loan</h3>
+<ul class="cp-list">
+<li>Mitsubishi L300 (FB Body)</li>
+<li>Isuzu Traviz (subject to availability / program)</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3><span>📜</span> LTFRB Compliance Support</h3>
+<ul class="cp-list">
+<li>Guidance for PA/CPC documentation flow</li>
+<li>Coordination with liaison process (if applicable)</li>
+<li>Compliance reminders and checklist</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3><span>📑</span> Partnership Documents</h3>
+<ul class="cp-list">
+<li>Memorandum of Agreement (MOA) onboarding</li>
+<li>Operational scheduling orientation</li>
+<li>Basic documentation &amp; billing flow guidance</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3><span>👨‍💼</span> Operations Support</h3>
+<ul class="cp-list">
+<li>Dispatch &amp; coordination support</li>
+<li>Basic monitoring and SOP reminders</li>
+<li>Practical onboarding for daily operations</li>
+</ul>
+</div>
+<div class="cp-box">
+<h3><span>✅</span> Automatic Subcontractor Status</h3>
+<p>Kapag complete ang onboarding, included ka na sa subcontractor pool para sa deployment opportunities.</p>
+</div>
+</article>
+</section>
+<!-- PATCH-ZONE: FOOTER -->
+<div class="cp-footer-embossed" id="pz-footer">
         All rights reserved by Carpinoy Logistics Services.
       </div>
-
-    </div>
-  </div>
-
-  <script>
+</div>
+</div>
+<script>
     // Carpinoy Cloudflare Standard — Auto-active Nav (Messenger-safe)
     (function(){
       try{
@@ -1784,7 +1767,7 @@ body{
   }catch(_){}
 })();
 </script>
-  <!-- Sticky Chat Widget -->
-  <script defer src="/cp-chat-widget.js"></script>
+<!-- Sticky Chat Widget -->
+<script defer="" src="/cp-chat-widget.js"></script>
 </body>
 </html>
