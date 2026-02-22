@@ -1,5 +1,7 @@
 /* Carpinoy Sticky Chat Widget (v0.1) */
-#cp-chat-launcher{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;border-radius:999px;padding:12px 14px;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.18);background:#111;color:#fff;font-weight:700}
+#cp-chat-launcher{position:fixed;right:16px;bottom:16px;z-index:9999;border:0;border-radius:999px;padding:10px 14px;cursor:pointer;box-shadow:0 10px 25px rgba(0,0,0,.18);background:#111;color:#fff;font-weight:700;display:flex;align-items:center;gap:10px}
+#cp-chat-launcher img{width:32px;height:32px;border-radius:999px;object-fit:cover;display:block}
+#cp-chat-launcher span{display:block;line-height:1}
 #cp-chat-panel{position:fixed;right:16px;bottom:72px;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 120px));z-index:9999;border-radius:16px;box-shadow:0 18px 45px rgba(0,0,0,.25);background:#fff;display:none;overflow:hidden}
 #cp-chat-panel.is-open{display:flex;flex-direction:column}
 #cp-chat-header{display:flex;align-items:center;justify-content:space-between;padding:12px 12px;border-bottom:1px solid rgba(0,0,0,.08);background:#111;color:#fff}
@@ -14,3 +16,8 @@
 #cp-chat-input{flex:1;border:1px solid rgba(0,0,0,.18);border-radius:12px;padding:10px 12px;font-size:14px}
 #cp-chat-send{border:0;border-radius:12px;padding:10px 12px;background:#111;color:#fff;font-weight:800;cursor:pointer}
 #cp-chat-note{font-size:12px;color:rgba(0,0,0,.6);padding:0 12px 10px}
+
+#cp-chat-header{display:flex;align-items:center;justify-content:space-between;gap:10px}
+#cp-chat-header .cp-chat-header-left{display:flex;align-items:center;gap:10px;min-width:0}
+#cp-chat-header .cp-chat-header-left img{width:32px;height:32px;border-radius:999px;object-fit:cover;display:block}
+#cp-chat-title{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}

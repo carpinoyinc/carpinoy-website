@@ -6,7 +6,8 @@
     // TODO: replace with your Supabase Edge Function endpoints
     START_URL: window.CP_CHAT_START_URL || "",
     SEND_URL: window.CP_CHAT_SEND_URL || "",
-    STORAGE_KEY: "cp_webchat_session_id_v1"
+    STORAGE_KEY: "cp_webchat_session_id_v1",
+    AVATAR_URL: window.CP_CHAT_AVATAR_URL || "/cp-support-avatar-64.png"
   };
 
   function uid(){
@@ -37,11 +38,19 @@
   function mount(){
     if(document.getElementById("cp-chat-launcher")) return;
 
-    const launcher = el("button",{id:"cp-chat-launcher", type:"button", "aria-label":"Open chat", text:"Chat"});
+    const launcher = el("button",{id:"cp-chat-launcher", type:"button", "aria-label":"Open chat"});
+    const launcherImg = el("img",{src:CFG.AVATAR_URL, alt:"Support"});
+    const launcherLabel = el("span",{text:"Chat"});
+    launcher.appendChild(launcherImg);
+    launcher.appendChild(launcherLabel);
     const panel = el("div",{id:"cp-chat-panel", role:"dialog", "aria-modal":"false"});
 
     const header = el("div",{id:"cp-chat-header"});
-    header.appendChild(el("div",{id:"cp-chat-title", text:"Carpinoy Help"}));
+    const headerLeft = el("div",{class:"cp-chat-header-left"});
+    const headerImg = el("img",{src:(window.CP_CHAT_AVATAR_URL_HEADER||"/cp-support-avatar-40.png"), alt:"Support"});
+    headerLeft.appendChild(headerImg);
+    headerLeft.appendChild(el("div",{id:"cp-chat-title", text:"Carpinoy Support"}));
+    header.appendChild(headerLeft);
     const closeBtn = el("button",{id:"cp-chat-close", type:"button", "aria-label":"Close chat", text:"×"});
     header.appendChild(closeBtn);
 
