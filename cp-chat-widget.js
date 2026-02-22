@@ -7,7 +7,7 @@
     START_URL: window.CP_CHAT_START_URL || "",
     SEND_URL: window.CP_CHAT_SEND_URL || "",
     STORAGE_KEY: "cp_webchat_session_id_v1",
-    AVATAR_URL: window.CP_CHAT_AVATAR_URL || "/cp-support-avatar-72.png"
+    AVATAR_URL: window.CP_CHAT_AVATAR_URL || "/cp-support-avatar-96.png"
   };
 
   function uid(){
