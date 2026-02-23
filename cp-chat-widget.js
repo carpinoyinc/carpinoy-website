@@ -194,23 +194,29 @@
     const arr = getMsgs();
     messagesEl.innerHTML = "";
     if (arr.length === 0) {
-      messagesEl.appendChild(el("div", { class: "cp-chat-msg cp-chat-msg--sys" }, [
-        "Hi! Please tell us what you need (shipping, rates, schedule)."
+      messagesEl.appendChild(el("div", { class: "cp-chat-row cp-chat-row--sys" }, [
+        el("div", { class: "cp-chat-msg cp-chat-msg--sys" }, ["Hi! Please tell us what you need (shipping, rates, schedule)."])
       ]));
       if (CFG.requireLead && !getLead()) {
-        messagesEl.appendChild(el("div", { class: "cp-chat-msg cp-chat-msg--sys" }, [
-          "Before we proceed, please enter your name and phone."
+        messagesEl.appendChild(el("div", { class: "cp-chat-row cp-chat-row--sys" }, [
+          el("div", { class: "cp-chat-msg cp-chat-msg--sys" }, ["Before we proceed, please enter your name and phone."])
         ]));
       }
       return;
     }
     arr.forEach((m) => {
-      const cls =
+      const rowCls =
+        m.role === "user" ? "cp-chat-row--user" :
+        m.role === "ai" ? "cp-chat-row--ai" :
+        "cp-chat-row--sys";
+      const bubbleCls =
         m.role === "user" ? "cp-chat-msg--user" :
         m.role === "ai" ? "cp-chat-msg--ai" :
         "cp-chat-msg--sys";
-      const node = el("div", { class: "cp-chat-msg " + cls }, [m.text]);
-      messagesEl.appendChild(node);
+
+      const bubble = el("div", { class: "cp-chat-msg " + bubbleCls }, [m.text]);
+      const row = el("div", { class: "cp-chat-row " + rowCls }, [bubble]);
+      messagesEl.appendChild(row);
     });
   }
   function scrollToBottom() {
