@@ -231,6 +231,7 @@
     const lead = getLead();
 
     if (CFG.requireLead && (!lead || !lead.name || !lead.phone)) {
+      footerEl.classList.add("cp-chat-footer--lead");
       const notice = el("div", { class: "cp-chat-notice" }, [CFG.noticeText]);
 
       const nameIn = el("input", { class: "cp-chat-inp", type: "text", placeholder: "Your name", autocomplete: "name" });
@@ -283,12 +284,8 @@
         }
       }, ["Continue"]);
 
-      footerEl.appendChild(notice);
-      footerEl.appendChild(err);
-      footerEl.appendChild(nameIn);
-      footerEl.appendChild(phoneIn);
-      footerEl.appendChild(emailIn);
-      footerEl.appendChild(btn);
+      const leadWrap = el("div", { class: "cp-chat-lead" }, [notice, err, nameIn, phoneIn, emailIn, btn]);
+      footerEl.appendChild(leadWrap);
       return;
     }
 
