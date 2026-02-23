@@ -349,8 +349,7 @@
     /* =========================
        STICKY HEADER (NO BANNER)
        ========================= */
-    .cp-topbar{
-      position:sticky;
+    .cp-topbar{position:sticky;
       top:0;
       z-index:1200;
       background:var(--cp-topbar);
@@ -358,7 +357,7 @@
       border-radius:22px;
       box-shadow:0 10px 22px rgba(15,23,42,.10);
       overflow:hidden;
-    }
+    padding:10px 0}
 
     html[data-theme="dark"] .cp-topbar{
       border:1px solid rgba(255,255,255,.10);
@@ -397,10 +396,12 @@
       position:relative;
       display:flex;
       align-items:center;
-      justify-content:center;
+      justify-content:space-between;
       width:100%;
-      max-width:1100px;
+      max-width:1680px;
       margin:0 auto;
+      padding:0 18px;
+      gap:14px;
     }
 
     .cp-nav__links{
