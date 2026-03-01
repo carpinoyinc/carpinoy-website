@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"/>
+<title>Carpinoy • Car Loan Application</title>
+<link href="https://carpinoylogistics.com/favicon.png" rel="icon" type="image/png"/>
+<style>
+/* ── Carpinoy Core Theme (cloned from business-package.html) ── */
+:root{
+  --cp-bg:#f3f4f6;--cp-card:#ffffff;--cp-ink:#111827;--cp-ink-soft:#4b5563;
+  --cp-border:rgba(148,163,184,.45);--cp-lime:#c5cd27;--cp-lime-soft:rgba(197,205,39,.14);
+  --cp-brick:#a06032;--cp-carton:#d78c5a;
+  --cp-topbar:#ffffff;--cp-navbg:#ffffff;--cp-linkbg:#f8fafc;--cp-linkink:#111827;
+  --cp-shadow:0 14px 32px rgba(15,23,42,.14);--cp-radius:22px;
+  --cp-toggle-bg:#ffffff;--cp-toggle-border:rgba(148,163,184,.45);
+  --cp-toggle-ink:#111827;--cp-toggle-shadow:0 10px 18px rgba(15,23,42,.10);
+}
+html[data-theme="dark"]{
+  --cp-bg:#0b1220;--cp-card:#0f1a2f;--cp-ink:#e5e7eb;--cp-ink-soft:#aeb7c2;
+  --cp-border:rgba(148,163,184,.20);
+  --cp-topbar:#0a1324;--cp-navbg:#0a1324;--cp-linkbg:rgba(255,255,255,.06);--cp-linkink:#e5e7eb;
+  --cp-shadow:0 12px 26px rgba(0,0,0,.35);
+  --cp-toggle-bg:rgba(255,255,255,.06);--cp-toggle-border:rgba(255,255,255,.14);
+  --cp-toggle-ink:#e5e7eb;--cp-toggle-shadow:0 14px 24px rgba(0,0,0,.40);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cp-bg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden;color:var(--cp-ink);-webkit-font-smoothing:antialiased}
+
+.white-wrap{background:var(--cp-card);border-radius:32px;width:min(1680px,calc(100vw - 28px));margin:14px auto;padding:clamp(12px,2.2vw,22px);box-shadow:0 10px 30px rgba(15,23,42,.10);border:1px solid rgba(148,163,184,.18)}
+html[data-theme="dark"] .white-wrap{box-shadow:0 18px 38px rgba(0,0,0,.50);border:1px solid rgba(255,255,255,.08)}
+.wrap{max-width:1600px;margin:0 auto;padding:clamp(10px,1.8vw,16px)}
+.cp-section{width:100%;display:flex;justify-content:center;align-items:flex-start;padding:clamp(6px,2.4vw,12px) clamp(4px,1.4vw,8px)}
+.cp-section--fullbleed{padding:0;display:block}
+
+/* ── Topbar / Nav ── */
+.cp-topbar{position:sticky;top:0;z-index:1200;background:var(--cp-topbar);border:1px solid rgba(148,163,184,.45);border-radius:22px;box-shadow:0 10px 22px rgba(15,23,42,.10);overflow:hidden;padding:10px 0}
+html[data-theme="dark"] .cp-topbar{border:1px solid rgba(255,255,255,.10);box-shadow:0 18px 34px rgba(0,0,0,.55)}
+.cp-topbar--fullbleed{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);border-radius:0;border-left:0;border-right:0}
+.cp-nav{width:100%;background:var(--cp-navbg);border-top:1px solid rgba(148,163,184,.25)}
+html[data-theme="dark"] .cp-nav{border-top:1px solid rgba(255,255,255,.10)}
+.cp-nav--center{padding:10px 10px 12px}
+.cp-nav__inner{position:relative;display:flex;align-items:center;justify-content:space-between;width:100%;max-width:1680px;margin:0 auto;padding:0 18px;gap:14px}
+.cp-nav__links{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;width:100%;padding-right:92px}
+@media(max-width:520px){.cp-nav--center{padding:8px 8px 10px}.cp-nav__links{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding-bottom:4px;padding-right:102px;scrollbar-width:none}.cp-nav__links::-webkit-scrollbar{display:none}}
+.cp-nav__link{display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;border-radius:999px;border:1px solid rgba(148,163,184,.45);background:var(--cp-linkbg);font-weight:800;font-size:13px;color:var(--cp-linkink);text-decoration:none;white-space:nowrap;transition:box-shadow .15s,transform .15s,border-color .15s}
+.cp-nav__link:hover{transform:translateY(-1px);border-color:rgba(197,205,39,.65);box-shadow:0 0 0 3px rgba(197,205,39,.18),0 10px 18px rgba(15,23,42,.12)}
+.cp-nav__link--active,.cp-nav__link.is-active{background:rgba(197,205,39,.14);border-color:rgba(197,205,39,.70);box-shadow:0 0 0 3px rgba(197,205,39,.18)}
+.cp-nav__logo{height:34px;width:auto;object-fit:contain;display:block}
+@media(max-width:640px){.cp-nav__logo{height:28px}}
+
+/* ── Theme toggle ── */
+.cp-switch{position:relative;display:inline-flex;cursor:pointer;user-select:none}
+.cp-switch__input{position:absolute;opacity:0;width:0;height:0}
+.cp-switch__track{position:relative;display:inline-flex;align-items:center;width:60px;height:30px;border-radius:999px;background:var(--cp-toggle-bg);border:1px solid var(--cp-toggle-border);box-shadow:var(--cp-toggle-shadow);transition:background .2s}
+.cp-switch__knob{position:absolute;left:3px;width:24px;height:24px;border-radius:999px;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.15);transition:transform .2s}
+.cp-switch__input:checked~.cp-switch__track .cp-switch__knob{transform:translateX(30px)}
+.cp-switch__txt{position:absolute;font-size:9px;font-weight:800;top:50%;transform:translateY(-50%);color:var(--cp-toggle-ink)}
+.cp-switch__txt--off{right:8px}
+.cp-switch__txt--on{left:8px}
+
+/* ── Footer ── */
+.cp-footer-embossed{margin-top:20px;padding:10px 18px;text-align:center;font-weight:800;letter-spacing:.15px;color:#1e293b;font-family:system-ui;text-shadow:0 1px 0 #fff,0 -1px 0 rgba(0,0,0,.10);font-size:12px;border-radius:18px;border:1px solid rgba(233,238,242,.9);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(248,250,252,.94)) padding-box,linear-gradient(135deg,#cfd6de,#aeb7c2 38%,#dfe5ea) border-box;box-shadow:inset 0 2px 5px rgba(255,255,255,.85),inset 0 -2px 8px rgba(0,0,0,.05),0 10px 22px rgba(0,0,0,.10)}
+html[data-theme="dark"] .cp-footer-embossed{color:rgba(229,231,235,.92);text-shadow:none;border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03)) padding-box,linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.06) 38%,rgba(255,255,255,.12)) border-box;box-shadow:inset 0 2px 6px rgba(0,0,0,.35),inset 0 -2px 10px rgba(255,255,255,.03),0 18px 34px rgba(0,0,0,.55)}
+
+/* ── Public-Mode overrides (same as site) ── */
+:root{--pm-radius:16px;--pm-maxw:960px;--pm-border:rgba(148,163,184,.35);--pm-soft:rgba(148,163,184,.08);--pm-shadow:0 12px 28px rgba(15,23,42,.12)}
+.cp-card{background:var(--cp-card);border-radius:var(--pm-radius);border:1px solid var(--pm-border);box-shadow:var(--pm-shadow);max-width:960px;width:100%;padding:clamp(14px,2.4vw,22px);text-align:left;position:relative;overflow:hidden;margin:0 auto 20px auto}
+.cp-card::before{display:none!important}
+.cp-topbar{border-bottom:1px solid var(--pm-border)!important;box-shadow:none!important;background:color-mix(in oklab,var(--cp-bg,#fff) 90%,transparent)!important;backdrop-filter:blur(10px)}
+.cp-nav__links a.is-active{border-color:var(--pm-border);background:var(--pm-soft);font-weight:700}
+
+/* ═══════════════════════════════════════════════
+   FORM-SPECIFIC STYLES
+   ═══════════════════════════════════════════════ */
+
+/* Step indicator */
+.caf-steps{display:flex;gap:4px;justify-content:center;margin:0 0 20px;flex-wrap:wrap}
+.caf-step{display:flex;align-items:center;gap:4px;font-size:11px;font-weight:700;color:var(--cp-ink-soft);opacity:.5;transition:opacity .2s}
+.caf-step.is-active{opacity:1;color:var(--cp-lime)}
+.caf-step.is-done{opacity:.8;color:var(--cp-lime)}
+.caf-step-num{width:24px;height:24px;border-radius:999px;display:grid;place-items:center;font-size:11px;font-weight:800;border:2px solid currentColor;background:transparent;transition:all .2s}
+.caf-step.is-active .caf-step-num{background:var(--cp-lime);color:#111;border-color:var(--cp-lime)}
+.caf-step.is-done .caf-step-num{background:var(--cp-lime);color:#111;border-color:var(--cp-lime)}
+.caf-step-line{width:20px;height:2px;background:currentColor;opacity:.3}
+
+/* Form panels */
+.caf-panel{display:none}
+.caf-panel.is-active{display:block;animation:cafFadeIn .3s ease-out}
+@keyframes cafFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Section title */
+.caf-section-title{font-size:15px;font-weight:800;margin:18px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--cp-lime-soft);color:var(--cp-ink);display:flex;align-items:center;gap:8px}
+.caf-section-title:first-child{margin-top:0}
+
+/* Form fields */
+.caf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+@media(max-width:600px){.caf-grid{grid-template-columns:1fr}}
+.caf-field{display:flex;flex-direction:column;gap:3px}
+.caf-field.full{grid-column:1/-1}
+.caf-label{font-size:11.5px;font-weight:700;color:var(--cp-ink-soft);letter-spacing:.02em}
+.caf-label .req{color:#e53e3e;margin-left:2px}
+.caf-input{padding:9px 12px;border:1.5px solid var(--cp-border);border-radius:10px;font-size:13.5px;font-family:inherit;background:var(--cp-card);color:var(--cp-ink);outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.caf-input:focus{border-color:var(--cp-lime);box-shadow:0 0 0 3px rgba(197,205,39,.15)}
+html[data-theme="dark"] .caf-input{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.15)}
+html[data-theme="dark"] .caf-input:focus{border-color:var(--cp-lime)}
+select.caf-input{cursor:pointer;appearance:auto}
+textarea.caf-input{resize:vertical;min-height:60px}
+
+/* Radio card for unit selection */
+.caf-unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:8px 0}
+.caf-unit-card{position:relative;cursor:pointer;padding:12px 14px;border:2px solid var(--cp-border);border-radius:14px;background:var(--cp-card);transition:all .2s;display:flex;align-items:center;gap:10px}
+.caf-unit-card:hover{border-color:rgba(197,205,39,.5);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.caf-unit-card.is-selected{border-color:var(--cp-lime);background:var(--cp-lime-soft);box-shadow:0 0 0 3px rgba(197,205,39,.18)}
+.caf-unit-card input{position:absolute;opacity:0;width:0;height:0}
+.caf-unit-dot{width:18px;height:18px;border-radius:999px;border:2px solid var(--cp-border);flex-shrink:0;display:grid;place-items:center;transition:all .2s}
+.caf-unit-card.is-selected .caf-unit-dot{border-color:var(--cp-lime);background:var(--cp-lime)}
+.caf-unit-card.is-selected .caf-unit-dot::after{content:"✓";font-size:11px;font-weight:800;color:#111}
+.caf-unit-name{font-size:13px;font-weight:700;color:var(--cp-ink);line-height:1.3}
+html[data-theme="dark"] .caf-unit-card{background:rgba(255,255,255,.03)}
+html[data-theme="dark"] .caf-unit-card.is-selected{background:rgba(197,205,39,.08)}
+
+/* Data Privacy checkbox */
+.caf-privacy{padding:14px;border:1.5px solid var(--cp-border);border-radius:14px;background:rgba(0,0,0,.02);margin:12px 0}
+html[data-theme="dark"] .caf-privacy{background:rgba(255,255,255,.03)}
+.caf-privacy-text{font-size:11.5px;line-height:1.5;color:var(--cp-ink-soft);max-height:120px;overflow-y:auto;margin-bottom:10px;padding-right:8px}
+.caf-privacy-check{display:flex;align-items:flex-start;gap:8px;cursor:pointer}
+.caf-privacy-check input{margin-top:2px;accent-color:var(--cp-lime);width:16px;height:16px;flex-shrink:0}
+.caf-privacy-check span{font-size:12.5px;font-weight:600;color:var(--cp-ink)}
+
+/* Buttons */
+.caf-actions{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:10px;flex-wrap:wrap}
+.caf-btn{padding:10px 24px;border:0;border-radius:12px;font-size:13.5px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+.caf-btn-next{background:linear-gradient(135deg,#c5cd27,#a8b020);color:#1a1a0a;box-shadow:0 4px 12px rgba(197,205,39,.25)}
+.caf-btn-next:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(197,205,39,.3)}
+.caf-btn-next:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.caf-btn-back{background:transparent;border:1.5px solid var(--cp-border);color:var(--cp-ink-soft)}
+.caf-btn-back:hover{border-color:var(--cp-lime);color:var(--cp-ink)}
+.caf-btn-submit{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;box-shadow:0 4px 12px rgba(34,197,94,.25);padding:12px 32px;font-size:14px}
+.caf-btn-submit:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(34,197,94,.3)}
+.caf-btn-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* Error */
+.caf-error{color:#e53e3e;font-size:12px;font-weight:600;margin-top:8px;display:none}
+.caf-error.is-visible{display:block;animation:cafFadeIn .2s}
+
+/* Success */
+.caf-success{text-align:center;padding:40px 20px}
+.caf-success-icon{font-size:48px;margin-bottom:12px}
+.caf-success h2{font-size:20px;font-weight:800;margin:0 0 8px;color:var(--cp-ink)}
+.caf-success p{font-size:14px;color:var(--cp-ink-soft);margin:4px 0;line-height:1.5}
+
+/* Title */
+.cp-title{font-weight:800;font-size:clamp(17px,2.7vw,23px);margin:0;color:var(--cp-linkink);text-align:center}
+html[data-theme="dark"] .cp-title{text-shadow:none}
+.cp-title-wrap{display:flex;align-items:center;justify-content:center;margin-bottom:8px;text-align:center;gap:8px}
+.cp-dot{width:10px;height:10px;border-radius:50%;background:var(--cp-lime);box-shadow:0 0 8px rgba(197,205,39,.45)}
+.cp-title-plate{display:inline-block;border-radius:14px;padding:6px 18px;background:linear-gradient(180deg,#f9fafb 0%,#e5e7eb 55%,#d1d5db 100%);border:1px solid #d0d8df;box-shadow:inset 0 8px 14px rgba(0,0,0,.04),inset 0 -3px 8px rgba(255,255,255,.45),0 3px 9px rgba(15,23,42,.16)}
+html[data-theme="dark"] .cp-title-plate{background:linear-gradient(180deg,rgba(255,255,255,.08) 0%,rgba(255,255,255,.05) 55%,rgba(255,255,255,.04) 100%);border:1px solid rgba(255,255,255,.14);box-shadow:inset 0 10px 18px rgba(0,0,0,.35),inset 0 -2px 10px rgba(255,255,255,.04),0 8px 18px rgba(0,0,0,.45)}
+
+.cp-sub{font-size:clamp(12px,1.45vw,14px);line-height:1.7;margin:6px 0 10px;color:var(--cp-ink-soft);text-align:center}
+
+@media(max-width:640px){.wrap{padding-inline:10px}.cp-card{padding:14px 12px}.cp-title-plate{padding-inline:10px}}
+@media(max-width:820px){:root{--cp-shadow:0 6px 16px rgba(15,23,42,.10)}.cp-dot{box-shadow:none}.cp-title-plate{background:#eef2f7;box-shadow:0 2px 8px rgba(15,23,42,.12)}.cp-title{text-shadow:none}}
+@media(max-width:820px) and (prefers-color-scheme:dark){html[data-theme="dark"] .cp-title-plate{background:rgba(255,255,255,.06);box-shadow:0 10px 18px rgba(0,0,0,.45)}}
+</style>
+<link href="/cp-chat-widget.css" rel="stylesheet"/>
+</head>
+<body>
+<a aria-hidden="true" id="top"></a>
+<!-- HEADER -->
+<section class="cp-section cp-section--fullbleed" id="pz-header">
+<header class="cp-topbar cp-topbar--fullbleed" role="banner">
+<nav aria-label="Primary" class="cp-nav cp-nav--center">
+<div class="cp-nav__inner">
+<div class="cp-nav__left">
+<a aria-label="Carpinoy Home" href="index.html" onclick="window.location.href='index.html';return false;">
+<img alt="Carpinoy" class="cp-nav__logo" decoding="async" loading="eager" src="https://carpinoylogistics.com/logo.png"/>
+</a>
+</div>
+<div class="cp-nav__center">
+<div class="cp-nav__links" role="list">
+<a class="cp-nav__link" href="index.html">Home</a>
+<a class="cp-nav__link" href="business-package.html">Business Package</a>
+<a class="cp-nav__link" href="accredited-associates.html">Accredited Associates</a>
+<a class="cp-nav__link" href="contact.html">Contact Us</a>
+<a class="cp-nav__link" href="mission-vision.html">Mission &amp; Vision</a>
+<a class="cp-nav__link" href="privacy-policy.html">Privacy Policy</a>
+</div>
+</div>
+<div class="cp-nav__right">
+<label class="cp-switch" id="cpThemeSwitchWrap" title="Theme">
+<input aria-label="Dark mode switch" class="cp-switch__input" id="cpThemeSwitch" type="checkbox"/>
+<span aria-hidden="true" class="cp-switch__track">
+<span class="cp-switch__knob"></span>
+<span class="cp-switch__txt cp-switch__txt--off">OFF</span>
+<span class="cp-switch__txt cp-switch__txt--on">ON</span>
+</span>
+</label>
+</div>
+</div>
+</nav>
+</header>
+</section>
+
+<!-- CONTENT -->
+<div class="white-wrap">
+<div class="wrap">
+<section class="cp-section">
+<article class="cp-card" style="max-width:720px">
+
+<!-- Title -->
+<div class="cp-title-wrap">
+<span class="cp-dot"></span>
+<span class="cp-title-plate"><h1 class="cp-title">📋 Car Loan Application</h1></span>
+<span class="cp-dot"></span>
+</div>
+<p class="cp-sub">Carpinoy Business Package — Authorized Dealership Car Loan</p>
+
+<!-- Step indicator -->
+<div class="caf-steps" id="cafSteps"></div>
+
+<!-- Error message -->
+<div class="caf-error" id="cafError"></div>
+
+<!-- ═══ STEP 1: Unit Selection ═══ -->
+<div class="caf-panel" id="step-1">
+<div class="caf-section-title">🚛 Select Unit</div>
+<div class="caf-unit-grid" id="unitGrid"></div>
+</div>
+
+<!-- ═══ STEP 2: Data Privacy Acceptance ═══ -->
+<div class="caf-panel" id="step-2">
+<div class="caf-section-title">🔒 Data Privacy Waiver</div>
+<div class="caf-privacy">
+<div class="caf-privacy-text" id="privacyText"></div>
+<label class="caf-privacy-check">
+<input type="checkbox" id="privacyAccept"/>
+<span>I have read and agree to the Data Privacy Act Waiver above.</span>
+</label>
+</div>
+</div>
+
+<!-- ═══ STEP 3: Principal Information ═══ -->
+<div class="caf-panel" id="step-3">
+<div class="caf-section-title">👤 Principal Applicant</div>
+<div class="caf-grid">
+<div class="caf-field"><label class="caf-label">First Name <span class="req">*</span></label><input class="caf-input" data-field="principal_firstname" required/></div>
+<div class="caf-field"><label class="caf-label">Middle Name</label><input class="caf-input" data-field="principal_middlename"/></div>
+<div class="caf-field"><label class="caf-label">Last Name <span class="req">*</span></label><input class="caf-input" data-field="principal_lastname" required/></div>
+<div class="caf-field"><label class="caf-label">Birthday <span class="req">*</span></label><input class="caf-input" type="date" data-field="principal_birthday" required/></div>
+<div class="caf-field"><label class="caf-label">Age</label><input class="caf-input" type="number" data-field="principal_age" min="18" max="99"/></div>
+<div class="caf-field"><label class="caf-label">Civil Status <span class="req">*</span></label>
+<select class="caf-input" data-field="principal_civil_status" required><option value="">Select…</option><option>Single</option><option>Married</option><option>Widowed</option><option>Separated</option></select></div>
+<div class="caf-field"><label class="caf-label">Nationality</label><input class="caf-input" data-field="principal_nationality" value="Filipino"/></div>
+<div class="caf-field"><label class="caf-label">Gender <span class="req">*</span></label>
+<select class="caf-input" data-field="principal_gender" required><option value="">Select…</option><option>Male</option><option>Female</option></select></div>
+<div class="caf-field"><label class="caf-label">TIN</label><input class="caf-input" data-field="principal_tin" placeholder="000-000-000-000"/></div>
+<div class="caf-field"><label class="caf-label">Birth Place</label><input class="caf-input" data-field="principal_birth_place"/></div>
+<div class="caf-field full"><label class="caf-label">Home Address <span class="req">*</span></label><input class="caf-input" data-field="principal_home_address" required/></div>
+<div class="caf-field"><label class="caf-label">Residential Status</label>
+<select class="caf-input" data-field="principal_residential_status"><option value="">Select…</option><option>Owned</option><option>Rented</option><option>Living with Relatives</option><option>Company Provided</option></select></div>
+<div class="caf-field"><label class="caf-label">Years at Residence</label><input class="caf-input" type="number" data-field="principal_residential_years_live" min="0"/></div>
+<div class="caf-field"><label class="caf-label">Home Phone</label><input class="caf-input" type="tel" data-field="principal_homephone_number"/></div>
+<div class="caf-field"><label class="caf-label">Mobile Number <span class="req">*</span></label><input class="caf-input" type="tel" data-field="principal_mobilephone_number" required placeholder="09XX-XXX-XXXX"/></div>
+<div class="caf-field"><label class="caf-label">Secondary Mobile</label><input class="caf-input" type="tel" data-field="principal_secondary_mobilephone"/></div>
+<div class="caf-field"><label class="caf-label">Email Address <span class="req">*</span></label><input class="caf-input" type="email" data-field="principal_email_address" required/></div>
+<div class="caf-field full"><label class="caf-label">Facebook Profile Link</label><input class="caf-input" type="url" data-field="principal_facebook_profile_link" placeholder="https://facebook.com/..."/></div>
+<div class="caf-field"><label class="caf-label">Main Bank</label><input class="caf-input" data-field="principal_main_bank"/></div>
+<div class="caf-field"><label class="caf-label">Mother's Maiden Name</label><input class="caf-input" data-field="principal_mothers_maiden_name"/></div>
+</div>
+</div>
+
+<!-- ═══ STEP 4: Employment / Business ═══ -->
+<div class="caf-panel" id="step-4">
+<div class="caf-section-title">💼 Employment / Business Info</div>
+<div class="caf-grid">
+<div class="caf-field"><label class="caf-label">Job/Business Status <span class="req">*</span></label>
+<select class="caf-input" data-field="principal_job_business_status" required><option value="">Select…</option><option>Employed</option><option>Self-Employed</option><option>Business Owner</option><option>OFW</option><option>Freelancer</option><option>Retired</option></select></div>
+<div class="caf-field"><label class="caf-label">Employer / Business Name <span class="req">*</span></label><input class="caf-input" data-field="principal_employer_name" required/></div>
+<div class="caf-field full"><label class="caf-label">Job Description</label><input class="caf-input" data-field="principal_job_description"/></div>
+<div class="caf-field"><label class="caf-label">Nature of Job/Business</label><input class="caf-input" data-field="principal_nature_job_business"/></div>
+<div class="caf-field"><label class="caf-label">Tenure (years)</label><input class="caf-input" data-field="principal_job_tenure" placeholder="e.g. 3 years"/></div>
+<div class="caf-field"><label class="caf-label">Monthly Income <span class="req">*</span></label><input class="caf-input" data-field="principal_monthly_income" required placeholder="₱"/></div>
+<div class="caf-field"><label class="caf-label">Work Email</label><input class="caf-input" type="email" data-field="principal_job_business_email"/></div>
+<div class="caf-field"><label class="caf-label">Work Phone</label><input class="caf-input" type="tel" data-field="principal_job_business_phone_number"/></div>
+</div>
+</div>
+
+<!-- ═══ STEP 5: Co-Maker ═══ -->
+<div class="caf-panel" id="step-5">
+<div class="caf-section-title">🤝 Co-Maker / Co-Borrower</div>
+<p style="font-size:12px;color:var(--cp-ink-soft);margin:0 0 12px">If not applicable, you may leave this section blank and proceed.</p>
+<div class="caf-grid">
+<div class="caf-field"><label class="caf-label">First Name</label><input class="caf-input" data-field="comaker_firstname"/></div>
+<div class="caf-field"><label class="caf-label">Middle Name</label><input class="caf-input" data-field="comaker_middlename"/></div>
+<div class="caf-field"><label class="caf-label">Last Name</label><input class="caf-input" data-field="comaker_lastname"/></div>
+<div class="caf-field"><label class="caf-label">Gender</label>
+<select class="caf-input" data-field="comaker_gender"><option value="">Select…</option><option>Male</option><option>Female</option></select></div>
+<div class="caf-field"><label class="caf-label">Relation to Principal</label><input class="caf-input" data-field="comaker_relation_to_principal" placeholder="e.g. Spouse, Parent, Sibling"/></div>
+<div class="caf-field"><label class="caf-label">TIN</label><input class="caf-input" data-field="comaker_tin"/></div>
+<div class="caf-field"><label class="caf-label">Birth Place</label><input class="caf-input" data-field="comaker_birth_place"/></div>
+<div class="caf-field"><label class="caf-label">Mobile Number</label><input class="caf-input" type="tel" data-field="comaker_mobile_number"/></div>
+<div class="caf-field"><label class="caf-label">Email</label><input class="caf-input" type="email" data-field="comaker_email_address"/></div>
+<div class="caf-field"><label class="caf-label">Job/Business Status</label>
+<select class="caf-input" data-field="comaker_job_business_status"><option value="">Select…</option><option>Employed</option><option>Self-Employed</option><option>Business Owner</option><option>OFW</option><option>Freelancer</option><option>Retired</option></select></div>
+<div class="caf-field"><label class="caf-label">Employer / Business Name</label><input class="caf-input" data-field="comaker_job_business_name"/></div>
+<div class="caf-field"><label class="caf-label">Job Description</label><input class="caf-input" data-field="comaker_job_description"/></div>
+<div class="caf-field"><label class="caf-label">Nature of Job/Business</label><input class="caf-input" data-field="comaker_job_business_nature"/></div>
+<div class="caf-field"><label class="caf-label">Tenure</label><input class="caf-input" data-field="comaker_job_business_tenure"/></div>
+<div class="caf-field"><label class="caf-label">Monthly Income</label><input class="caf-input" data-field="comaker_monthly_income" placeholder="₱"/></div>
+<div class="caf-field"><label class="caf-label">Work Email</label><input class="caf-input" type="email" data-field="comaker_job_business_email"/></div>
+<div class="caf-field"><label class="caf-label">Work Phone</label><input class="caf-input" type="tel" data-field="comaker_job_business_phone_number"/></div>
+</div>
+</div>
+
+<!-- ═══ STEP 6: References & Submit ═══ -->
+<div class="caf-panel" id="step-6">
+<div class="caf-section-title">📇 Character References</div>
+<p style="font-size:12px;color:var(--cp-ink-soft);margin:0 0 12px">Please provide 3 character references (Name, Mobile, Address).</p>
+<div class="caf-grid">
+<div class="caf-field full"><label class="caf-label">Reference 1 — Name / Mobile / Address <span class="req">*</span></label><input class="caf-input" data-field="principal_reference_name_mobile_address_first" required placeholder="Juan Dela Cruz / 09171234567 / Quezon City"/></div>
+<div class="caf-field full"><label class="caf-label">Reference 2 — Name / Mobile / Address <span class="req">*</span></label><input class="caf-input" data-field="principal_reference_name_mobile_address_second" required placeholder="Maria Santos / 09181234567 / Manila"/></div>
+<div class="caf-field full"><label class="caf-label">Reference 3 — Name / Mobile / Address</label><input class="caf-input" data-field="principal_reference_name_mobile_address_third" placeholder="Pedro Garcia / 09191234567 / Bulacan"/></div>
+</div>
+</div>
+
+<!-- ═══ SUCCESS screen ═══ -->
+<div class="caf-panel" id="step-success">
+<div class="caf-success">
+<div class="caf-success-icon">🎉</div>
+<h2>Application Submitted!</h2>
+<p>Maraming salamat! Natanggap na namin ang iyong car loan application.</p>
+<p>Ang aming team ay mag-contact sayo within 24-48 hours.</p>
+<p style="margin-top:16px"><a href="business-package.html" style="color:var(--cp-lime);font-weight:700;text-decoration:underline">← Back to Business Package</a></p>
+</div>
+</div>
+
+<!-- Actions -->
+<div class="caf-actions" id="cafActions">
+<button class="caf-btn caf-btn-back" id="btnBack" onclick="cafPrev()">← Back</button>
+<button class="caf-btn caf-btn-next" id="btnNext" onclick="cafNext()">Next →</button>
+<button class="caf-btn caf-btn-submit" id="btnSubmit" onclick="cafSubmit()" style="display:none">Submit Application ✓</button>
+</div>
+
+</article>
+</section>
+
+<!-- Footer -->
+<div class="cp-footer-embossed" id="pz-footer">All rights reserved by Carpinoy Logistics Services.</div>
+</div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════
+   Carpinoy Car Loan Application — Multi-Step Form
+   ════════════════════════════════════════════════ */
+
+var UNITS = [
+  "Mitsubishi L300 FB Exceed Euro4 Dual A/C",
+  "Isuzu Traviz L 2.5D UV Dual A/C",
+  "Toyota Tamarraw FX Diesel Manual",
+  "Isuzu Traviz Reefer Van",
+  "Isuzu Traviz Close Van",
+  "Isuzu 4-Wheeler Close Van",
+  "Isuzu 6-Wheeler Close Van",
+  "Kia K2500",
+  "Hyundai H100"
+];
+
+var BRAND_MAP = {
+  "Mitsubishi L300 FB Exceed Euro4 Dual A/C": "Mitsubishi",
+  "Isuzu Traviz L 2.5D UV Dual A/C": "Isuzu",
+  "Toyota Tamarraw FX Diesel Manual": "Toyota",
+  "Isuzu Traviz Reefer Van": "Isuzu",
+  "Isuzu Traviz Close Van": "Isuzu",
+  "Isuzu 4-Wheeler Close Van": "Isuzu",
+  "Isuzu 6-Wheeler Close Van": "Isuzu",
+  "Kia K2500": "Kia",
+  "Hyundai H100": "Hyundai"
+};
+
+var PRIVACY_TEMPLATE = 'DATA PRIVACY ACT WAIVER\n\nTO BE INCLUDED IN AND CONSIDERED PART AND PARCEL OF THE CREDIT APPLICATION FORM AND DOCUMENTS:\n\nI hereby authorize {BRAND} Dealership Branch to process and share my personal data to any of its accredited banks, which is likewise authorized to receive, use, collect and process my personal data, for the purpose of financing my purchase of auto vehicle/s from the dealer or assignment of the dealer\'s rights to its accredited banks, including verification, customer profiling, cross-checking and credit investigation.\n\nIn this regard, my personal information may also be shared with accredited banks\' branches, subsidiaries, affiliates, representative or third party service providers.\n\nI am also aware that the details of how my personal data will be processed and the rights available to me are listed in the accredited banks Privacy Policy Statement, which I may secure from the accredited bank(s) concerned.';
+
+var STEPS = [
+  {id:"step-1",label:"Unit"},
+  {id:"step-2",label:"Privacy"},
+  {id:"step-3",label:"Personal"},
+  {id:"step-4",label:"Employment"},
+  {id:"step-5",label:"Co-Maker"},
+  {id:"step-6",label:"References"}
+];
+
+var currentStep = 0;
+var selectedUnit = "";
+var selectedBrand = "";
+
+/* ── Supabase config ── */
+var SB_URL = "https://yixnlcppzjyxoarghlai.supabase.co";
+var SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlpeG5sY3Bwemp5eG9hcmdobGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc1MTkxNTcsImV4cCI6MjA1MzA5NTE1N30.jM9sJFqsJnR1Ti9XD7JhJjj4RjGBJnSq-4u9WT9g-2g";
+
+/* ── Init ── */
+function cafInit(){
+  // Build unit cards
+  var grid = document.getElementById("unitGrid");
+  UNITS.forEach(function(u){
+    var card = document.createElement("label");
+    card.className = "caf-unit-card";
+    card.innerHTML = '<input type="radio" name="unit_applying" value="'+u+'"/><span class="caf-unit-dot"></span><span class="caf-unit-name">'+u+'</span>';
+    card.querySelector("input").addEventListener("change",function(){
+      selectedUnit = u;
+      selectedBrand = BRAND_MAP[u] || "";
+      document.querySelectorAll(".caf-unit-card").forEach(function(c){c.classList.remove("is-selected")});
+      card.classList.add("is-selected");
+      hideError();
+    });
+    grid.appendChild(card);
+  });
+
+  // Build step indicators
+  renderSteps();
+  showStep(0);
+}
+
+function renderSteps(){
+  var el = document.getElementById("cafSteps");
+  el.innerHTML = "";
+  STEPS.forEach(function(s,i){
+    var cls = "caf-step";
+    if(i===currentStep) cls+=" is-active";
+    else if(i<currentStep) cls+=" is-done";
+    var html = '<div class="'+cls+'"><span class="caf-step-num">'+(i+1)+'</span><span>'+s.label+'</span></div>';
+    if(i<STEPS.length-1) html += '<span class="caf-step-line"></span>';
+    el.innerHTML += html;
+  });
+}
+
+function showStep(n){
+  currentStep = n;
+  STEPS.forEach(function(s,i){
+    var panel = document.getElementById(s.id);
+    if(panel) panel.classList.toggle("is-active",i===n);
+  });
+  document.getElementById("step-success").classList.remove("is-active");
+
+  var btnBack = document.getElementById("btnBack");
+  var btnNext = document.getElementById("btnNext");
+  var btnSubmit = document.getElementById("btnSubmit");
+  var actions = document.getElementById("cafActions");
+
+  actions.style.display = "flex";
+  btnBack.style.display = n>0 ? "" : "none";
+  btnNext.style.display = n<STEPS.length-1 ? "" : "none";
+  btnSubmit.style.display = n===STEPS.length-1 ? "" : "none";
+
+  renderSteps();
+  hideError();
+  window.scrollTo({top:document.getElementById("cafSteps").offsetTop-80,behavior:"smooth"});
+}
+
+function showSuccess(){
+  STEPS.forEach(function(s){document.getElementById(s.id).classList.remove("is-active")});
+  document.getElementById("step-success").classList.add("is-active");
+  document.getElementById("cafActions").style.display="none";
+  document.getElementById("cafSteps").style.display="none";
+}
+
+/* ── Validation ── */
+function showError(msg){
+  var el=document.getElementById("cafError");
+  el.textContent=msg;el.classList.add("is-visible");
+  el.scrollIntoView({behavior:"smooth",block:"center"});
+}
+function hideError(){document.getElementById("cafError").classList.remove("is-visible")}
+
+function validateStep(n){
+  hideError();
+  if(n===0){
+    if(!selectedUnit){showError("Please select a unit.");return false}
+  }
+  if(n===1){
+    if(!document.getElementById("privacyAccept").checked){showError("Please accept the Data Privacy Waiver to proceed.");return false}
+  }
+  if(n===2){
+    var req=document.querySelectorAll("#step-3 [required]");
+    for(var i=0;i<req.length;i++){
+      if(!req[i].value.trim()){
+        showError("Please fill in all required fields (marked with *).");
+        req[i].focus();return false;
+      }
+    }
+  }
+  if(n===3){
+    var req=document.querySelectorAll("#step-4 [required]");
+    for(var i=0;i<req.length;i++){
+      if(!req[i].value.trim()){
+        showError("Please fill in all required fields.");
+        req[i].focus();return false;
+      }
+    }
+  }
+  if(n===5){
+    var r1=document.querySelector('[data-field="principal_reference_name_mobile_address_first"]');
+    var r2=document.querySelector('[data-field="principal_reference_name_mobile_address_second"]');
+    if(!r1.value.trim()||!r2.value.trim()){showError("Please provide at least 2 character references.");return false}
+  }
+  return true;
+}
+
+/* ── Navigation ── */
+function cafNext(){
+  if(!validateStep(currentStep))return;
+  if(currentStep===0){
+    // Update privacy text based on selected brand
+    var text = PRIVACY_TEMPLATE.replace(/\{BRAND\}/g, selectedBrand);
+    document.getElementById("privacyText").textContent = text;
+    document.getElementById("privacyAccept").checked = false;
+  }
+  showStep(currentStep+1);
+}
+
+function cafPrev(){
+  if(currentStep>0)showStep(currentStep-1);
+}
+
+/* ── Collect all form data ── */
+function collectData(){
+  var data = {};
+  data.unit_applying = selectedUnit;
+  data.unit_applied = selectedUnit;
+  var brand = selectedBrand.toLowerCase();
+  data[brand+"_data_privacy_act"] = true;
+  data.status = "pending";
+  data.sales_agent = "";
+  data.remarks = "";
+
+  document.querySelectorAll("[data-field]").forEach(function(el){
+    data[el.getAttribute("data-field")] = el.value.trim();
+  });
+
+  // Auto-calc age from birthday
+  if(data.principal_birthday){
+    try{
+      var bd=new Date(data.principal_birthday);
+      var now=new Date();
+      var age=now.getFullYear()-bd.getFullYear();
+      if(now.getMonth()<bd.getMonth()||(now.getMonth()===bd.getMonth()&&now.getDate()<bd.getDate()))age--;
+      data.principal_age=String(age);
+    }catch(_){}
+  }
+
+  return data;
+}
+
+/* ── Submit ── */
+async function cafSubmit(){
+  if(!validateStep(currentStep))return;
+
+  var btn=document.getElementById("btnSubmit");
+  btn.disabled=true;btn.textContent="Submitting...";
+
+  var data=collectData();
+
+  try{
+    var res=await fetch(SB_URL+"/rest/v1/carloan_applications",{
+      method:"POST",
+      headers:{
+        "apikey":SB_KEY,
+        "Authorization":"Bearer "+SB_KEY,
+        "Content-Type":"application/json",
+        "Prefer":"return=minimal"
+      },
+      body:JSON.stringify(data)
+    });
+
+    if(!res.ok){
+      var err=await res.json().catch(function(){return{}});
+      throw new Error(err.message||err.error||"Submission failed");
+    }
+
+    showSuccess();
+  }catch(e){
+    showError("Failed to submit: "+e.message+". Please try again or message us at m.me/carpinoylogistics");
+    btn.disabled=false;btn.textContent="Submit Application ✓";
+  }
+}
+
+/* ── Auto-age calc on birthday change ── */
+document.addEventListener("change",function(e){
+  if(e.target.getAttribute("data-field")==="principal_birthday"){
+    var ageField=document.querySelector('[data-field="principal_age"]');
+    if(ageField&&e.target.value){
+      try{
+        var bd=new Date(e.target.value);var now=new Date();
+        var age=now.getFullYear()-bd.getFullYear();
+        if(now.getMonth()<bd.getMonth()||(now.getMonth()===bd.getMonth()&&now.getDate()<bd.getDate()))age--;
+        ageField.value=age;
+      }catch(_){}
+    }
+  }
+});
+
+cafInit();
+</script>
+
+<!-- Nav + Theme scripts (same as all pages) -->
+<script>
+(function(){try{var path=(location.pathname||'').split('/').pop()||'index.html';path=path.split('?')[0].split('#')[0];var links=document.querySelectorAll('.cp-nav__link');links.forEach(function(a){a.classList.remove('cp-nav__link--active');a.removeAttribute('aria-current');var href=(a.getAttribute('href')||'').split('?')[0].split('#')[0];if(href===path){a.classList.add('cp-nav__link--active');a.setAttribute('aria-current','page')}});}catch(_){}})();
+(function(){try{var KEY='cp_theme';var root=document.documentElement;var sw=document.getElementById('cpThemeSwitch');function apply(mode){if(mode==='dark'){root.setAttribute('data-theme','dark');if(sw)sw.checked=true}else{root.removeAttribute('data-theme');if(sw)sw.checked=false}}var saved='';try{saved=(localStorage.getItem(KEY)||'').toLowerCase()}catch(_){}if(saved==='dark'||saved==='light')apply(saved);else apply('light');if(sw){sw.addEventListener('change',function(){var now=sw.checked?'dark':'light';apply(now);try{localStorage.setItem(KEY,now)}catch(_){}},{passive:true})}}catch(_){}})();
+(function(){try{var path=(location.pathname.split('/').pop()||'index.html').toLowerCase();var links=document.querySelectorAll('.cp-nav__links a[href]');links.forEach(function(a){var href=(a.getAttribute('href')||'').split('#')[0].toLowerCase();if(!href)return;if(href===path){a.setAttribute('aria-current','page');a.classList.add('is-active')}});}catch(_){}})();
+</script>
+
+<!-- Brad AI Chat Widget -->
+<script>
+window.CP_CHAT_CONFIG = {
+  edgeFnUrl: "https://yixnlcppzjyxoarghlai.supabase.co/functions/v1/carpinoy-ai-chat",
+  handoffUrl: "https://m.me/carpinoylogistics",
+  requireLead: false
+};
+</script>
+<script defer src="/cp-chat-widget.js"></script>
+</body>
+</html>
