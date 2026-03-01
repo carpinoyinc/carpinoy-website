@@ -438,7 +438,7 @@
   width:100%;
   max-width:none;                 /* allow true far-left / far-right */
   margin:0 auto;
-  padding:0 clamp(16px, 2.5vw, 28px); /* keeps a clean edge margin */
+  padding:0 clamp(10px, 2vw, 18px); /* keeps a clean edge margin */
 }
 
 .cp-nav__left{
@@ -1255,7 +1255,7 @@ body{
     }
 
 </style>
-  <!-- Sticky Chat Widget -->
+  <!-- Brad AI Chat Widget v1.0 -->
   <link rel="stylesheet" href="/cp-chat-widget.css" />
 </head>
 
@@ -1641,15 +1641,13 @@ body{
 })();
 </script>
 
-  <!-- Sticky Chat Widget -->
-  <!-- Carpinoy Web Chat Config (Sales Supabase project) -->
+  <!-- Brad AI Chat Widget v1.0 -->
+  <!-- Brad AI Chat Widget v1.0 -->
   <script>
     window.CP_CHAT_CONFIG = {
-      startUrl: "https://ttscnoawvaciwpasxhsu.supabase.co/functions/v1/web-chat-start",
-      sendUrl: "https://ttscnoawvaciwpasxhsu.supabase.co/functions/v1/web-chat-send",
+      edgeFnUrl: "https://yixnlcppzjyxoarghlai.supabase.co/functions/v1/carpinoy-ai-chat",
       handoffUrl: "https://m.me/carpinoylogistics",
-      requireLead: true,
-      noticeText: "We ask for your name and phone so we can remember your inquiry for follow-ups even if the chat closes."
+      requireLead: false
     };
   </script>
   <script defer src="/cp-chat-widget.js"></script>
