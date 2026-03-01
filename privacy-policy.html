@@ -1,17 +1,23 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Privacy Policy &mdash; Carpinoy</title><link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png"><link rel="stylesheet" href="carpinoy-theme.css"><link rel="stylesheet" href="cp-chat-widget.css"></head><body>
-<nav class="cp-nav" id="cpNav"><div class="cp-nav__glow"></div><div class="cp-nav__inner"><a href="index.html"><img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy"></a><div class="cp-nav__links"><a href="index.html">Home</a>
+<nav class="cp-nav" id="cpNav"><div class="cp-nav__bar">
+<a href="index.html"><img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy"></a>
+<div class="cp-nav__links"><a href="index.html">Home</a>
 <a href="business-package.html">Business Package</a>
 <a href="accredited-associates.html">Associates</a>
 <a href="contact.html">Contact</a>
-<a href="mission-vision.html">Mission & Vision</a>
-<a class=active href="privacy-policy.html">Privacy Policy</a></div><a class="cp-nav__cta" href="carloan-application.html">Apply Now</a><button class="cp-nav__hamburger" id="cpHamburger" aria-label="Menu">☰</button></div><div class="cp-nav__mobile" id="cpMobile"><a href="index.html">Home</a>
+<a href="mission-vision.html">Mission</a>
+<a class=active href="privacy-policy.html">Privacy</a></div>
+<a class="cp-nav__cta" href="carloan-application.html">Apply Now</a>
+<button class="cp-nav__hamburger" id="cpHam" aria-label="Menu">&#9776;</button>
+</div><div class="cp-nav__mobile" id="cpMob"><a href="index.html">Home</a>
 <a href="business-package.html">Business Package</a>
 <a href="accredited-associates.html">Associates</a>
 <a href="contact.html">Contact</a>
-<a href="mission-vision.html">Mission & Vision</a>
-<a class=active href="privacy-policy.html">Privacy Policy</a><a href="carloan-application.html" style="color:var(--lime);font-weight:700">Apply Now →</a></div></nav>
-<div style="height:var(--nav-h)"></div>
-<section class="section section--bg"><div class="container">
+<a href="mission-vision.html">Mission</a>
+<a class=active href="privacy-policy.html">Privacy</a><a class="mob-cta" href="carloan-application.html">Apply Now &rarr;</a></div></nav>
+<div style="height:80px"></div>
+<section class="section" style="background:var(--bg)">
+<div class="container" style="max-width:780px">
 <div class="sec-head reveal"><span class="sec-label">Legal</span><h2 class="sec-title">Privacy Policy</h2><p style="font-family:var(--mono);font-size:10px;color:var(--dim);margin-top:6px;letter-spacing:1px">EFFECTIVE DATE: AUGUST 11, 2024</p><p class="sec-sub">At Carpinoy Logistics Services, we respect your privacy and are committed to protecting your personal information.</p></div>
 <div class="priv-box reveal"><h3>&#x1F4CC; Scope</h3><p>Ang policy na ito ay sakop ang:</p><ul><li><strong>Facebook Page interactions</strong> &mdash; pag-like, pag-comment, pag-message, at pag-click sa aming posts o ads.</li><li><strong>Other official online channels</strong> &mdash; email, inquiry forms, at iba pang contact points.</li></ul></div>
 <div class="priv-box reveal"><h3>&#x1F4E5; Information We Collect</h3><ul><li><strong>Basic contact details</strong> &mdash; pangalan, email, phone number.</li><li><strong>Interaction data</strong> &mdash; kapag nag-iinteract kayo sa aming posts o messages.</li><li><strong>Support-related info</strong> &mdash; detalye kapag humihingi ng tulong.</li></ul></div>
@@ -20,14 +26,13 @@
 <div class="priv-box reveal"><h3>&#x1F9FE; Your Rights</h3><ul><li>Access &amp; update your data.</li><li>Request deletion.</li><li>Opt-out anumang oras.</li></ul><p>Contact: <strong>carpinoylogistics@gmail.com</strong></p></div>
 <div class="priv-box reveal"><h3>&#x1F36A; Cookies</h3><p>Maaaring gumamit ng cookies. I-manage sa browser settings.</p></div>
 <div class="priv-box reveal"><h3>&#x1F512; Security</h3><p>Reasonable security measures. Walang system na 100% risk-free.</p></div>
-<div class="priv-box reveal"><h3>&#x1F4E2; Changes</h3><p>Maaari naming i-update ang policy. Basahin regularly.</p></div>
 <div class="priv-box reveal"><h3>&#x1F4DE; Contact</h3><ul><li><strong>Phone:</strong> (02) 8824-0603</li><li><strong>Messenger:</strong> m.me/carpinoylogistics</li></ul></div>
 </div></section>
 <footer class="cp-footer">&copy; 2024&ndash;2026 Carpinoy Logistics Services &mdash; All rights reserved. &#x1F1F5;&#x1F1ED;</footer><script>
-const cpNav=document.getElementById('cpNav');window.addEventListener('scroll',()=>cpNav.classList.toggle('scrolled',scrollY>30),{passive:true});
-const ham=document.getElementById('cpHamburger'),mob=document.getElementById('cpMobile');
-ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.textContent=o?'\u2715':'\u2630';});
-mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mob.classList.remove('open');ham.textContent='\u2630';}));
-const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const N=document.getElementById('cpNav');window.addEventListener('scroll',()=>N.classList.toggle('scrolled',scrollY>40),{passive:true});
+const H=document.getElementById('cpHam'),M=document.getElementById('cpMob');
+H.addEventListener('click',()=>{const o=M.classList.toggle('open');H.innerHTML=o?'&#10005;':'&#9776;';});
+M.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{M.classList.remove('open');H.innerHTML='&#9776;';}));
+new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1}).observe(document.querySelectorAll?undefined:undefined);
+document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1}).observe(el));
 </script><script src="cp-chat-widget.js"></script></body></html>
