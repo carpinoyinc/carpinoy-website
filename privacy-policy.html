@@ -1,368 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Privacy Policy · Carpinoy Logistics</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" href="https://yixnlcppzjyxoarghlai.supabase.co/storage/v1/object/public/images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0D1B3E;
-    --navy-deep: #0A1428;
-    --navy-light: #152348;
-    --orange: #E8720C;
-    --orange-light: #F5A623;
-    --snow: #FFFFFF;
-    --mist: rgba(255,255,255,.6);
-    --fog: rgba(255,255,255,.35);
-    --separator: rgba(255,255,255,.08);
-    --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    font-family: var(--font);
-    background: var(--navy-deep);
-    color: var(--snow);
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── Header ── */
-  .header {
-    background: var(--navy);
-    border-bottom: 1px solid var(--separator);
-    padding: 20px 24px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-
-  .header-brand {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .header-brand img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  /* ── Container ── */
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-
-  /* ── Title Block ── */
-  .title-block {
-    margin-bottom: 48px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--separator);
-  }
-
-  .title-block h1 {
-    font-size: clamp(28px, 5vw, 38px);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, var(--snow) 0%, var(--mist) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .title-meta {
-    font-size: 13px;
-    color: var(--fog);
-    font-weight: 500;
-  }
-
-  .title-meta strong {
-    color: var(--orange);
-    font-weight: 600;
-  }
-
-  /* ── Sections ── */
-  .section {
-    margin-bottom: 36px;
-  }
-
-  .section h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--orange-light);
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(232,114,12,.15);
-  }
-
-  .section h3 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--snow);
-    margin: 16px 0 8px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
-
-  .section p {
-    font-size: 14px;
-    color: var(--mist);
-    margin-bottom: 12px;
-  }
-
-  .section ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 12px;
-  }
-
-  .section ul li {
-    font-size: 14px;
-    color: var(--mist);
-    padding: 4px 0 4px 20px;
-    position: relative;
-  }
-
-  .section ul li::before {
-    content: '›';
-    position: absolute;
-    left: 4px;
-    color: var(--orange);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  /* ── Info Card ── */
-  .info-card {
-    background: var(--navy-light);
-    border: 1px solid var(--separator);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 24px 0;
-  }
-
-  .info-card p {
-    margin-bottom: 6px;
-  }
-
-  .info-card a {
-    color: var(--orange);
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .info-card a:hover {
-    text-decoration: underline;
-  }
-
-  /* ── Footer ── */
-  .footer {
-    text-align: center;
-    padding: 32px 24px;
-    border-top: 1px solid var(--separator);
-    font-size: 12px;
-    color: var(--fog);
-  }
-
-  .footer .brand {
-    color: var(--orange);
-    font-weight: 700;
-  }
-
-  /* ── Mobile ── */
-  @media (max-width: 600px) {
-    .container { padding: 32px 18px 60px; }
-    .section h2 { font-size: 16px; }
-    .section p, .section ul li { font-size: 13px; }
-  }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy Policy &mdash; Carpinoy Logistics</title>
+<link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png">
+<link rel="stylesheet" href="carpinoy-theme.css">
+<link rel="stylesheet" href="cp-brad-widget-v2.css">
 </head>
 <body>
+<nav class="cp-nav" id="cpNav"><div class="cp-nav__bar">
+<a href="index.html"><img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy Logistics"></a>
+<div class="cp-nav__links"><a href="index.html">Home</a>
+<a href="business-package.html">Business Package</a>
+<a href="accredited-associates.html">Accredited Associates</a>
+<a href="contact.html">Contact Us</a>
+<a href="mission-vision.html">Mission &amp; Vision</a>
+<a class="active" href="privacy-policy.html">Privacy Policy</a></div>
+<a class="cp-nav__cta" href="carloan-application.html">Apply Now</a>
+<button class="cp-nav__hamburger" id="cpHam" aria-label="Menu">&#9776;</button>
+</div><div class="cp-nav__mobile" id="cpMob"><a href="index.html">Home</a>
+<a href="business-package.html">Business Package</a>
+<a href="accredited-associates.html">Accredited Associates</a>
+<a href="contact.html">Contact Us</a>
+<a href="mission-vision.html">Mission &amp; Vision</a>
+<a href="privacy-policy.html">Privacy Policy</a><a class="mob-cta" href="carloan-application.html">Apply Now &rarr;</a></div></nav>
+<div style="height:80px"></div>
 
-<div class="header">
-  <div class="header-brand">
-    <img src="https://www.carpinoylogistics.com/logo-header.png" alt="Carpinoy Logistics">
-  </div>
-</div>
+<section class="section" style="background:var(--bg)">
+<div class="container" style="max-width:800px">
+<div class="sec-head reveal"><span class="sec-label">Legal</span><h2 class="sec-title">Privacy Policy</h2>
+<p class="sec-sub">Effective Date: March 2, 2026 &middot; Last Updated: March 2, 2026</p></div>
 
-<div class="container">
+<div class="legal-content">
+<div class="reveal"><h2>1. Introduction</h2>
+<p>Carpinoy Logistics ("we", "us", "our") operates a trucking and logistics service in the Philippines. This Privacy Policy explains how we collect, use, store, and protect information when you interact with us through our website (www.carpinoylogistics.com), our Facebook Page, Facebook Messenger chatbot ("Brad AI"), and our subcontractor (subcon) dashboard.</p>
+<p>By using any of our services or messaging our Facebook Page, you agree to the terms described in this policy.</p></div>
 
-  <div class="title-block">
-    <h1>Privacy Policy</h1>
-    <div class="title-meta">
-      <strong>Carpinoy Logistics</strong> · Effective Date: March 2, 2026 · Last Updated: March 2, 2026
-    </div>
-  </div>
+<div class="reveal"><h2>2. Information We Collect</h2>
+<p><strong style="color:var(--text)">A. Information You Provide</strong></p>
+<div class="li">Name, contact details, and other information you share via Messenger or our dashboard</div>
+<div class="li">Vehicle details (plate number, vehicle type) if you are a subcon operator</div>
+<div class="li">Messages and inquiries you send to our Facebook Page or chatbot</div>
+<div class="li">Documents submitted for accreditation (valid IDs, business permits, vehicle registration)</div>
+<p style="margin-top:14px"><strong style="color:var(--text)">B. Automatically Collected Information</strong></p>
+<div class="li">Facebook profile information (name, profile picture) as provided by the Messenger Platform</div>
+<div class="li">Chat history and conversation logs with our AI assistant</div>
+<div class="li">Device and browser information when accessing our website or dashboard</div>
+<div class="li">Usage data such as pages visited, features used, and interaction timestamps</div>
+<p style="margin-top:14px"><strong style="color:var(--text)">C. Information from Third Parties</strong></p>
+<div class="li">Data from Meta/Facebook as part of the Messenger Platform integration</div>
+<div class="li">Trip and billing data from our logistics partners and client accounts</div></div>
 
-  <!-- 1 -->
-  <div class="section">
-    <h2>1. Introduction</h2>
-    <p>Carpinoy Logistics ("we", "us", "our") operates a trucking and logistics service in the Philippines. This Privacy Policy explains how we collect, use, store, and protect information when you interact with us through our website (www.carpinoylogistics.com), our Facebook Page, Facebook Messenger chatbot ("Brad AI"), and our subcontractor (subcon) dashboard.</p>
-    <p>By using any of our services or messaging our Facebook Page, you agree to the terms described in this policy.</p>
-  </div>
+<div class="reveal"><h2>3. How We Use Your Information</h2>
+<p>We use the information we collect to:</p>
+<div class="li">Respond to your inquiries and provide customer support via our AI chatbot and human agents</div>
+<div class="li">Process and manage subcon operations including trip tracking, billing, and payouts</div>
+<div class="li">Manage subcontractor accreditation and compliance</div>
+<div class="li">Improve our services, AI responses, and operational efficiency</div>
+<div class="li">Send important updates about rates, policies, schedules, and billing</div>
+<div class="li">Maintain records for accounting, auditing, and legal compliance</div>
+<div class="li">Personalize your experience by remembering your preferences and past interactions</div></div>
 
-  <!-- 2 -->
-  <div class="section">
-    <h2>2. Information We Collect</h2>
+<div class="reveal"><h2>4. AI Chatbot ("Brad AI")</h2>
+<p>Our Facebook Page and subcon dashboard use an AI-powered chatbot named "Brad" to assist with inquiries. When you interact with Brad AI:</p>
+<div class="li">Your messages are processed to generate relevant responses</div>
+<div class="li">Conversation history may be stored to provide context in follow-up messages</div>
+<div class="li">Certain information you share (such as your name, area, vehicle details) may be saved to personalize future interactions</div>
+<div class="li">Brad AI uses a knowledge base maintained by Carpinoy Logistics management to provide accurate information</div>
+<p>Brad AI is designed to assist with Carpinoy Logistics-related inquiries only. It does not provide personal, medical, legal, or financial advice.</p></div>
 
-    <h3>A. Information You Provide</h3>
-    <ul>
-      <li>Name, contact details, and other information you share via Messenger or our dashboard</li>
-      <li>Vehicle details (plate number, vehicle type) if you are a subcon operator</li>
-      <li>Messages and inquiries you send to our Facebook Page or chatbot</li>
-      <li>Documents submitted for accreditation (valid IDs, business permits, vehicle registration)</li>
-    </ul>
+<div class="reveal"><h2>5. Data Storage and Security</h2>
+<p>Your data is stored securely using industry-standard cloud infrastructure (Supabase). We implement the following measures to protect your information:</p>
+<div class="li">Encrypted data transmission (HTTPS/TLS)</div>
+<div class="li">Role-based access controls &mdash; only authorized personnel can access sensitive data</div>
+<div class="li">Regular security reviews and updates</div>
+<div class="li">Separate data access levels for subcon operators, admins, BP associates, and management</div>
+<p>While we take reasonable steps to protect your information, no method of electronic transmission or storage is 100% secure.</p></div>
 
-    <h3>B. Automatically Collected Information</h3>
-    <ul>
-      <li>Facebook profile information (name, profile picture) as provided by the Messenger Platform</li>
-      <li>Chat history and conversation logs with our AI assistant</li>
-      <li>Device and browser information when accessing our website or dashboard</li>
-      <li>Usage data such as pages visited, features used, and interaction timestamps</li>
-    </ul>
+<div class="reveal"><h2>6. Data Sharing</h2>
+<p>We do not sell, rent, or trade your personal information to third parties. We may share your data only in the following circumstances:</p>
+<div class="li"><strong style="color:var(--text)">With our logistics partners and client accounts</strong> &mdash; to fulfill operational requirements</div>
+<div class="li"><strong style="color:var(--text)">With service providers</strong> &mdash; cloud hosting (Supabase), AI processing (OpenAI), strictly for service delivery</div>
+<div class="li"><strong style="color:var(--text)">When required by law</strong> &mdash; to comply with legal obligations, court orders, or government regulations in the Philippines</div>
+<div class="li"><strong style="color:var(--text)">To protect our rights</strong> &mdash; to enforce our terms, prevent fraud, or protect safety</div></div>
 
-    <h3>C. Information from Third Parties</h3>
-    <ul>
-      <li>Data from Meta/Facebook as part of the Messenger Platform integration</li>
-      <li>Trip and billing data from our logistics partners and client accounts</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>7. Data Retention</h2>
+<div class="li">Chat conversations: Retained for operational support and may be periodically archived</div>
+<div class="li">Trip and billing records: Retained for a minimum of 3 years for accounting and audit purposes</div>
+<div class="li">Accreditation documents: Retained for the duration of the subcon relationship plus 1 year</div>
+<div class="li">AI memory data: Retained to improve service quality; can be deleted upon request</div></div>
 
-  <!-- 3 -->
-  <div class="section">
-    <h2>3. How We Use Your Information</h2>
-    <p>We use the information we collect to:</p>
-    <ul>
-      <li>Respond to your inquiries and provide customer support via our AI chatbot and human agents</li>
-      <li>Process and manage subcon operations including trip tracking, billing, and payouts</li>
-      <li>Manage subcontractor accreditation and compliance</li>
-      <li>Improve our services, AI responses, and operational efficiency</li>
-      <li>Send important updates about rates, policies, schedules, and billing</li>
-      <li>Maintain records for accounting, auditing, and legal compliance</li>
-      <li>Personalize your experience by remembering your preferences and past interactions</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>8. Your Rights</h2>
+<p>Under the Data Privacy Act of 2012 (Republic Act No. 10173) of the Philippines, you have the right to:</p>
+<div class="li"><strong style="color:var(--text)">Access</strong> &mdash; Request a copy of the personal data we hold about you</div>
+<div class="li"><strong style="color:var(--text)">Correction</strong> &mdash; Request correction of inaccurate or incomplete data</div>
+<div class="li"><strong style="color:var(--text)">Erasure</strong> &mdash; Request deletion of your personal data, subject to legal retention requirements</div>
+<div class="li"><strong style="color:var(--text)">Object</strong> &mdash; Object to the processing of your personal data in certain circumstances</div>
+<div class="li"><strong style="color:var(--text)">Data Portability</strong> &mdash; Request your data in a structured, machine-readable format</div>
+<p>To exercise any of these rights, please contact us using the information below. You may also request data deletion at <a href="data-deletion.html">carpinoylogistics.com/data-deletion</a>.</p></div>
 
-  <!-- 4 -->
-  <div class="section">
-    <h2>4. AI Chatbot ("Brad AI")</h2>
-    <p>Our Facebook Page and subcon dashboard use an AI-powered chatbot named "Brad" to assist with inquiries. When you interact with Brad AI:</p>
-    <ul>
-      <li>Your messages are processed to generate relevant responses</li>
-      <li>Conversation history may be stored to provide context in follow-up messages</li>
-      <li>Certain information you share (such as your name, area, vehicle details) may be saved to personalize future interactions</li>
-      <li>Brad AI uses a knowledge base maintained by Carpinoy Logistics management to provide accurate information</li>
-    </ul>
-    <p>Brad AI is designed to assist with Carpinoy Logistics-related inquiries only. It does not provide personal, medical, legal, or financial advice.</p>
-  </div>
+<div class="reveal"><h2>9. Cookies and Tracking</h2>
+<p>Our website and dashboard may use cookies and similar technologies to keep you logged in, remember your preferences, and analyze usage patterns. You can control cookie settings through your browser.</p></div>
 
-  <!-- 5 -->
-  <div class="section">
-    <h2>5. Data Storage and Security</h2>
-    <p>Your data is stored securely using industry-standard cloud infrastructure (Supabase). We implement the following measures to protect your information:</p>
-    <ul>
-      <li>Encrypted data transmission (HTTPS/TLS)</li>
-      <li>Role-based access controls — only authorized personnel can access sensitive data</li>
-      <li>Regular security reviews and updates</li>
-      <li>Separate data access levels for subcon operators, admins, BP associates, and management</li>
-    </ul>
-    <p>While we take reasonable steps to protect your information, no method of electronic transmission or storage is 100% secure.</p>
-  </div>
+<div class="reveal"><h2>10. Children's Privacy</h2>
+<p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from minors.</p></div>
 
-  <!-- 6 -->
-  <div class="section">
-    <h2>6. Data Sharing</h2>
-    <p>We do not sell, rent, or trade your personal information to third parties. We may share your data only in the following circumstances:</p>
-    <ul>
-      <li><strong>With our logistics partners and client accounts</strong> — to fulfill operational requirements (trip data, billing, delivery confirmations)</li>
-      <li><strong>With service providers</strong> — cloud hosting (Supabase), AI processing (OpenAI), and payment processors, strictly for service delivery</li>
-      <li><strong>When required by law</strong> — to comply with legal obligations, court orders, or government regulations in the Philippines</li>
-      <li><strong>To protect our rights</strong> — to enforce our terms, prevent fraud, or protect the safety of our users and operations</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>11. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated "Last Updated" date. Continued use of our services after changes constitutes acceptance of the revised policy.</p></div>
 
-  <!-- 7 -->
-  <div class="section">
-    <h2>7. Data Retention</h2>
-    <p>We retain your information for as long as necessary to provide our services and fulfill the purposes described in this policy. Specifically:</p>
-    <ul>
-      <li>Chat conversations: Retained for operational support and may be periodically archived</li>
-      <li>Trip and billing records: Retained for a minimum of 3 years for accounting and audit purposes</li>
-      <li>Accreditation documents: Retained for the duration of the subcon relationship plus 1 year</li>
-      <li>AI memory data: Retained to improve service quality; can be deleted upon request</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>12. Contact Us</h2>
+<p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data:</p>
+<div class="grid-2" style="margin-top:14px">
+<div class="info-card"><div class="info-card__label"><span>&#x1F4E7;</span>Email</div><div class="info-card__value"><a href="mailto:carpinoylogistics@gmail.com" style="color:var(--lime)">carpinoylogistics@gmail.com</a></div></div>
+<div class="info-card"><div class="info-card__label"><span>&#x1F4AC;</span>Facebook</div><div class="info-card__value"><a href="https://m.me/carpinoylogistics" style="color:var(--lime)">m.me/carpinoylogistics</a></div></div>
+</div></div>
 
-  <!-- 8 -->
-  <div class="section">
-    <h2>8. Your Rights</h2>
-    <p>Under the Data Privacy Act of 2012 (Republic Act No. 10173) of the Philippines, you have the right to:</p>
-    <ul>
-      <li><strong>Access</strong> — Request a copy of the personal data we hold about you</li>
-      <li><strong>Correction</strong> — Request correction of inaccurate or incomplete data</li>
-      <li><strong>Erasure</strong> — Request deletion of your personal data, subject to legal retention requirements</li>
-      <li><strong>Object</strong> — Object to the processing of your personal data in certain circumstances</li>
-      <li><strong>Data Portability</strong> — Request your data in a structured, machine-readable format</li>
-    </ul>
-    <p>To exercise any of these rights, please contact us using the information below.</p>
-  </div>
+</div></div></section>
 
-  <!-- 9 -->
-  <div class="section">
-    <h2>9. Cookies and Tracking</h2>
-    <p>Our website and dashboard may use cookies and similar technologies to:</p>
-    <ul>
-      <li>Keep you logged in to the dashboard</li>
-      <li>Remember your preferences and settings</li>
-      <li>Analyze usage patterns to improve our services</li>
-    </ul>
-    <p>You can control cookie settings through your browser. Disabling cookies may affect the functionality of our dashboard.</p>
-  </div>
-
-  <!-- 10 -->
-  <div class="section">
-    <h2>10. Children's Privacy</h2>
-    <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from minors. If we become aware that we have collected data from a minor, we will take steps to delete it promptly.</p>
-  </div>
-
-  <!-- 11 -->
-  <div class="section">
-    <h2>11. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated "Last Updated" date. We encourage you to review this policy periodically. Continued use of our services after changes constitutes acceptance of the revised policy.</p>
-  </div>
-
-  <!-- 12 -->
-  <div class="section">
-    <h2>12. Contact Us</h2>
-    <p>If you have questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
-
-    <div class="info-card">
-      <p><strong style="color:var(--snow)">Carpinoy Logistics</strong></p>
-      <p>📧 Email: <a href="mailto:carpinoylogistics@gmail.com">carpinoylogistics@gmail.com</a></p>
-      <p>🌐 Website: <a href="https://www.carpinoylogistics.com" target="_blank" rel="noopener">www.carpinoylogistics.com</a></p>
-      <p>📱 Facebook: <a href="https://www.facebook.com/carpinoylogistics" target="_blank" rel="noopener">facebook.com/carpinoylogistics</a></p>
-      <p>📍 Philippines</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  <span class="brand">CARPINOY LOGISTICS</span> · © 2026 All rights reserved.
-</div>
-
-</body>
-</html>
+<footer class="cp-footer">&copy; 2024&ndash;2026 Carpinoy Logistics Services &mdash; All rights reserved. &#x1F1F5;&#x1F1ED;</footer>
+<script>
+const N=document.getElementById('cpNav');
+window.addEventListener('scroll',()=>N.classList.toggle('scrolled',scrollY>40),{passive:true});
+const H=document.getElementById('cpHam'),M=document.getElementById('cpMob');
+H.addEventListener('click',()=>{const o=M.classList.toggle('open');H.innerHTML=o?'\u2715':'\u2630';});
+M.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{M.classList.remove('open');H.innerHTML='\u2630';}));
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.08}).observe(el);
+});
+</script>
+<script>
+window.CP_CHAT_CONFIG = {
+  edgeFnUrl: "https://yixnlcppzjyxoarghlai.supabase.co/functions/v1/carpinoy-ai-chat",
+  handoffUrl: "https://m.me/carpinoylogistics",
+  requireLead: true,
+  noticeText: "We ask for your name and phone so we can remember your inquiry for follow-ups even if the chat closes."
+};
+</script>
+<script src="cp-brad-widget-v2.js"></script>
+</body></html>

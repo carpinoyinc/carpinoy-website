@@ -1,294 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Terms of Service · Carpinoy Logistics</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="icon" href="https://yixnlcppzjyxoarghlai.supabase.co/storage/v1/object/public/images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --navy: #0D1B3E;
-    --navy-deep: #0A1428;
-    --navy-light: #152348;
-    --orange: #E8720C;
-    --orange-light: #F5A623;
-    --snow: #FFFFFF;
-    --mist: rgba(255,255,255,.6);
-    --fog: rgba(255,255,255,.35);
-    --separator: rgba(255,255,255,.08);
-    --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: var(--font);
-    background: var(--navy-deep);
-    color: var(--snow);
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-  }
-  .header {
-    background: var(--navy);
-    border-bottom: 1px solid var(--separator);
-    padding: 20px 24px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-  .header-brand {
-    display: inline-flex;
-    align-items: center;
-  }
-  .header-brand img {
-    height: 36px;
-    width: auto;
-    object-fit: contain;
-  }
-  .container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-  }
-  .title-block {
-    margin-bottom: 48px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--separator);
-  }
-  .title-block h1 {
-    font-size: clamp(28px, 5vw, 38px);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 12px;
-    background: linear-gradient(135deg, var(--snow) 0%, var(--mist) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .title-meta {
-    font-size: 13px;
-    color: var(--fog);
-    font-weight: 500;
-  }
-  .title-meta strong {
-    color: var(--orange);
-    font-weight: 600;
-  }
-  .section { margin-bottom: 36px; }
-  .section h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--orange-light);
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(232,114,12,.15);
-  }
-  .section h3 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--snow);
-    margin: 16px 0 8px;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-  }
-  .section p {
-    font-size: 14px;
-    color: var(--mist);
-    margin-bottom: 12px;
-  }
-  .section ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 12px;
-  }
-  .section ul li {
-    font-size: 14px;
-    color: var(--mist);
-    padding: 4px 0 4px 20px;
-    position: relative;
-  }
-  .section ul li::before {
-    content: '›';
-    position: absolute;
-    left: 4px;
-    color: var(--orange);
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.75;
-  }
-  .info-card {
-    background: var(--navy-light);
-    border: 1px solid var(--separator);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 24px 0;
-  }
-  .info-card p { margin-bottom: 6px; }
-  .info-card a {
-    color: var(--orange);
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .info-card a:hover { text-decoration: underline; }
-  .footer {
-    text-align: center;
-    padding: 32px 24px;
-    border-top: 1px solid var(--separator);
-    font-size: 12px;
-    color: var(--fog);
-  }
-  .footer .brand {
-    color: var(--orange);
-    font-weight: 700;
-  }
-  @media (max-width: 600px) {
-    .container { padding: 32px 18px 60px; }
-    .section h2 { font-size: 16px; }
-    .section p, .section ul li { font-size: 13px; }
-  }
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Terms of Service &mdash; Carpinoy Logistics</title>
+<link rel="icon" type="image/png" href="https://carpinoylogistics.com/favicon.png">
+<link rel="stylesheet" href="carpinoy-theme.css">
+<link rel="stylesheet" href="cp-brad-widget-v2.css">
 </head>
 <body>
+<nav class="cp-nav" id="cpNav"><div class="cp-nav__bar">
+<a href="index.html"><img class="cp-nav__logo" src="https://carpinoylogistics.com/logo.png" alt="Carpinoy Logistics"></a>
+<div class="cp-nav__links"><a href="index.html">Home</a>
+<a href="business-package.html">Business Package</a>
+<a href="accredited-associates.html">Accredited Associates</a>
+<a href="contact.html">Contact Us</a>
+<a href="mission-vision.html">Mission &amp; Vision</a>
+<a href="privacy-policy.html">Privacy Policy</a></div>
+<a class="cp-nav__cta" href="carloan-application.html">Apply Now</a>
+<button class="cp-nav__hamburger" id="cpHam" aria-label="Menu">&#9776;</button>
+</div><div class="cp-nav__mobile" id="cpMob"><a href="index.html">Home</a>
+<a href="business-package.html">Business Package</a>
+<a href="accredited-associates.html">Accredited Associates</a>
+<a href="contact.html">Contact Us</a>
+<a href="mission-vision.html">Mission &amp; Vision</a>
+<a href="privacy-policy.html">Privacy Policy</a><a class="mob-cta" href="carloan-application.html">Apply Now &rarr;</a></div></nav>
+<div style="height:80px"></div>
 
-<div class="header">
-  <div class="header-brand">
-    <img src="https://www.carpinoylogistics.com/logo-header.png" alt="Carpinoy Logistics">
-  </div>
-</div>
+<section class="section" style="background:var(--bg)">
+<div class="container" style="max-width:800px">
+<div class="sec-head reveal"><span class="sec-label">Legal</span><h2 class="sec-title">Terms of Service</h2>
+<p class="sec-sub">Effective Date: March 2, 2026 &middot; Last Updated: March 2, 2026</p></div>
 
-<div class="container">
+<div class="legal-content">
+<div class="reveal"><h2>1. Acceptance of Terms</h2>
+<p>By accessing or using the services of Carpinoy Logistics &mdash; including our website (www.carpinoylogistics.com), Facebook Page, Facebook Messenger chatbot ("Brad AI"), and subcontractor dashboard &mdash; you agree to be bound by these Terms of Service. If you do not agree, please discontinue use of our services.</p></div>
 
-  <div class="title-block">
-    <h1>Terms of Service</h1>
-    <div class="title-meta">
-      <strong>Carpinoy Logistics</strong> · Effective Date: March 2, 2026 · Last Updated: March 2, 2026
-    </div>
-  </div>
+<div class="reveal"><h2>2. Description of Services</h2>
+<p>Carpinoy Logistics provides trucking and logistics services in the Philippines. Our digital services include:</p>
+<div class="li"><strong style="color:var(--text)">Facebook Messenger Chatbot (Brad AI)</strong> &mdash; answers inquiries about rates, trips, billing, terms, and accreditation</div>
+<div class="li"><strong style="color:var(--text)">Subcon Dashboard</strong> &mdash; platform for subcontractor operators to view trip data, billing, payouts</div>
+<div class="li"><strong style="color:var(--text)">Admin Dashboard</strong> &mdash; internal management system for Carpinoy operations</div>
+<div class="li"><strong style="color:var(--text)">BP Associate Portal</strong> &mdash; platform for business partners and agents</div></div>
 
-  <!-- 1 -->
-  <div class="section">
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing or using the services of Carpinoy Logistics — including our website (www.carpinoylogistics.com), Facebook Page, Facebook Messenger chatbot ("Brad AI"), and subcontractor dashboard — you agree to be bound by these Terms of Service. If you do not agree, please discontinue use of our services.</p>
-  </div>
+<div class="reveal"><h2>3. User Responsibilities</h2>
+<p>When using our services, you agree to:</p>
+<div class="li">Provide accurate and truthful information</div>
+<div class="li">Use our services only for their intended purposes related to Carpinoy Logistics operations</div>
+<div class="li">Not attempt to misuse, hack, reverse-engineer, or exploit our systems, chatbot, or dashboard</div>
+<div class="li">Not impersonate another person or misrepresent your affiliation with Carpinoy</div>
+<div class="li">Not use our AI chatbot for purposes unrelated to Carpinoy Logistics</div>
+<div class="li">Keep your login credentials (if applicable) confidential and secure</div>
+<div class="li">Comply with all applicable laws and regulations of the Philippines</div></div>
 
-  <!-- 2 -->
-  <div class="section">
-    <h2>2. Description of Services</h2>
-    <p>Carpinoy Logistics provides trucking and logistics services in the Philippines. Our digital services include:</p>
-    <ul>
-      <li><strong>Facebook Messenger Chatbot (Brad AI)</strong> — an AI-powered assistant that answers inquiries about rates, trips, billing, terms, and accreditation</li>
-      <li><strong>Subcon Dashboard</strong> — a web-based platform for subcontractor operators to view trip data, billing, payouts, and manage their accounts</li>
-      <li><strong>Admin Dashboard</strong> — an internal management system for Carpinoy operations</li>
-      <li><strong>BP Associate Portal</strong> — a platform for business partners and agents</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>4. AI Chatbot Disclaimer</h2>
+<div class="li">Brad AI provides information based on a knowledge base maintained by Carpinoy management, but responses may not always be perfectly accurate</div>
+<div class="li">Brad AI is not a substitute for direct communication with Carpinoy admin for critical decisions</div>
+<div class="li">Brad AI does not provide personal, medical, legal, or financial advice</div>
+<div class="li">Rates, policies, and schedules are subject to change &mdash; always verify with Carpinoy admin</div>
+<div class="li">Carpinoy Logistics is not liable for decisions made solely based on chatbot responses</div></div>
 
-  <!-- 3 -->
-  <div class="section">
-    <h2>3. User Responsibilities</h2>
-    <p>When using our services, you agree to:</p>
-    <ul>
-      <li>Provide accurate and truthful information</li>
-      <li>Use our services only for their intended purposes related to Carpinoy Logistics operations</li>
-      <li>Not attempt to misuse, hack, reverse-engineer, or exploit our systems, chatbot, or dashboard</li>
-      <li>Not impersonate another person or misrepresent your affiliation with Carpinoy</li>
-      <li>Not use our AI chatbot for purposes unrelated to Carpinoy Logistics</li>
-      <li>Keep your login credentials (if applicable) confidential and secure</li>
-      <li>Comply with all applicable laws and regulations of the Philippines</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>5. Subcontractor Terms</h2>
+<div class="li">Your subcon agreement and accreditation terms govern your operational relationship with Carpinoy</div>
+<div class="li">Trip data, billing, and payout information displayed on the dashboard are based on validated records</div>
+<div class="li">Disputes regarding trips, billing, or payouts should be raised directly with Carpinoy admin</div>
+<div class="li">Carpinoy reserves the right to suspend or terminate dashboard access for violations</div></div>
 
-  <!-- 4 -->
-  <div class="section">
-    <h2>4. AI Chatbot Disclaimer</h2>
-    <p>Our AI chatbot "Brad" is designed to assist with Carpinoy Logistics inquiries. Please note:</p>
-    <ul>
-      <li>Brad AI provides information based on a knowledge base maintained by Carpinoy management, but responses may not always be perfectly accurate</li>
-      <li>Brad AI is not a substitute for direct communication with Carpinoy admin or management for critical decisions</li>
-      <li>Brad AI does not provide personal, medical, legal, or financial advice</li>
-      <li>Information provided by Brad AI regarding rates, policies, and schedules is subject to change — always verify with Carpinoy admin for the latest details</li>
-      <li>Carpinoy Logistics is not liable for decisions made solely based on chatbot responses</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>6. Intellectual Property</h2>
+<p>All content, design, software, and branding associated with Carpinoy Logistics &mdash; including the Brad AI chatbot, dashboard interfaces, logos, and documentation &mdash; are the property of Carpinoy Logistics and are protected by applicable intellectual property laws.</p></div>
 
-  <!-- 5 -->
-  <div class="section">
-    <h2>5. Subcontractor Terms</h2>
-    <p>If you are a subcontractor (subcon) operator registered with Carpinoy Logistics:</p>
-    <ul>
-      <li>Your subcon agreement and accreditation terms govern your operational relationship with Carpinoy</li>
-      <li>Trip data, billing, and payout information displayed on the dashboard are based on validated records</li>
-      <li>Disputes regarding trips, billing, or payouts should be raised directly with Carpinoy admin</li>
-      <li>Carpinoy reserves the right to suspend or terminate dashboard access for violations of the subcon agreement</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>7. Limitation of Liability</h2>
+<div class="li">Carpinoy Logistics provides its digital services "as is" without warranties of any kind</div>
+<div class="li">We do not guarantee uninterrupted, error-free, or completely secure access to our services</div>
+<div class="li">We are not liable for any indirect, incidental, or consequential damages arising from the use of our services</div></div>
 
-  <!-- 6 -->
-  <div class="section">
-    <h2>6. Intellectual Property</h2>
-    <p>All content, design, software, and branding associated with Carpinoy Logistics — including the Brad AI chatbot, dashboard interfaces, logos, and documentation — are the property of Carpinoy Logistics and are protected by applicable intellectual property laws. You may not copy, reproduce, distribute, or create derivative works without our written consent.</p>
-  </div>
+<div class="reveal"><h2>8. Service Availability</h2>
+<p>We strive to keep our services operational at all times, but we may experience downtime due to maintenance, updates, or circumstances beyond our control.</p></div>
 
-  <!-- 7 -->
-  <div class="section">
-    <h2>7. Limitation of Liability</h2>
-    <p>To the fullest extent permitted by law:</p>
-    <ul>
-      <li>Carpinoy Logistics provides its digital services "as is" without warranties of any kind</li>
-      <li>We do not guarantee uninterrupted, error-free, or completely secure access to our services</li>
-      <li>We are not liable for any indirect, incidental, or consequential damages arising from the use of our services</li>
-      <li>Our total liability for any claim shall not exceed the amount you paid to Carpinoy in the preceding 3 months, if any</li>
-    </ul>
-  </div>
+<div class="reveal"><h2>9. Termination</h2>
+<p>We reserve the right to suspend or terminate your access to our services at any time if you violate these Terms. You may also stop using our services at any time.</p></div>
 
-  <!-- 8 -->
-  <div class="section">
-    <h2>8. Service Availability</h2>
-    <p>We strive to keep our services operational at all times, but we may experience downtime due to maintenance, updates, or circumstances beyond our control. We reserve the right to modify, suspend, or discontinue any part of our services with or without notice.</p>
-  </div>
+<div class="reveal"><h2>10. Governing Law</h2>
+<p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of the Philippines.</p></div>
 
-  <!-- 9 -->
-  <div class="section">
-    <h2>9. Termination</h2>
-    <p>We reserve the right to suspend or terminate your access to our services at any time if you violate these Terms or engage in behavior that we deem harmful to Carpinoy Logistics, its users, or its operations. You may also stop using our services at any time.</p>
-  </div>
+<div class="reveal"><h2>11. Changes to These Terms</h2>
+<p>We may update these Terms from time to time. Changes will be reflected on this page. Continued use constitutes acceptance.</p></div>
 
-  <!-- 10 -->
-  <div class="section">
-    <h2>10. Governing Law</h2>
-    <p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of the Philippines. Any disputes arising from these Terms shall be resolved in the appropriate courts of the Philippines.</p>
-  </div>
+<div class="reveal"><h2>12. Contact Us</h2>
+<div class="grid-2" style="margin-top:14px">
+<div class="info-card"><div class="info-card__label"><span>&#x1F4E7;</span>Email</div><div class="info-card__value"><a href="mailto:carpinoylogistics@gmail.com" style="color:var(--lime)">carpinoylogistics@gmail.com</a></div></div>
+<div class="info-card"><div class="info-card__label"><span>&#x1F4AC;</span>Facebook</div><div class="info-card__value"><a href="https://m.me/carpinoylogistics" style="color:var(--lime)">m.me/carpinoylogistics</a></div></div>
+</div></div>
+</div></div></section>
 
-  <!-- 11 -->
-  <div class="section">
-    <h2>11. Changes to These Terms</h2>
-    <p>We may update these Terms from time to time. Changes will be reflected on this page with an updated "Last Updated" date. Continued use of our services after changes constitutes acceptance of the revised Terms.</p>
-  </div>
-
-  <!-- 12 -->
-  <div class="section">
-    <h2>12. Contact Us</h2>
-    <p>If you have questions about these Terms of Service, please contact us:</p>
-
-    <div class="info-card">
-      <p><strong style="color:var(--snow)">Carpinoy Logistics</strong></p>
-      <p>📧 Email: <a href="mailto:carpinoylogistics@gmail.com">carpinoylogistics@gmail.com</a></p>
-      <p>🌐 Website: <a href="https://www.carpinoylogistics.com" target="_blank" rel="noopener">www.carpinoylogistics.com</a></p>
-      <p>📱 Facebook: <a href="https://www.facebook.com/carpinoylogistics" target="_blank" rel="noopener">facebook.com/carpinoylogistics</a></p>
-      <p>📍 Philippines</p>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  <span class="brand">CARPINOY LOGISTICS</span> · © 2026 All rights reserved.
-</div>
-
-</body>
-</html>
+<footer class="cp-footer">&copy; 2024&ndash;2026 Carpinoy Logistics Services &mdash; All rights reserved. &#x1F1F5;&#x1F1ED;</footer>
+<script>
+const N=document.getElementById('cpNav');
+window.addEventListener('scroll',()=>N.classList.toggle('scrolled',scrollY>40),{passive:true});
+const H=document.getElementById('cpHam'),M=document.getElementById('cpMob');
+H.addEventListener('click',()=>{const o=M.classList.toggle('open');H.innerHTML=o?'\u2715':'\u2630';});
+M.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{M.classList.remove('open');H.innerHTML='\u2630';}));
+document.querySelectorAll('.reveal').forEach(el=>{
+  new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.08}).observe(el);
+});
+</script>
+<script>
+window.CP_CHAT_CONFIG = {
+  edgeFnUrl: "https://yixnlcppzjyxoarghlai.supabase.co/functions/v1/carpinoy-ai-chat",
+  handoffUrl: "https://m.me/carpinoylogistics",
+  requireLead: true,
+  noticeText: "We ask for your name and phone so we can remember your inquiry for follow-ups even if the chat closes."
+};
+</script>
+<script src="cp-brad-widget-v2.js"></script>
+</body></html>
